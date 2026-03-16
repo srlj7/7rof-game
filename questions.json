@@ -1,0 +1,4202 @@
+[
+  {
+    "id": "ا_0",
+    "letter": "ا",
+    "category": "أسئلة عامة",
+    "question": "أكبر قارة في العالم؟",
+    "answer": "آسيا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ا_1",
+    "letter": "ا",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي لُقب بـ 'المدفعجية' في الدوري الإنجليزي؟",
+    "answer": "أرسنال",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ا_2",
+    "letter": "ا",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم كائنات زرقاء تعيش في كوكب باندورا؟",
+    "answer": "أفاتار",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ا_3",
+    "letter": "ا",
+    "category": "لاعبين كرة قدم",
+    "question": "أسطورة هجوم الأرجنتين ومانشستر سيتي المعتزل؟",
+    "answer": "أجويرو",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ا_4",
+    "letter": "ا",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي صاحب معلقة؟",
+    "answer": "امرؤ القيس",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ا_5",
+    "letter": "ا",
+    "category": "مشاهير",
+    "question": "فيزيائي ألماني شهير صاحب النظرية النسبية؟",
+    "answer": "أينشتاين",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ا_6",
+    "letter": "ا",
+    "category": "أسئلة عامة",
+    "question": "أول ألوان الطيف الشمسي؟",
+    "answer": "أحمر",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ب_7",
+    "letter": "ب",
+    "category": "أسئلة عامة",
+    "question": "دولة أوروبية عاصمتها بروكسل؟",
+    "answer": "بلجيكا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ب_8",
+    "letter": "ب",
+    "category": "كرة قدم أوروبية",
+    "question": "النادي البافاري العريق في ألمانيا؟",
+    "answer": "بايرن ميونخ",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ب_9",
+    "letter": "ب",
+    "category": "أفلام وشخصياتها",
+    "question": "شخصية البطل الخفاش في عالم DC؟",
+    "answer": "باتمان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ب_10",
+    "letter": "ب",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب برازيلي أسطوري، بطل العالم 3 مرات؟",
+    "answer": "بيليه",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ب_11",
+    "letter": "ب",
+    "category": "الأدب العربي القديم",
+    "question": "المدينة التي نشأ فيها الفرزدق وجرير؟",
+    "answer": "البصرة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ب_12",
+    "letter": "ب",
+    "category": "مشاهير",
+    "question": "مؤسس شركة مايكروسوفت؟",
+    "answer": "بيل غيتس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ب_13",
+    "letter": "ب",
+    "category": "خيارات أخرى",
+    "question": "طائر جارح يرمز ليل، يبدأ بحرف الباء؟",
+    "answer": "بومة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ت_14",
+    "letter": "ت",
+    "category": "أسئلة عامة",
+    "question": "فاكهة حمراء ومليئة بالبذور؟",
+    "answer": "توت",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ت_15",
+    "letter": "ت",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي لندني يلقب بالسبيرز أو الديوك؟",
+    "answer": "توتنهام",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ت_16",
+    "letter": "ت",
+    "category": "أفلام وشخصياتها",
+    "question": "الفيلم الشهير عن غرق السفينة العملاقة عام 1912؟",
+    "answer": "تيتانيك",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ت_17",
+    "letter": "ت",
+    "category": "لاعبين كرة قدم",
+    "question": "أسطورة هجوم روما وإيطاليا الأول؟",
+    "answer": "توتي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ت_18",
+    "letter": "ت",
+    "category": "الأدب العربي القديم",
+    "question": "قبيلة عربية شهيرة منها الشاعر المهلهل؟",
+    "answer": "تغلب",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ت_19",
+    "letter": "ت",
+    "category": "مشاهير",
+    "question": "ممثل أمريكي بطل سلسلة أفلام Mission Impossible؟",
+    "answer": "توم كروز",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ت_20",
+    "letter": "ت",
+    "category": "أسئلة عامة",
+    "question": "دولة في أمريكا الجنوبية ذات شكل طولي ونحيف جداً؟",
+    "answer": "تشيلي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ث_21",
+    "letter": "ث",
+    "category": "أسئلة عامة",
+    "question": "حيوان زاحف سام يزحف على بطنه؟",
+    "answer": "ثعبان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ث_22",
+    "letter": "ث",
+    "category": "أفلام وشخصياتها",
+    "question": "إله الرعد في عالم مارفل السينمائي؟",
+    "answer": "ثور",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ث_23",
+    "letter": "ث",
+    "category": "لاعبين كرة قدم",
+    "question": "ظهير أيسر فرنسي يلعب في أسي ميلان؟",
+    "answer": "ثيو",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ث_24",
+    "letter": "ث",
+    "category": "الأدب العربي القديم",
+    "question": "قبيلة عربية استقرت في الطائف منها الحجاج بن يوسف؟",
+    "answer": "ثقيف",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ث_25",
+    "letter": "ث",
+    "category": "أسئلة عامة",
+    "question": "عكس كلمة متحرك؟",
+    "answer": "ثابت",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ث_26",
+    "letter": "ث",
+    "category": "لاعبين كرة قدم",
+    "question": "شقيق الموهوب إيدين هازارد، يلعب في بلجيكا؟",
+    "answer": "ثورجان",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ج_27",
+    "letter": "ج",
+    "category": "أسئلة عامة",
+    "question": "أكبر دولة في المنطقة العربية مساحة؟",
+    "answer": "الجزائر",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ج_28",
+    "letter": "ج",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إيطالي يعتبر أقدم فريق كرة قدم في إيطاليا لا يزال نشطاً؟",
+    "answer": "جنوى",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ج_29",
+    "letter": "ج",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر أموي مشهور بالهجاء والنقائض مع الفرزدق؟",
+    "answer": "جرير",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ج_30",
+    "letter": "ج",
+    "category": "مشاهير",
+    "question": "أول رئيس للولايات المتحدة الأمريكية؟",
+    "answer": "جورج",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ج_31",
+    "letter": "ج",
+    "category": "أسئلة عامة",
+    "question": "أكبر عضو في جسم الإنسان البشري؟",
+    "answer": "جلد",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ح_32",
+    "letter": "ح",
+    "category": "أسئلة عامة",
+    "question": "حيوان بحري ضخم جداً؟",
+    "answer": "حوت",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ح_33",
+    "letter": "ح",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب مغربي موهوب، نجم أياكس السابق؟",
+    "answer": "حكيم",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ح_34",
+    "letter": "ح",
+    "category": "لاعبين كرة قدم",
+    "question": "ظهير أيمن مغربي يلعب لباريس سان جيرمان؟",
+    "answer": "حكيمي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ح_35",
+    "letter": "ح",
+    "category": "أفلام وشخصياتها",
+    "question": "الاسم العربي لسلسلة أفلام Star Wars؟",
+    "answer": "حرب النجوم",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ح_36",
+    "letter": "ح",
+    "category": "مشاهير",
+    "question": "ممثل مصري كوميدي شهير متزوج من منى زكي؟",
+    "answer": "حلمي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "خ_37",
+    "letter": "خ",
+    "category": "أسئلة عامة",
+    "question": "طائر ليلي مخيف للبعض ينام بالمقلوب؟",
+    "answer": "خفاش",
+    "difficulty": "easy"
+  },
+  {
+    "id": "خ_38",
+    "letter": "خ",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إسباني يلعب في ضواحي مدريد، قميصه أزرق غامق؟",
+    "answer": "خيتافي",
+    "difficulty": "hard"
+  },
+  {
+    "id": "خ_39",
+    "letter": "خ",
+    "category": "لاعبين كرة قدم",
+    "question": "نجم كولومبي لعب لريال مدريد وبايرن ميونخ؟",
+    "answer": "خاميس",
+    "difficulty": "medium"
+  },
+  {
+    "id": "خ_40",
+    "letter": "خ",
+    "category": "الأدب العربي القديم",
+    "question": "شاعرة عربية مشهورة من العصر الجاهلي والإسلامي، رثت أخاها صخراً؟",
+    "answer": "الخنساء",
+    "difficulty": "medium"
+  },
+  {
+    "id": "د_41",
+    "letter": "د",
+    "category": "أسئلة عامة",
+    "question": "حيوان مفترس يعيش في الغابات والمناطق الثلجية؟",
+    "answer": "دب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "د_42",
+    "letter": "د",
+    "category": "أسئلة عامة",
+    "question": "مدينة إماراتية بها أعلى برج في العالم؟",
+    "answer": "دبي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "د_43",
+    "letter": "د",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل خيال علمي يتحدث عن رحلة عبر الزمن؟",
+    "answer": "دارك",
+    "difficulty": "hard"
+  },
+  {
+    "id": "د_44",
+    "letter": "د",
+    "category": "الأدب العربي القديم",
+    "question": "كتاب يجمع فيه الشاعر قصائده يسمى؟",
+    "answer": "ديوان",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ذ_45",
+    "letter": "ذ",
+    "category": "أسئلة عامة",
+    "question": "معدن ثمين لونه أصفر؟",
+    "answer": "ذهب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ذ_46",
+    "letter": "ذ",
+    "category": "أسئلة عامة",
+    "question": "أصغر جزء في المادة الكيميائية؟",
+    "answer": "ذرة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ذ_47",
+    "letter": "ذ",
+    "category": "كرة قدم أوروبية",
+    "question": "ما هو اللقب الذي يطلق على فريق وولفرهامبتون الإنجليزي؟",
+    "answer": "ذئاب",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ذ_48",
+    "letter": "ذ",
+    "category": "مسلسلات أجنبية",
+    "question": ". حيوان يشبه الكلب المخلص لعائلة ستارك؟",
+    "answer": "ذئب درع",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ذ_49",
+    "letter": "ذ",
+    "category": "أفلام وشخصياتها",
+    "question": "وولفرين في سلسلة إكس مان يعني بالعربية؟",
+    "answer": "ذئب",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ذ_50",
+    "letter": "ذ",
+    "category": "أسئلة عامة",
+    "question": "عكس كلمة نسيان؟",
+    "answer": "ذاكرة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ر_51",
+    "letter": "ر",
+    "category": "كرة قدم أوروبية",
+    "question": "النادي الملكي الإسباني؟",
+    "answer": "ريال مدريد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ر_52",
+    "letter": "ر",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم عن الملاكم سيلفستر ستالون؟",
+    "answer": "روكي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ر_53",
+    "letter": "ر",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب برازيلي اشتهر بالابتسامة الساحرة والمراوغات في برشلونة؟",
+    "answer": "رونالدينيو",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ر_54",
+    "letter": "ر",
+    "category": "لاعبين كرة قدم",
+    "question": "الهداف التاريخي لدوري أبطال أوروبا؟",
+    "answer": "رونالدو",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ر_55",
+    "letter": "ر",
+    "category": "أسئلة عامة",
+    "question": "فاكهة حمراء مليئة بالحبوب الصغيرة؟",
+    "answer": "رمان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ز_56",
+    "letter": "ز",
+    "category": "أسئلة عامة",
+    "question": "حيوان يتميز بطول رقبته؟",
+    "answer": "زرافة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ز_57",
+    "letter": "ز",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي روسي من مدينة سانت بطرسبرغ؟",
+    "answer": "زينيت",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ز_58",
+    "letter": "ز",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب فرنسي جزائري الأصل نطح ماتيراتزي في النهائي؟",
+    "answer": "زيدان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ز_59",
+    "letter": "ز",
+    "category": "أفلام وشخصياتها",
+    "question": "الكائنات الميتة التي تحيى لتأكل البشر في الأفلام؟",
+    "answer": "زومبي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ز_60",
+    "letter": "ز",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي صاحب معلقة؟",
+    "answer": "زهير",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ز_61",
+    "letter": "ز",
+    "category": "أسئلة عامة",
+    "question": "الكوكب الثاني في المجموعة الشمسية المشهور بلمعانه؟",
+    "answer": "زهرة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "س_62",
+    "letter": "س",
+    "category": "أسئلة عامة",
+    "question": "مركبة فضائية أو مركبة بحرية؟",
+    "answer": "سفينة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_63",
+    "letter": "س",
+    "category": "أفلام وشخصياتها",
+    "question": "بطل خارق يطير ويلبس عباءة حمراء وحرف S على صدره؟",
+    "answer": "سوبرمان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_64",
+    "letter": "س",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب سنغالي شهير لعب لليفربول وانتقل لبايرن ميونخ؟",
+    "answer": "ساديو ماني",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_65",
+    "letter": "س",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب إسباني مدافع أسطوري لريال مدريد؟",
+    "answer": "سيرجيو راموس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_66",
+    "letter": "س",
+    "category": "أمثال وحكم",
+    "question": "ما هو الشيء الذي إذا طال قصر . سلاح ذو حدين يبدأ بالسين؟",
+    "answer": "سيف",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ش_67",
+    "letter": "ش",
+    "category": "أسئلة عامة",
+    "question": "الكوكب أو النجم الذي يمد الأرض بالحرارة والضوء؟",
+    "answer": "شمس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ش_68",
+    "letter": "ش",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إنجليزي يلفظ اسمه ، نادي يبدأ بالشين؟",
+    "answer": "شيفيلد",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ش_69",
+    "letter": "ش",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي ألماني مقره في مدينة غيلسنكيرشن؟",
+    "answer": "شالكه",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ش_70",
+    "letter": "ش",
+    "category": "أفلام وشخصياتها",
+    "question": "غول أخضر اللون له أفلام أنيميشن شهيرة؟",
+    "answer": "شريك",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ش_71",
+    "letter": "ش",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب وسط إسباني أسطوري لبرشلونة ، لاعب يبدأ بالشين؟",
+    "answer": "شيرار",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ش_72",
+    "letter": "ش",
+    "category": "الأدب العربي القديم",
+    "question": "من شعراء الصعاليك في العصر الجاهلي وصاحب لامية العرب؟",
+    "answer": "الشنفرى",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ش_73",
+    "letter": "ش",
+    "category": "مشاهير",
+    "question": "مغنية كولومبية شهيرة، شريكة بيكيه السابقة؟",
+    "answer": "شاكيرا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ص_74",
+    "letter": "ص",
+    "category": "أسئلة عامة",
+    "question": "أحد فصول السنة؟",
+    "answer": "صيف",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ص_75",
+    "letter": "ص",
+    "category": "كرة قدم أوروبية",
+    "question": "عاصمة بلغاريا وبها نادي سسكا؟",
+    "answer": "صوفيا",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ص_76",
+    "letter": "ص",
+    "category": "أفلام وشخصياتها",
+    "question": "طائر قوي الجارح الذي يصطاد؟",
+    "answer": "صقر",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ص_77",
+    "letter": "ص",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب مصري أسطوري يلعب لليفربول؟",
+    "answer": "صلاح",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ص_78",
+    "letter": "ص",
+    "category": "لاعبين كرة قدم",
+    "question": "مهاجم كاميروني أسطوري لعب لبرشلونة والإنتر؟",
+    "answer": "صامويل",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ص_79",
+    "letter": "ص",
+    "category": "مشاهير",
+    "question": "ديكتاتور عراقي سابق؟",
+    "answer": "صدام",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ض_80",
+    "letter": "ض",
+    "category": "أسئلة عامة",
+    "question": "حيوان برمائي يقفز ويصدر نقيقاً؟",
+    "answer": "ضفدع",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ض_81",
+    "letter": "ض",
+    "category": "أسئلة عامة",
+    "question": "تطلق على من يقوم بوظيفة حفظ الأمن في الدولة؟",
+    "answer": "ضابط",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ض_82",
+    "letter": "ض",
+    "category": "مسلسلات أجنبية",
+    "question": "في مسلسل Breaking Bad، الـ DEA هي إدارة مكافحة المخدرات يترأس قسمها شخص اسمه بصفة؟",
+    "answer": "ضابط",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ض_83",
+    "letter": "ض",
+    "category": "أفلام وشخصياتها",
+    "question": "ظاهرة جوية تستخدم في أفلام الرعب لتقليل الرؤية؟",
+    "answer": "ضباب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ض_84",
+    "letter": "ض",
+    "category": "أسئلة عامة",
+    "question": "حيوان مفترس يشبه الكلب ويعيش في أفريقيا معروف بضحكته؟",
+    "answer": "ضبع",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ط_85",
+    "letter": "ط",
+    "category": "أسئلة عامة",
+    "question": "اسم العاصمة اليابانية؟",
+    "answer": "طوكيو",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ط_86",
+    "letter": "ط",
+    "category": "أسئلة عامة",
+    "question": "طائر جميل يشتهر بريشه الملون الذي ينشره كالمروحة؟",
+    "answer": "طاووس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ط_87",
+    "letter": "ط",
+    "category": "كرة قدم أوروبية",
+    "question": "مجموعة الحكام الذين يديرون المباراة؟",
+    "answer": "طاقم",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ط_88",
+    "letter": "ط",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم عن مدينة ديزني . طارق؟",
+    "answer": "طرزان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ط_89",
+    "letter": "ط",
+    "category": "أفلام وشخصياتها",
+    "question": "رجل الغابة الذي ربته القرود وله أفلام ديزني؟",
+    "answer": "طرزان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ط_90",
+    "letter": "ط",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب ليبي مهاري لعب للهلال السعودي؟",
+    "answer": "طارق",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ط_91",
+    "letter": "ط",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر أموي من مؤسسي النقائض ؟ الطرماح؟",
+    "answer": "طرفة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ط_92",
+    "letter": "ط",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي صاحب معلقة؟",
+    "answer": "طرفة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ط_93",
+    "letter": "ط",
+    "category": "مشاهير",
+    "question": "فنان سعودي أسطوري ملقب بصوت الأرض؟",
+    "answer": "طلال",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ظ_94",
+    "letter": "ظ",
+    "category": "أسئلة عامة",
+    "question": "ما ينتج عن اعتراض جسم مسار الضوء؟",
+    "answer": "ظل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ظ_95",
+    "letter": "ظ",
+    "category": "كرة قدم أوروبية",
+    "question": "اللاعب الذي يلعب في خط الدفاع على الأطراف يسمى؟",
+    "answer": "ظهير",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ظ_96",
+    "letter": "ظ",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل ألماني عن الزمن معناه بالعربية؟",
+    "answer": "ظلام",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ظ_97",
+    "letter": "ظ",
+    "category": "لاعبين كرة قدم",
+    "question": "لقب يطلق على النجم البرازيلي رونالدو؟",
+    "answer": "الظاهرة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ع_98",
+    "letter": "ع",
+    "category": "أسئلة عامة",
+    "question": "دولة عربية عاصمتها بغداد؟",
+    "answer": "عراق",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ع_99",
+    "letter": "ع",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم ديزني الساحر العربي الذي يطير على بساط؟",
+    "answer": "علاء الدين",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ع_100",
+    "letter": "ع",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب إماراتي ملقب بـ عموري؟",
+    "answer": "عمر",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ع_101",
+    "letter": "ع",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي صاحب معلقة؟",
+    "answer": "عنترة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ع_102",
+    "letter": "ع",
+    "category": "مشاهير",
+    "question": "الممثل المصري الكوميدي الملقب بالزعيم؟",
+    "answer": "عادل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "غ_103",
+    "letter": "غ",
+    "category": "أسئلة عامة",
+    "question": "حيوان سريع وجميل يعتبر من الظباء ويعيش في الصحاري؟",
+    "answer": "غزال",
+    "difficulty": "easy"
+  },
+  {
+    "id": "غ_104",
+    "letter": "غ",
+    "category": "أسئلة عامة",
+    "question": "دولة أفريقية عاصمتها أكرا؟",
+    "answer": "غانا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "غ_105",
+    "letter": "غ",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي تركي عريق من إسطنبول يرتدي الأصفر والأحمر؟",
+    "answer": "غلطة سراي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "غ_106",
+    "letter": "غ",
+    "category": "أفلام وشخصياتها",
+    "question": "وحش ياباني ضخم خيالي ظهر في العديد من الأفلام ويدمر المدن؟",
+    "answer": "غودزيلا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "غ_107",
+    "letter": "غ",
+    "category": "الأدب العربي القديم",
+    "question": "نوع من الشعر خاص بمدح ووصف المحبوبة؟",
+    "answer": "غزل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "غ_108",
+    "letter": "غ",
+    "category": "مشاهير",
+    "question": "المهاتما قائد هندي روحي وسياسي أسطوري؟",
+    "answer": "غاندي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_109",
+    "letter": "ف",
+    "category": "أسئلة عامة",
+    "question": "دولة أوروبية عاصمتها باريس؟",
+    "answer": "فرنسا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_110",
+    "letter": "ف",
+    "category": "كرة قدم أوروبية",
+    "question": "مدينة إيطالية بها نادي يلبس البنفسجي . اسم المدينة؟",
+    "answer": "فلورنسا",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ف_111",
+    "letter": "ف",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إيطالي قميصه بنفسجي اللون؟",
+    "answer": "فيورنتينا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ف_112",
+    "letter": "ف",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل كوميدي عن 6 أصدقاء يتقابلون في مقهى سنترال بيرك؟",
+    "answer": "فريندز",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_113",
+    "letter": "ف",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر أموي شهير اشتهر بنقائضه مع جرير؟",
+    "answer": "الفرزدق",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ف_114",
+    "letter": "ف",
+    "category": "مشاهير",
+    "question": "المغنية اللبنانية الكبيرة جارة القمر؟",
+    "answer": "فيروز",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_115",
+    "letter": "ف",
+    "category": "أسئلة عامة",
+    "question": "حيوان ضخم بخرطوم وعاج؟",
+    "answer": "فيل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_116",
+    "letter": "ق",
+    "category": "أسئلة عامة",
+    "question": "حيوان أليف يجلس في المنزل يحب السمك؟",
+    "answer": "قطة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_117",
+    "letter": "ق",
+    "category": "لاعبين كرة قدم",
+    "question": "كابتن ريال مدريد وبرشلونة السابقين . بويول. كابتن انجلترا.؟",
+    "answer": "قائد",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ق_118",
+    "letter": "ق",
+    "category": "لاعبين كرة قدم",
+    "question": "لقب يطلق على الحارس الإسباني إيكر كاسياس؟",
+    "answer": "قديس",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ق_119",
+    "letter": "ق",
+    "category": "الأدب العربي القديم",
+    "question": "ال الطويلة القديمة التي كانت تعلق على الكعبة تسمى؟",
+    "answer": "قصيدة",
+    "difficulty": "قصيدة"
+  },
+  {
+    "id": "ك_120",
+    "letter": "ك",
+    "category": "أسئلة عامة",
+    "question": "دولة تقع في أمريكا الشمالية وعاصمتها أوتاوا؟",
+    "answer": "كندا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ك_121",
+    "letter": "ك",
+    "category": "أسئلة عامة",
+    "question": "حيوان أليف يسمى أوفى صديق للإنسان؟",
+    "answer": "كلب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_122",
+    "letter": "ل",
+    "category": "أسئلة عامة",
+    "question": "دولة عربية عاصمتها بيروت؟",
+    "answer": "لبنان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_123",
+    "letter": "ل",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إنجليزي يلقب بالريدز يلعب له محمد صلاح؟",
+    "answer": "ليفربول",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_124",
+    "letter": "ل",
+    "category": "مسلسلات أجنبية",
+    "question": "الاسم الأخير لعائلة بطلة صراع العروش سيرسي وجايمي وتيريون؟",
+    "answer": "لانيستر",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ل_125",
+    "letter": "ل",
+    "category": "لاعبين كرة قدم",
+    "question": "النجم الأرجنتيني ميسي؟",
+    "answer": "ليونيل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_126",
+    "letter": "ل",
+    "category": "أمثال وحكم",
+    "question": "ما هو السائل الذي لا يبكى عليه إذا انسكب في المثل؟",
+    "answer": "لبن",
+    "difficulty": "medium"
+  },
+  {
+    "id": "م_127",
+    "letter": "م",
+    "category": "أسئلة عامة",
+    "question": "دولة عربية عاصمتها الرباط؟",
+    "answer": "مغرب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "م_128",
+    "letter": "م",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إيطالي يلقب بالروسونيري؟",
+    "answer": "ميلان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "م_129",
+    "letter": "م",
+    "category": "أفلام وشخصياتها",
+    "question": "سلسلة أفلام خيال علمي من إنتاج ديزني واسع يجمع الأبطال الخارقين؟",
+    "answer": "مارفل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "م_130",
+    "letter": "م",
+    "category": "الأدب العربي القديم",
+    "question": "كانت الأشعار الجاهلية الطويلة تعلق على الكعبة وتسمى؟",
+    "answer": "معلقات",
+    "difficulty": "medium"
+  },
+  {
+    "id": "م_131",
+    "letter": "م",
+    "category": "أمثال وحكم",
+    "question": "عاصمة مصر . يضرب هذا المثل لمن يعطي الكثير بلا مقابل؟",
+    "answer": "معطاء",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ن_132",
+    "letter": "ن",
+    "category": "أسئلة عامة",
+    "question": "أطول نهر في العالم يمر بعدة دول أفريقية ومصر؟",
+    "answer": "نيل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ن_133",
+    "letter": "ن",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إيطالي برز فيه مارادونا؟",
+    "answer": "نابولي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ن_134",
+    "letter": "ن",
+    "category": "كرة قدم أوروبية",
+    "question": "المدينة التي لعب لها مارادونا في إيطاليا وقادها للمجد؟",
+    "answer": "نابولي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ن_135",
+    "letter": "ن",
+    "category": "مسلسلات أجنبية",
+    "question": "شبكة البث التي أنتجت مسلسلات مثل لعبة الحبار ودارك؟",
+    "answer": "نتفليكس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ن_136",
+    "letter": "ن",
+    "category": "أفلام وشخصياتها",
+    "question": "بطل فيلم ماتريكس؟",
+    "answer": "نيو",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ن_137",
+    "letter": "ن",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب برازيلي متميز لعب لبرشلونة وباريس سان جيرمان والهلال؟",
+    "answer": "نيمار",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ن_138",
+    "letter": "ن",
+    "category": "لاعبين كرة قدم",
+    "question": "حارس ألماني عملاق يلعب لبايرن ميونخ بأسلوب الليبرو؟",
+    "answer": "نوير",
+    "difficulty": "medium"
+  },
+  {
+    "id": "و_139",
+    "letter": "و",
+    "category": "أسئلة عامة",
+    "question": "زهور جميلة تعبر عن الحب ذو أشواك؟",
+    "answer": "ورد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "و_140",
+    "letter": "و",
+    "category": "أسئلة عامة",
+    "question": "عاصمة الولايات المتحدة الأمريكية؟",
+    "answer": "واشنطن",
+    "difficulty": "easy"
+  },
+  {
+    "id": "و_141",
+    "letter": "و",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب إنجليزي شهير يدعى روني؟",
+    "answer": "واين",
+    "difficulty": "medium"
+  },
+  {
+    "id": "و_142",
+    "letter": "و",
+    "category": "الأدب العربي القديم",
+    "question": ". بالعربية الواو؟",
+    "answer": "وليد",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ي_143",
+    "letter": "ي",
+    "category": "أسئلة عامة",
+    "question": "دولة تقع شرق آسيا وتلقب بكوكب التطور؟",
+    "answer": "يابان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ي_144",
+    "letter": "ي",
+    "category": "أسئلة عامة",
+    "question": "طائر يرمز للسلام، عادة يكون أبيض اللون؟",
+    "answer": "يمامة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ي_145",
+    "letter": "ي",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إيطالي شهير جدا مقره تورينو يلبس الأبيض والأسود؟",
+    "answer": "يوفنتوس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ي_146",
+    "letter": "ي",
+    "category": "كرة قدم أوروبية",
+    "question": "بطولة أمم أوروبا باللغة الدارجة وتلعب كل 4 سنوات؟",
+    "answer": "يورو",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ي_147",
+    "letter": "ي",
+    "category": "أفلام وشخصياتها",
+    "question": "معلم الجيداي القصير الأخضر والقديم في سلسلة حرب النجوم؟",
+    "answer": "يودا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ي_148",
+    "letter": "ي",
+    "category": "الأدب العربي القديم",
+    "question": "مدينة عربية قديمة اشتهرت بالشعر والتجارة وتسمى حالياً كان اسمها قديماً؟",
+    "answer": "يثرب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ي_149",
+    "letter": "ي",
+    "category": "مشاهير",
+    "question": "يوتيوبر سويدي شهير جدا اشتهر بصناعة محتوى الألعاب واسمه بيو دي باي. اسم ياباني؟",
+    "answer": "يوسين بولت?",
+    "difficulty": "medium"
+  },
+  {
+    "id": "أ_150",
+    "letter": "أ",
+    "category": "جغرافيا",
+    "question": "أكبر قارة في العالم من حيث المساحة والسكان؟",
+    "answer": "آسيا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "أ_151",
+    "letter": "أ",
+    "category": "أفلام وشخصياتها",
+    "question": "مخرج فيلم الخيال العلمي الشهير \"أفاتار\" وجيمس كاميرون أخرجا فيلماً عن غرق سفينة، ما هو؟",
+    "answer": "أسطورة التايتانيك",
+    "difficulty": "medium"
+  },
+  {
+    "id": "أ_152",
+    "letter": "أ",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي لُقب بـ \"الملك الضليل\" وصاحب معلقة \"قفا نبك\"؟",
+    "answer": "امرؤ القيس",
+    "difficulty": "hard"
+  },
+  {
+    "id": "أ_153",
+    "letter": "أ",
+    "category": "معلومات عامة",
+    "question": "مغنية بريطانية شهيرة صاحبة أغنية \"Hello\" و \"Someone Like You\"؟",
+    "answer": "أديل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "أ_154",
+    "letter": "أ",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "شخصية مافيا بريطانية وزعيم عصابة في مسلسل \"بيكي بلايندرز\" واسمه الأول؟",
+    "answer": "آرثر شيلبي",
+    "difficulty": "hard"
+  },
+  {
+    "id": "أ_155",
+    "letter": "أ",
+    "category": "كرة قدم أوروبية",
+    "question": "أسطورة كرة قدم إسبانية سجل هدف الفوز بكأس العالم 2010؟",
+    "answer": "أندريس إنييستا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "أ_156",
+    "letter": "أ",
+    "category": "معلومات عامة",
+    "question": "عالم فيزياء شهير صاحب النظرية النسبية؟",
+    "answer": "أينشتاين",
+    "difficulty": "medium"
+  },
+  {
+    "id": "أ_157",
+    "letter": "أ",
+    "category": "جغرافيا",
+    "question": "ابنة اللورد نيد ستارك في \"صراع العروش\" التي ذهبت لمدينة برافوس؟",
+    "answer": "آريا ستارك",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ب_158",
+    "letter": "ب",
+    "category": "جغرافيا",
+    "question": "عاصمة فرنسا وتُعرف بعاصمة النور؟",
+    "answer": "باريس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ب_159",
+    "letter": "ب",
+    "category": "معلومات عامة",
+    "question": "زعيم الأندية الألمانية وبطل دوري أبطال أوروبا عدة مرات؟",
+    "answer": "بايرن ميونخ",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ب_160",
+    "letter": "ب",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل أمريكي شهير عن معلم كيمياء يصنع الميثامفيتامين؟",
+    "answer": "بريكينغ باد",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ب_161",
+    "letter": "ب",
+    "category": "كرة قدم أوروبية",
+    "question": "أسطورة كرة القدم البرازيلية والوحيد الذي حقق كأس العالم 3 مرات كلاعب؟",
+    "answer": "بيليه",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ب_162",
+    "letter": "ب",
+    "category": "جغرافيا",
+    "question": "الاسم الحقيقي لشخصية \"باتمان\" الملياردير في مدينة غوثام؟",
+    "answer": "بروس واين",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ب_163",
+    "letter": "ب",
+    "category": "أمثال وحكم",
+    "question": "ممثل هوليوودي شهير بطل فيلم \"Fight Club\"؟",
+    "answer": "براد بيت",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ب_164",
+    "letter": "ب",
+    "category": "معلومات عامة",
+    "question": "ملكة سبأ التي ذُكرت قصتها مع النبي سليمان في القرآن الكريم؟",
+    "answer": "بلقيس",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ب_165",
+    "letter": "ب",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر أموي كفيف من أشهر شعراء الغزل؟",
+    "answer": "بشار بن برد",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ب_166",
+    "letter": "ب",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "عصابة بريطانية في برمنغهام بعد الحرب العالمية الأولى؟",
+    "answer": "بيكي بلايندرز",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ت_167",
+    "letter": "ت",
+    "category": "جغرافيا",
+    "question": "دولة عربية عاصمتها تحمل نفس اسمها؟",
+    "answer": "تونس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ت_168",
+    "letter": "ت",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي لندني إنجليزي يُلقب بـ \"البلوز\"؟",
+    "answer": "تشيلسي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ت_169",
+    "letter": "ت",
+    "category": "معلومات عامة",
+    "question": "أسطورة خط الوسط الألماني الذي اعتزل بعد يورو 2024؟",
+    "answer": "توني كروس",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ت_170",
+    "letter": "ت",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل قصير من إنتاج HBO يروي قصة كارثة نووية سوفيتية؟",
+    "answer": "تشيرنوبيل",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ت_171",
+    "letter": "ت",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم شهير عن غرق سفينة عملاقة في محيط الأطلسي؟",
+    "answer": "تايتانيك",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ت_172",
+    "letter": "ت",
+    "category": "معلومات عامة",
+    "question": "فرعون مصري شاب اكتشفت مقبرته بالكامل عام 1922؟",
+    "answer": "توت عنخ آمون",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ت_173",
+    "letter": "ت",
+    "category": "معلومات عامة",
+    "question": "بطل سلسلة أفلام \"مهمة مستحيلة\"؟",
+    "answer": "توم كروز",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ت_174",
+    "letter": "ت",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر من صعاليك العرب في الجاهلية؟",
+    "answer": "تأبط شراً",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ت_175",
+    "letter": "ت",
+    "category": "معلومات عامة",
+    "question": "قائد عصابة البيكي بلايندرز، ما اسمه الأول؟",
+    "answer": "تومي شيلبي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ث_176",
+    "letter": "ث",
+    "category": "أمثال وحكم",
+    "question": "حيوان ماكر يُضرب به المثل في الخداع؟",
+    "answer": "ثعلب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ث_177",
+    "letter": "ث",
+    "category": "كرة قدم أوروبية",
+    "question": "لاعب إنجليزي سريع لعب طويلاً لنادي أرسنال؟",
+    "answer": "ثيو والكوت",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ث_178",
+    "letter": "ث",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "شخصية من عالم مارفل وهو إله الرعد ويحمل مطرقة سحرية؟",
+    "answer": "ثور",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ث_179",
+    "letter": "ث",
+    "category": "جغرافيا",
+    "question": "مدينة يونانية قديمة مشهورة في الأساطير؟",
+    "answer": "ثيفا",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ث_180",
+    "letter": "ث",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم رعب مقتبس عن رواية لستيفن كينغ عن شخص يفقد وزنه بلعنة؟",
+    "answer": "ثينر",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ث_181",
+    "letter": "ث",
+    "category": "معلومات عامة",
+    "question": "رئيس أمريكي نُحت وجهه على جبل راشمور، اسمه الأول؟",
+    "answer": "ثيودور روزفلت",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ث_182",
+    "letter": "ث",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي صاحب معلقة من بني شيبان؟",
+    "answer": "ثعلبة بن صعير",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ج_183",
+    "letter": "ج",
+    "category": "جغرافيا",
+    "question": "دولة عربية عبارة عن جزر تقع في المحيط الهندي؟",
+    "answer": "جزر القمر",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ج_184",
+    "letter": "ج",
+    "category": "جغرافيا",
+    "question": "نادي إيطالي قديم في مدينة تورينو وهو غريم يوفنتوس، أو فريق إيطالي آخر؟",
+    "answer": "جنوى",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ج_185",
+    "letter": "ج",
+    "category": "كرة قدم أوروبية",
+    "question": "لاعب إنجليزي شاب يتألق مع ريال مدريد حالياً؟",
+    "answer": "جود بيلينغهام",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ج_186",
+    "letter": "ج",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "الاسم الإنجليزي لمسلسل \"صراع العروش\"؟",
+    "answer": "جيم أوف ثرونز",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ج_187",
+    "letter": "ج",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم شهير لخواكين فينيكس يحكي قصة شرير باتمان؟",
+    "answer": "جوكر",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ج_188",
+    "letter": "ج",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر أموي اشتهر بالنقائض مع الفرزدق؟",
+    "answer": "جرير",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ج_189",
+    "letter": "ج",
+    "category": "أمثال وحكم",
+    "question": "ممثل هوليوودي بطل سلسلة قراصنة الكاريبي؟",
+    "answer": "جوني ديب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ج_190",
+    "letter": "ج",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "ملك الشمال في مسلسل صراع العروش، ما اسمه؟",
+    "answer": "جون سنو",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ج_191",
+    "letter": "ج",
+    "category": "معلومات عامة",
+    "question": "مخترع الهاتف، اسمه الأول؟",
+    "answer": "جراهام بيل",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ح_192",
+    "letter": "ح",
+    "category": "جغرافيا",
+    "question": "مدينة سورية تُعد من أقدم المدن المأهولة في التاريخ؟",
+    "answer": "حلب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ح_193",
+    "letter": "ح",
+    "category": "كرة قدم أوروبية",
+    "question": "لاعب ومدرب مصري يُعتبر الهداف التاريخي لمنتخب مصر؟",
+    "answer": "حسام حسن",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ح_194",
+    "letter": "ح",
+    "category": "معلومات عامة",
+    "question": "سلسلة أفلام خيال علمي فضاء بالعربية؟",
+    "answer": "حرب النجوم",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ح_195",
+    "letter": "ح",
+    "category": "أمثال وحكم",
+    "question": "شاعر جاهلي يُضرب به المثل في الكرم والجود؟",
+    "answer": "حاتم الطائي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ح_196",
+    "letter": "ح",
+    "category": "معلومات عامة",
+    "question": "حيوان يُستخدم في الفروسية والسباقات؟",
+    "answer": "حصان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ح_197",
+    "letter": "ح",
+    "category": "معلومات عامة",
+    "question": "ملك بابلي قديم اشتهر بسن القوانين والتشريعات؟",
+    "answer": "حمورابي",
+    "difficulty": "hard"
+  },
+  {
+    "id": "خ_198",
+    "letter": "خ",
+    "category": "جغرافيا",
+    "question": "مدينة سودانية تقع عند التقاء النيل الأبيض والأزرق؟",
+    "answer": "خرطوم",
+    "difficulty": "easy"
+  },
+  {
+    "id": "خ_199",
+    "letter": "خ",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إسباني يقع في مدريد ويلعب في الدوري الإسباني؟",
+    "answer": "خيتافي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "خ_200",
+    "letter": "خ",
+    "category": "كرة قدم أوروبية",
+    "question": "أسطورة كرة قدم أرجنتينية وقائد تاريخي لنادي إنتر ميلان؟",
+    "answer": "خافيير زانيتي",
+    "difficulty": "hard"
+  },
+  {
+    "id": "خ_201",
+    "letter": "خ",
+    "category": "أفلام وشخصياتها",
+    "question": "أول كلمة من الاسم العربي لفيلم \"The Shawshank Redemption\"؟",
+    "answer": "خلاص",
+    "difficulty": "hard"
+  },
+  {
+    "id": "خ_202",
+    "letter": "خ",
+    "category": "الأدب العربي القديم",
+    "question": "شاعرة مخضرمة أدركت الجاهلية والإسلام ورثت أخويها صخراً ومعاوية؟",
+    "answer": "خنساء",
+    "difficulty": "medium"
+  },
+  {
+    "id": "خ_203",
+    "letter": "خ",
+    "category": "أمثال وحكم",
+    "question": "ممثل حاز على الأوسكار عن دوره في فيلم الجوكر، اسمه الأول؟",
+    "answer": "خواكين فينيكس",
+    "difficulty": "medium"
+  },
+  {
+    "id": "خ_204",
+    "letter": "خ",
+    "category": "معلومات عامة",
+    "question": "صحابي وقائد عسكري لُقب بسيف الله المسلول، اسمه الأول؟",
+    "answer": "خالد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "خ_205",
+    "letter": "خ",
+    "category": "معلومات عامة",
+    "question": "حيوان ثديي يطير وينام مقلوباً؟",
+    "answer": "خفاش",
+    "difficulty": "easy"
+  },
+  {
+    "id": "د_206",
+    "letter": "د",
+    "category": "جغرافيا",
+    "question": "دولة أوروبية إسكندنافية عاصمتها كوبنهاغن؟",
+    "answer": "دنمارك",
+    "difficulty": "easy"
+  },
+  {
+    "id": "د_207",
+    "letter": "د",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي ألماني يشتهر بجمهوره \"الجدار الأصفر\"؟",
+    "answer": "دورتموند",
+    "difficulty": "easy"
+  },
+  {
+    "id": "د_208",
+    "letter": "د",
+    "category": "كرة قدم أوروبية",
+    "question": "أسطورة كرة قدم إنجليزية لعب لمانشستر يونايتد وريال مدريد؟",
+    "answer": "ديفيد بيكهام",
+    "difficulty": "medium"
+  },
+  {
+    "id": "د_209",
+    "letter": "د",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل ألماني خيال علمي معقد عن السفر عبر الزمن؟",
+    "answer": "دارك",
+    "difficulty": "hard"
+  },
+  {
+    "id": "د_210",
+    "letter": "د",
+    "category": "معلومات عامة",
+    "question": "بطل خارق فكاهي من مارفل يرتدي اللون الأحمر؟",
+    "answer": "ديدبول",
+    "difficulty": "medium"
+  },
+  {
+    "id": "د_211",
+    "letter": "د",
+    "category": "الأدب العربي القديم",
+    "question": "فارس وشاعر جاهلي من قبيلة هوازن قُتل في غزوة حنين؟",
+    "answer": "دريد بن الصمة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "د_212",
+    "letter": "د",
+    "category": "أمثال وحكم",
+    "question": "ممثل هوليوودي بطل فيلم \"الذئب في وول ستريت\"؟",
+    "answer": "دي كابريو",
+    "difficulty": "medium"
+  },
+  {
+    "id": "د_213",
+    "letter": "د",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "شخصية مسلسل شهير يعمل كمحلل دم في الشرطة وهو قاتل متسلسل؟",
+    "answer": "دكستر",
+    "difficulty": "hard"
+  },
+  {
+    "id": "د_214",
+    "letter": "د",
+    "category": "معلومات عامة",
+    "question": "عالم إنجليزي صاحب نظرية التطور؟",
+    "answer": "داروين",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ذ_215",
+    "letter": "ذ",
+    "category": "أمثال وحكم",
+    "question": "حيوان مفترس يُضرب به المثل في الدهاء والسرعة؟",
+    "answer": "ذئب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ذ_216",
+    "letter": "ذ",
+    "category": "معلومات عامة",
+    "question": "معدن ثمين يُستخدم في الزينة والمجوهرات؟",
+    "answer": "ذهب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ذ_217",
+    "letter": "ذ",
+    "category": "معلومات عامة",
+    "question": "نبات زراعي صيفي أصفر اللون يُصنع منه الفشار؟",
+    "answer": "ذرة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ذ_218",
+    "letter": "ذ",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر أموي من عشاق العرب اشتهر بحب \"مية\"؟",
+    "answer": "ذو الرمة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ذ_219",
+    "letter": "ذ",
+    "category": "معلومات عامة",
+    "question": "صفة تطلق على الشخص الفطن سريع البديهة؟",
+    "answer": "ذكي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ذ_220",
+    "letter": "ذ",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "شخصية شريرة في أفلام باتمان كان مدعياً عاماً لغوثام؟",
+    "answer": "ذو الوجهين",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ذ_221",
+    "letter": "ذ",
+    "category": "معلومات عامة",
+    "question": "ملك عظيم ذُكر في القرآن الكريم بنى السد ليأجوج ومأجوج؟",
+    "answer": "ذو القرنين",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ر_222",
+    "letter": "ر",
+    "category": "كرة قدم أوروبية",
+    "question": "النادي الأكثر تتويجاً بدوري أبطال أوروبا؟",
+    "answer": "ريال مدريد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ر_223",
+    "letter": "ر",
+    "category": "معلومات عامة",
+    "question": "ظاهرة برازيلية وأحد أعظم المهاجمين في تاريخ كرة القدم؟",
+    "answer": "رونالدو",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ر_224",
+    "letter": "ر",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل أنيميشن خيال علمي كوميدي شهير جداً؟",
+    "answer": "ريك",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ر_225",
+    "letter": "ر",
+    "category": "معلومات عامة",
+    "question": "سلسلة أفلام رياضية عن الملاكمة بطلها سيلفستر ستالون؟",
+    "answer": "روكي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ر_226",
+    "letter": "ر",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر من العصر الأموي اشتهر بشعر الرجز؟",
+    "answer": "رؤبة بن العجاج",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ر_227",
+    "letter": "ر",
+    "category": "أمثال وحكم",
+    "question": "ممثل أسطوري بطل فيلم \"Taxi Driver\"؟",
+    "answer": "روبرت دي نيرو",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ر_228",
+    "letter": "ر",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "بطل مسلسل الفايكنج الأسطوري واسمه الأول؟",
+    "answer": "راغنار",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ر_229",
+    "letter": "ر",
+    "category": "معلومات عامة",
+    "question": "عالم فيزياء اكتشف نواة الذرة؟",
+    "answer": "رذرفورد",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ز_230",
+    "letter": "ز",
+    "category": "معلومات عامة",
+    "question": "حيوان إفريقي يتميز بطول عنقه؟",
+    "answer": "زرافة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ز_231",
+    "letter": "ز",
+    "category": "جغرافيا",
+    "question": "نادي روسي شهير مقره في مدينة سان بطرسبرج؟",
+    "answer": "زينيت",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ز_232",
+    "letter": "ز",
+    "category": "كرة قدم أوروبية",
+    "question": "أسطورة كرة قدم فرنسية من أصول جزائرية، اسمه الأول؟",
+    "answer": "زين الدين",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ز_233",
+    "letter": "ز",
+    "category": "جغرافيا",
+    "question": "فيلم أنيميشن من ديزني يحكي عن مدينة للحيوانات؟",
+    "answer": "زوتوبيا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ز_234",
+    "letter": "ز",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي صاحب معلقة من الحوليات؟",
+    "answer": "زهير بن أبي سلمى",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ز_235",
+    "letter": "ز",
+    "category": "أمثال وحكم",
+    "question": "ممثل شاب بطل سلسلة أفلام \"High School Musical\"؟",
+    "answer": "زاك إيفرون",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ز_236",
+    "letter": "ز",
+    "category": "معلومات عامة",
+    "question": "ملكة تدمر الشهيرة في التاريخ القديم؟",
+    "answer": "زنوبيا",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ز_237",
+    "letter": "ز",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "شخصية خيالية لمبارز مقنع يرتدي الأسود ويترك علامة بحرفه؟",
+    "answer": "زورو",
+    "difficulty": "medium"
+  },
+  {
+    "id": "س_238",
+    "letter": "س",
+    "category": "جغرافيا",
+    "question": "دولة عربية عاصمتها دمشق؟",
+    "answer": "سوريا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_239",
+    "letter": "س",
+    "category": "جغرافيا",
+    "question": "النادي الاسكتلندي الأبرز في مدينة غلاسكو باللونين الأخضر والأبيض؟",
+    "answer": "سيلتيك",
+    "difficulty": "medium"
+  },
+  {
+    "id": "س_240",
+    "letter": "س",
+    "category": "معلومات عامة",
+    "question": "مدافع إسباني أسطوري القائد السابق لريال مدريد، اسمه الأول؟",
+    "answer": "سيرجيو راموس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_241",
+    "letter": "س",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل خيال علمي شهير على نتفليكس يقع في الثمانينات؟",
+    "answer": "سترينجر ثينقز",
+    "difficulty": "medium"
+  },
+  {
+    "id": "س_242",
+    "letter": "س",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "شخصية بطل خارق يُعرف بالرجل العنكبوت؟",
+    "answer": "سبايدرمان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_243",
+    "letter": "س",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي من الصعاليك، اسمه الأول؟",
+    "answer": "سليك بن السلكة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "س_244",
+    "letter": "س",
+    "category": "أفلام وشخصياتها",
+    "question": "ممثلة أمريكية شهيرة أدت دور \"الأرملة السوداء\"؟",
+    "answer": "سكارليت",
+    "difficulty": "medium"
+  },
+  {
+    "id": "س_245",
+    "letter": "س",
+    "category": "معلومات عامة",
+    "question": "فيلسوف يوناني عظيم حكم عليه بالإعدام بشرب السم؟",
+    "answer": "سقراط",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_246",
+    "letter": "س",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل كوميدي أمريكي شهير يُعتبر \"مسلسلاً عن لا شيء\"؟",
+    "answer": "ساينفيلد",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ش_247",
+    "letter": "ش",
+    "category": "جغرافيا",
+    "question": "دولة في أمريكا الجنوبية شريطية الشكل على المحيط الهادئ؟",
+    "answer": "شيلي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ش_248",
+    "letter": "ش",
+    "category": "جغرافيا",
+    "question": "نادي ألماني قديم في مدينة غلزنكيرشن؟",
+    "answer": "شالكه",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ش_249",
+    "letter": "ش",
+    "category": "معلومات عامة",
+    "question": "أسطورة هجوم أوكرانية فاز بالكرة الذهبية؟",
+    "answer": "شيفتشينكو",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ش_250",
+    "letter": "ش",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل بريطاني عن محقق شهير يعيش في شارع بيكر؟",
+    "answer": "شيرلوك",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ش_251",
+    "letter": "ش",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم أنيميشن عن غول أخضر يعيش في مستنقع؟",
+    "answer": "شريك",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ش_252",
+    "letter": "ش",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي من الصعاليك صاحب لامية العرب؟",
+    "answer": "الشنفري",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ش_253",
+    "letter": "ش",
+    "category": "أمثال وحكم",
+    "question": "أول ممثل أدى دور جيمس بوند في السينما؟",
+    "answer": "شون كونري",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ش_254",
+    "letter": "ش",
+    "category": "معلومات عامة",
+    "question": "أعظم كاتب مسرحي باللغة الإنجليزية، كتب روميو وجولييت؟",
+    "answer": "شكسبير",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ش_255",
+    "letter": "ش",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "عبقري فيزياء غريب الأطوار في مسلسل \"ذا بيج بانج ثيوري\"؟",
+    "answer": "شيلدون",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ص_256",
+    "letter": "ص",
+    "category": "جغرافيا",
+    "question": "دولة عربية تقع في القرن الأفريقي عاصمتها مقديشو؟",
+    "answer": "صومال",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ص_257",
+    "letter": "ص",
+    "category": "كرة قدم أوروبية",
+    "question": "لاعب كاميروني أسطوري لعب لبرشلونة وإنتر ميلان؟",
+    "answer": "صامويل إيتو",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ص_258",
+    "letter": "ص",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "الترجمة العربية لمسلسل الفنتازيا الشهير؟",
+    "answer": "صراع",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ص_259",
+    "letter": "ص",
+    "category": "معلومات عامة",
+    "question": "أخو الخنساء الذي رثته بأشهر القصائد؟",
+    "answer": "صخر",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ص_260",
+    "letter": "ص",
+    "category": "أمثال وحكم",
+    "question": "ممثل أسمر شهير ظهر في فيلم \"Pulp Fiction\" ومسلسلات مارفل؟",
+    "answer": "صامويل جاكسون",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ص_261",
+    "letter": "ص",
+    "category": "معلومات عامة",
+    "question": "قائد عسكري مسلم حرر القدس في معركة حطين؟",
+    "answer": "صلاح الدين الأيوبي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ص_262",
+    "letter": "ص",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "شخصية من DC Comics جسدها جون سينا في مسلسل منفصل؟",
+    "answer": "صانع السلام",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ض_263",
+    "letter": "ض",
+    "category": "معلومات عامة",
+    "question": "حيوان برمائي شهير بالقفز؟",
+    "answer": "ضفدع",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ض_264",
+    "letter": "ض",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "الترجمة العربية للمسلسل الأمريكي الشهير \"Lost\"؟",
+    "answer": "ضياع",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ض_265",
+    "letter": "ض",
+    "category": "معلومات عامة",
+    "question": "ظاهرة طقسية تحجب الرؤية في الصباح الباكر؟",
+    "answer": "ضباب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ط_266",
+    "letter": "ط",
+    "category": "جغرافيا",
+    "question": "نادي تركي شهير في مدينة تقع على البحر الأسود؟",
+    "answer": "طرابزون سبور",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ط_267",
+    "letter": "ط",
+    "category": "كرة قدم أوروبية",
+    "question": "لاعب ألماني هداف تاريخي مع بايرن ميونخ لنقل طائر جميل الريش؟",
+    "answer": "طاووس",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ط_268",
+    "letter": "ط",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل طبي أمريكي شهير عن جراح مصاب بالتوحد؟",
+    "answer": "طبيب",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ط_269",
+    "letter": "ط",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم تاريخي أسطوري عن حرب بسبب هيلين؟",
+    "answer": "طروادة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ط_270",
+    "letter": "ط",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي صاحب معلقة من صغار الشعراء سناً؟",
+    "answer": "طرفة بن العبد",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ط_271",
+    "letter": "ط",
+    "category": "معلومات عامة",
+    "question": "فنان مسرحي كويتي كوميدي شهير؟",
+    "answer": "طارق العلي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ط_272",
+    "letter": "ط",
+    "category": "معلومات عامة",
+    "question": "قائد مسلم فتح الأندلس وعبر المضيق؟",
+    "answer": "طارق بن زياد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ط_273",
+    "letter": "ط",
+    "category": "معلومات عامة",
+    "question": "مهنة الشخص الذي يقوم بالطهي؟",
+    "answer": "طباخ",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ظ_274",
+    "letter": "ظ",
+    "category": "معلومات عامة",
+    "question": "حيوان من فصيلة الغزلان يعيش في الصحراء؟",
+    "answer": "ظبي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ظ_275",
+    "letter": "ظ",
+    "category": "معلومات عامة",
+    "question": "ظاهرة فيزيائية تنتج عن اعتراض جسم لمسار الضوء؟",
+    "answer": "ظل",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ظ_276",
+    "letter": "ظ",
+    "category": "أمثال وحكم",
+    "question": "ممثل تونسي عربي اشتهر في الدراما المصرية والمشتركة؟",
+    "answer": "ظافر العابدين",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ظ_277",
+    "letter": "ظ",
+    "category": "جغرافيا",
+    "question": "مدينة سعودية في المنطقة الشرقية وهي المقر الرئيسي لشركة أرامكو؟",
+    "answer": "ظهران",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ظ_278",
+    "letter": "ظ",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي عماني شهير بطل الدوري عدة مرات؟",
+    "answer": "ظفار",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ظ_279",
+    "letter": "ظ",
+    "category": "معلومات عامة",
+    "question": "وقت من أوقات النهار وصلاة مفروضة؟",
+    "answer": "ظهر",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ظ_280",
+    "letter": "ظ",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم كوميدي مصري للفنان هاني رمزي يحمل اسم شخصية؟",
+    "answer": "ظاظا",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ظ_281",
+    "letter": "ظ",
+    "category": "معلومات عامة",
+    "question": "صفة تُطلق على من يتعدى على حقوق الآخرين؟",
+    "answer": "ظالم",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ع_282",
+    "letter": "ع",
+    "category": "جغرافيا",
+    "question": "عاصمة المملكة الأردنية الهاشمية؟",
+    "answer": "عمان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ع_283",
+    "letter": "ع",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إماراتي شهير لونه بنفسجي ويُلقب بـ \"الزعيم\"؟",
+    "answer": "عين",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ع_284",
+    "letter": "ع",
+    "category": "كرة قدم أوروبية",
+    "question": "لاعب فرنسي جناح يلعب لنادي باريس سان جيرمان؟",
+    "answer": "عثمان ديمبيلي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ع_285",
+    "letter": "ع",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل أنيميشن أمريكي أصفر اللون يتنبأ بالمستقبل؟",
+    "answer": "عائلة سيمبسون",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ع_286",
+    "letter": "ع",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم مافيا أسطوري يُعتبر من أعظم أفلام السينما؟",
+    "answer": "عراب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ع_287",
+    "letter": "ع",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي أسود اللون اشتهر بحبه لعبلة؟",
+    "answer": "عنترة بن شداد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ع_288",
+    "letter": "ع",
+    "category": "أمثال وحكم",
+    "question": "ممثل كوميدي مصري لُقب بـ \"الزعيم\"؟",
+    "answer": "عادل إمام",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ع_289",
+    "letter": "ع",
+    "category": "معلومات عامة",
+    "question": "ثاني الخلفاء الراشدين والفاروق؟",
+    "answer": "عمر بن الخطاب",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ع_290",
+    "letter": "ع",
+    "category": "معلومات عامة",
+    "question": "عضو في جسم الإنسان مسؤول عن حاسة البصر؟",
+    "answer": "عين",
+    "difficulty": "easy"
+  },
+  {
+    "id": "غ_291",
+    "letter": "غ",
+    "category": "جغرافيا",
+    "question": "دولة إفريقية تُعرف بـ \"النجوم السوداء\" في كرة القدم؟",
+    "answer": "غانا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "غ_292",
+    "letter": "غ",
+    "category": "جغرافيا",
+    "question": "نادي إسباني ومدينة أندلسية شهيرة بقصر الحمراء؟",
+    "answer": "غرناطة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "غ_293",
+    "letter": "غ",
+    "category": "كرة قدم أوروبية",
+    "question": "لاعب ويلزي لعب لريال مدريد واشتهر بسرعته الفائقة؟",
+    "answer": "غاريث بيل",
+    "difficulty": "medium"
+  },
+  {
+    "id": "غ_294",
+    "letter": "غ",
+    "category": "جغرافيا",
+    "question": "مسلسل أمريكي يحمل اسم مدينة باتمان؟",
+    "answer": "غوثام",
+    "difficulty": "hard"
+  },
+  {
+    "id": "غ_295",
+    "letter": "غ",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم عن وحش عملاق يخرج من البحر ليدمر المدن؟",
+    "answer": "غودزيلا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "غ_296",
+    "letter": "غ",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر أموي لُقب بـ \"ذو الرمة\"، ما اسمه الأول؟",
+    "answer": "غيلان",
+    "difficulty": "hard"
+  },
+  {
+    "id": "غ_297",
+    "letter": "غ",
+    "category": "أمثال وحكم",
+    "question": "ممثل بريطاني جسّد دور ونستون تشرشل وفاز بالأوسكار، واسمه الأول؟",
+    "answer": "غاري أولدمان",
+    "difficulty": "hard"
+  },
+  {
+    "id": "غ_298",
+    "letter": "غ",
+    "category": "معلومات عامة",
+    "question": "زعيم هندي قاد حركة الاستقلال بالمقاومة السلمية؟",
+    "answer": "غاندي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "غ_299",
+    "letter": "غ",
+    "category": "معلومات عامة",
+    "question": "حيوان ضخم من القردة العليا؟",
+    "answer": "غوريلا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_300",
+    "letter": "ف",
+    "category": "جغرافيا",
+    "question": "دولة أوروبية فازت بكأس العالم 2018؟",
+    "answer": "فرنسا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_301",
+    "letter": "ف",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إيطالي يُعرف بـ \"الفيولا\" أو البنفسجي؟",
+    "answer": "فيورنتينا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ف_302",
+    "letter": "ف",
+    "category": "معلومات عامة",
+    "question": "مدافع هولندي صلب يلعب لليفربول الإنجليزي؟",
+    "answer": "فيرجيل فان دايك",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ف_303",
+    "letter": "ف",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل كوميدي أمريكي شهير عن ستة أصدقاء في نيويورك؟",
+    "answer": "فريندز",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_304",
+    "letter": "ف",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم رائع لتوم هانكس عن رجل بسيط يشارك في أحداث تاريخية هامة؟",
+    "answer": "فورست غامب",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ف_305",
+    "letter": "ف",
+    "category": "أمثال وحكم",
+    "question": "ممثل أكشن أصلع بطل سلسلة أفلام \"Fast & Furious\"؟",
+    "answer": "فين ديزل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_306",
+    "letter": "ف",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "الشخصية الشريرة الأبرز في سلسلة \"هاري بوتر\" والتي لا يُذكر اسمها؟",
+    "answer": "فولدمورت",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ف_307",
+    "letter": "ف",
+    "category": "معلومات عامة",
+    "question": "عالم نفس نمساوي مؤسس التحليل النفسي؟",
+    "answer": "فرويد",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ق_308",
+    "letter": "ق",
+    "category": "جغرافيا",
+    "question": "جزيرة ودولة تقع في البحر الأبيض المتوسط مقسمة لجزأين؟",
+    "answer": "قبرص",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_309",
+    "letter": "ق",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إسباني في الأندلس ألوانه الأصفر والأزرق؟",
+    "answer": "قادش",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ق_310",
+    "letter": "ق",
+    "category": "جغرافيا",
+    "question": "قارة متجمدة تقع في أقصى الجنوب؟",
+    "answer": "قطب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_311",
+    "letter": "ق",
+    "category": "أمثال وحكم",
+    "question": "شخصية تاريخية ضرب بها المثل في الثراء وخُسف به الأرض؟",
+    "answer": "قارون",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_312",
+    "letter": "ق",
+    "category": "معلومات عامة",
+    "question": "حيوان يُعرف بذكائه وقدرته على التقليد؟",
+    "answer": "قرد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ك_313",
+    "letter": "ك",
+    "category": "جغرافيا",
+    "question": "دولة في أمريكا الشمالية عاصمتها أوتاوا؟",
+    "answer": "كندا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ك_314",
+    "letter": "ك",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي لندني يلعب في الدوري الإنجليزي يُلقب بـ \"النسور\"؟",
+    "answer": "كريستال بالاس",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ك_315",
+    "letter": "ك",
+    "category": "معلومات عامة",
+    "question": "صانع ألعاب بلجيكي أسطوري في مانشستر سيتي؟",
+    "answer": "كيفين دي بروين",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ك_316",
+    "letter": "ك",
+    "category": "معلومات عامة",
+    "question": "بطل خارق من مارفل يحمل درعاً بألوان العلم الأمريكي؟",
+    "answer": "كابتن أمريكا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ك_317",
+    "letter": "ك",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر مخضرم صاحب قصيدة \"بانت سعاد\"؟",
+    "answer": "كعب بن زهير",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ك_318",
+    "letter": "ك",
+    "category": "معلومات عامة",
+    "question": "بطل سلسلة أفلام \"جون ويك\" والماتريكس؟",
+    "answer": "كيانو ريفز",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ك_319",
+    "letter": "ك",
+    "category": "كرة قدم أوروبية",
+    "question": "شخصية كرتونية شهيرة للاعب كرة قدم ياباني دُبلج للعربية؟",
+    "answer": "كابتن ماجد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ك_320",
+    "letter": "ك",
+    "category": "معلومات عامة",
+    "question": "ملكة فرعونية أسطورية اشتهرت بجمالها وعلاقتها بيوليوس قيصر؟",
+    "answer": "كليوباترا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_321",
+    "letter": "ل",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إنجليزي أحمر اللون يُغني جمهوره \"لن تسير وحدك أبداً\"؟",
+    "answer": "ليفربول",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_322",
+    "letter": "ل",
+    "category": "معلومات عامة",
+    "question": "الأسطورة الأرجنتينية المتوج بكأس العالم 2022؟",
+    "answer": "ليونيل ميسي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_323",
+    "letter": "ل",
+    "category": "جغرافيا",
+    "question": "مسلسل عن ناجين من تحطم طائرة على جزيرة غامضة؟",
+    "answer": "لوست",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ل_324",
+    "letter": "ل",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم مارفل عن شخصية وولفرين في شيخوخته؟",
+    "answer": "لوغان",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ل_325",
+    "letter": "ل",
+    "category": "أمثال وحكم",
+    "question": "ممثل فاز بأوسكار بعد انتظار طويل عن فيلم العائد؟",
+    "answer": "ليوناردو دي كابريو",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_326",
+    "letter": "ل",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "شخصية مسلسل عن الشيطان الذي هبط إلى لوس أنجلوس للعمل כמחقق؟",
+    "answer": "لوسيفر",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ل_327",
+    "letter": "ل",
+    "category": "معلومات عامة",
+    "question": "رسام ومخترع إيطالي رسم لوحة الموناليزا؟",
+    "answer": "ليوناردو دا فينشي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "م_328",
+    "letter": "م",
+    "category": "جغرافيا",
+    "question": "دولة عربية بها الأهرامات؟",
+    "answer": "مصر",
+    "difficulty": "easy"
+  },
+  {
+    "id": "م_329",
+    "letter": "م",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إنجليزي لُقب بـ \"الشياطين الحمر\"؟",
+    "answer": "مانشستر يونايتد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "م_330",
+    "letter": "م",
+    "category": "كرة قدم أوروبية",
+    "question": "لاعب مصري يُلقب بـ \"فخر العرب\" نجم ليفربول؟",
+    "answer": "محمد صلاح",
+    "difficulty": "easy"
+  },
+  {
+    "id": "م_331",
+    "letter": "م",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم خيال علمي شهير يتحدث عن واقع افتراضي يتحكم بالبشر؟",
+    "answer": "ماتريكس",
+    "difficulty": "medium"
+  },
+  {
+    "id": "م_332",
+    "letter": "م",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي من أبطال حرب البسوس وهو خال امرئ القيس؟",
+    "answer": "مهلهل بن ربيعة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "م_333",
+    "letter": "م",
+    "category": "أمثال وحكم",
+    "question": "ممثل هوليوودي أسمر بصوت مميز لعب دور \"ريد\" في شاوشانك؟",
+    "answer": "مورغان فريمان",
+    "difficulty": "medium"
+  },
+  {
+    "id": "م_334",
+    "letter": "م",
+    "category": "معلومات عامة",
+    "question": "عالمة فيزياء وكيمياء فازت بجائزة نوبل مرتين في مجالين مختلفين؟",
+    "answer": "ماري كوري",
+    "difficulty": "medium"
+  },
+  {
+    "id": "م_335",
+    "letter": "م",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "الشخصية الكوميدية لمدير الفرع في مسلسل The Office؟",
+    "answer": "مايكل سكوت",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ن_336",
+    "letter": "ن",
+    "category": "جغرافيا",
+    "question": "دولة إسكندنافية عاصمتها أوسلو؟",
+    "answer": "نرويج",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ن_337",
+    "letter": "ن",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إيطالي حقق له مارادونا أمجاداً كبيرة؟",
+    "answer": "نابولي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ن_338",
+    "letter": "ن",
+    "category": "معلومات عامة",
+    "question": "نجم برازيلي انتقل من برشلونة لباريس سان جيرمان في أغلى صفقة بالتاريخ؟",
+    "answer": "نيمار",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ن_339",
+    "letter": "ن",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل عن تجار المخدرات في كولومبيا وبابلو إسكوبار؟",
+    "answer": "ناركوس",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ن_340",
+    "letter": "ن",
+    "category": "أفلام وشخصياتها",
+    "question": "الترجمة العربية لفيلم براد بيت وإدوارد نورتون؟",
+    "answer": "نادي القتال",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ن_341",
+    "letter": "ن",
+    "category": "أمثال وحكم",
+    "question": "شاعر جاهلي يُضرب بشعره المثل في الاعتذار، كان مقرباً من النعمان بن المنذر؟",
+    "answer": "النابغة الذبياني",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ن_342",
+    "letter": "ن",
+    "category": "أفلام وشخصياتها",
+    "question": "ممثلة بطلة فيلم \"البجعة السوداء\"؟",
+    "answer": "ناتالي بورتمان",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ن_343",
+    "letter": "ن",
+    "category": "معلومات عامة",
+    "question": "إمبراطور فرنسي وقائد عسكري غزا مصر وأجزاء من أوروبا؟",
+    "answer": "نابليون بونابرت",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ن_344",
+    "letter": "ن",
+    "category": "معلومات عامة",
+    "question": "لورد وينترفيل في الموسم الأول من صراع العروش؟",
+    "answer": "نيد ستارك",
+    "difficulty": "hard"
+  },
+  {
+    "id": "و_345",
+    "letter": "و",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إنجليزي يُلقب بـ \"الذئاب\"؟",
+    "answer": "وولفرهامبتون",
+    "difficulty": "medium"
+  },
+  {
+    "id": "و_346",
+    "letter": "و",
+    "category": "معلومات عامة",
+    "question": "الفتى الذهبي لإنجلترا وأحد الهدافين التاريخيين لمانشستر يونايتد؟",
+    "answer": "واين روني",
+    "difficulty": "easy"
+  },
+  {
+    "id": "و_347",
+    "letter": "و",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم بطلة خارقة من عالم ديزني/دي سي بالإنجليزية؟",
+    "answer": "وندر وومان",
+    "difficulty": "medium"
+  },
+  {
+    "id": "و_348",
+    "letter": "و",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر أموي يمني اشتهر بوسامته وتغزله، قتله الخليفة الوليد؟",
+    "answer": "وضاح اليمن",
+    "difficulty": "hard"
+  },
+  {
+    "id": "و_349",
+    "letter": "و",
+    "category": "أمثال وحكم",
+    "question": "ممثل هوليوودي بطل فيلم \"I Am Legend\"؟",
+    "answer": "ويل سميث",
+    "difficulty": "easy"
+  },
+  {
+    "id": "و_350",
+    "letter": "و",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "شخصية كرتونية شهيرة راعي البقر في \"حكاية لعبة\"؟",
+    "answer": "وودي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "و_351",
+    "letter": "و",
+    "category": "أفلام وشخصياتها",
+    "question": "البطل الاسكتلندي التاريخي الذي تم تجسيد قصته في فيلم \"القلب الشجاع\"؟",
+    "answer": "ويليام والاس",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ي_352",
+    "letter": "ي",
+    "category": "جغرافيا",
+    "question": "دولة آسيوية تُعرف ببلاد الشمس المشرقة؟",
+    "answer": "يابان",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ي_353",
+    "letter": "ي",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إيطالي لُقب بـ \"السيدة العجوز\"؟",
+    "answer": "يوفنتوس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ي_354",
+    "letter": "ي",
+    "category": "معلومات عامة",
+    "question": "أسطورة هولندية لعب لبرشلونة ويعتبر الأب الروحي للكرة الشاملة؟",
+    "answer": "يوهان كرويف",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ي_355",
+    "letter": "ي",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل أمريكي حديث من بطولة كيفن كوستنر يروي قصة عائلة داتون؟",
+    "answer": "يلوستون",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ي_356",
+    "letter": "ي",
+    "category": "أفلام وشخصياتها",
+    "question": "أول كلمة من الترجمة العربية لفيلم الكائنات الفضائية الشهير لـ ويل سميث؟",
+    "answer": "يوم",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ي_357",
+    "letter": "ي",
+    "category": "الأدب العربي القديم",
+    "question": "خليفة أموي وشاعر، ابنه معاوية؟",
+    "answer": "يزيد بن معاوية",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ي_358",
+    "letter": "ي",
+    "category": "أمثال وحكم",
+    "question": "ممثل بريطاني أدى دور \"أوبي وان كينوبي\"؟",
+    "answer": "يوان ماكغريغور",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ي_359",
+    "letter": "ي",
+    "category": "معلومات عامة",
+    "question": "إمبراطور روماني شهير اغتيل في مجلس الشيوخ؟",
+    "answer": "يوليوس قيصر",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ي_360",
+    "letter": "ي",
+    "category": "معلومات عامة",
+    "question": "الحكيم الأخضر الصغير الذي درب الجيداي في سلسلة حرب النجوم؟",
+    "answer": "يودا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ا_361",
+    "letter": "ا",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب أرجنتيني شهير جداً يلعب في الهجوم؟",
+    "answer": "أنجيل دي ماريا  أجويرو",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ب_362",
+    "letter": "ب",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل جريمة بريطاني عن عصابة في برمنغهام؟",
+    "answer": "بلايندرز",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ت_363",
+    "letter": "ت",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل تحقيقات جرائم أمريكي؟",
+    "answer": "ترو",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ث_364",
+    "letter": "ث",
+    "category": "أسئلة عامة",
+    "question": "لا. حيوان ماكر؟",
+    "answer": "ثعلب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ث_365",
+    "letter": "ث",
+    "category": "مسلسلات أجنبية",
+    "question": "لعبة العروش بالانجليزي؟",
+    "answer": "ثرونز",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ث_366",
+    "letter": "ث",
+    "category": "أمثال وحكم",
+    "question": "يضرب لمن يجمع بين مصيبتين:؟",
+    "answer": "ثمن بخس",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ج_367",
+    "letter": "ج",
+    "category": "أفلام وشخصياتها",
+    "question": "أشهر أفلام المافيا في التاريخ ، ما هو بالإنجليزية؟",
+    "answer": "جاد فاذر",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ج_368",
+    "letter": "ج",
+    "category": "مسلسلات أجنبية",
+    "question": "بطل مسلسل صراع العروش؟",
+    "answer": "جون",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ج_369",
+    "letter": "ج",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا؟",
+    "answer": "جزاء",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ح_370",
+    "letter": "ح",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل كوري جنوبي عن مسابقات قاتلة؟",
+    "answer": "حبار",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ح_371",
+    "letter": "ح",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر الرسول صلى الله عليه وسلم؟",
+    "answer": "حسان",
+    "difficulty": "medium"
+  },
+  {
+    "id": "خ_372",
+    "letter": "خ",
+    "category": "كرة قدم أوروبية",
+    "question": "أبيض. نادي لونه أزرق وأحمر بالاسباني؟",
+    "answer": "خيتافي",
+    "difficulty": "hard"
+  },
+  {
+    "id": "خ_373",
+    "letter": "خ",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم مصري لنيللي كريم أو ممثل أمريكي؟",
+    "answer": "خواكين",
+    "difficulty": "hard"
+  },
+  {
+    "id": "خ_374",
+    "letter": "خ",
+    "category": "أفلام وشخصياتها",
+    "question": "الممثل الذي أدى دور الجوكر في الفيلم المنفرد عام 2019 وفاز بالأوسكار؟",
+    "answer": "خواكين",
+    "difficulty": "medium"
+  },
+  {
+    "id": "خ_375",
+    "letter": "خ",
+    "category": "مسلسلات أجنبية",
+    "question": "مخلوقات خيالية ظهرت في مسلسل صراع العروش إذا كانت غير صحيحة؟",
+    "answer": "خرافيون",
+    "difficulty": "easy"
+  },
+  {
+    "id": "خ_376",
+    "letter": "خ",
+    "category": "مسلسلات أجنبية",
+    "question": "صفة تطلق على نوع المسلسلات التي تتحدث عن الفضاء والمستقبل؟",
+    "answer": "خيال",
+    "difficulty": "easy"
+  },
+  {
+    "id": "خ_377",
+    "letter": "خ",
+    "category": "أمثال وحكم",
+    "question": "لتصبح مشهوراً بغرابتك؟",
+    "answer": "خالف",
+    "difficulty": "medium"
+  },
+  {
+    "id": "خ_378",
+    "letter": "خ",
+    "category": "مشاهير",
+    "question": "مغني إسباني أسطوري؟",
+    "answer": "خوليو",
+    "difficulty": "hard"
+  },
+  {
+    "id": "د_379",
+    "letter": "د",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي ألماني عريق يرتدي الأصفر والأسود؟",
+    "answer": "دورتموند",
+    "difficulty": "easy"
+  },
+  {
+    "id": "د_380",
+    "letter": "د",
+    "category": "لاعبين كرة قدم",
+    "question": "أسطورة إيفوارية لعبت لتشيلسي؟",
+    "answer": "دروغبا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "د_381",
+    "letter": "د",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب إسباني حارس مرمى أسطوري لمانشستر يونايتد؟",
+    "answer": "ديفيد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "د_382",
+    "letter": "د",
+    "category": "أفلام وشخصياتها",
+    "question": "شخصية شريرة في حرب النجوم؟",
+    "answer": "دارث",
+    "difficulty": "medium"
+  },
+  {
+    "id": "د_383",
+    "letter": "د",
+    "category": "الأدب العربي القديم",
+    "question": "القصيدة التي تكتب تعبيراً عن الحزن والرثاء؟",
+    "answer": "ديوان",
+    "difficulty": "hard"
+  },
+  {
+    "id": "د_384",
+    "letter": "د",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا؟",
+    "answer": "دارهم ما دمت في ____",
+    "difficulty": "hard"
+  },
+  {
+    "id": "د_385",
+    "letter": "د",
+    "category": "مشاهير",
+    "question": "ممثل أمريكي أسمر شهير بـ؟",
+    "answer": "دينزل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ذ_386",
+    "letter": "ذ",
+    "category": "الأدب العربي القديم",
+    "question": "ما هو الشيء أو الشخص من أشهر شعراء العصر الجاهلي؟",
+    "answer": "ذبياني",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ذ_387",
+    "letter": "ذ",
+    "category": "مشاهير",
+    "question": "لا. لاعب إماراتي رحل؟",
+    "answer": "ذياب",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ر_388",
+    "letter": "ر",
+    "category": "مسلسلات أجنبية",
+    "question": ". مدينة إيطالية؟",
+    "answer": "روما",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ر_389",
+    "letter": "ر",
+    "category": "لاعبين كرة قدم",
+    "question": ". لاعب وسط أسباني ومدرب؟",
+    "answer": "رودري",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ر_390",
+    "letter": "ر",
+    "category": "الأدب العربي القديم",
+    "question": "أحد بحور الشعر العربي؟",
+    "answer": "رجز",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ر_391",
+    "letter": "ر",
+    "category": "مشاهير",
+    "question": "الممثل الكوميدي البريطاني صاحب شخصية مستر بين؟",
+    "answer": "روان",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ز_392",
+    "letter": "ز",
+    "category": "مسلسلات أجنبية",
+    "question": "بطل مسلسل Peaky Blinders العصابة هم . مادة خطيرة في بريكنج باد؟",
+    "answer": "زئبق  مخلوقات ميتة تعود للحياة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ز_393",
+    "letter": "ز",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا؟",
+    "answer": "زيادة الخير خيرين",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ز_394",
+    "letter": "ز",
+    "category": "مشاهير",
+    "question": "مؤسس شركة فيسبوك؟",
+    "answer": "زوكربرغ",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_395",
+    "letter": "س",
+    "category": "كرة قدم أوروبية",
+    "question": "الملعب الخاص بنادي ريال مدريد؟",
+    "answer": "سانتياغو",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_396",
+    "letter": "س",
+    "category": "مسلسلات أجنبية",
+    "question": "الاسم الأول لبطلة مسلسل صراع العروش؟",
+    "answer": "سيرسي  سانسا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "س_397",
+    "letter": "س",
+    "category": "الأدب العربي القديم",
+    "question": "الشاعر الجاهلي الذي قُتل وقيل إنه أشعر العرب أم؟",
+    "answer": "السموأل",
+    "difficulty": "hard"
+  },
+  {
+    "id": "س_398",
+    "letter": "س",
+    "category": "مشاهير",
+    "question": "ممثلة هوليوودية جميلة؟",
+    "answer": "سكارليت",
+    "difficulty": "medium"
+  },
+  {
+    "id": "س_399",
+    "letter": "س",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إسباني من إقليم الأندلس يرتدي الأبيض والأحمر . نادي بريطاني؟",
+    "answer": "ساوثهامبتون",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ش_400",
+    "letter": "ش",
+    "category": "مسلسلات أجنبية",
+    "question": "محقق بريطاني عبقري يسكن في شارع بيكر؟",
+    "answer": "شارلوك",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ش_401",
+    "letter": "ش",
+    "category": "لاعبين كرة قدم",
+    "question": "هداف الدوري الإنجليزي التاريخي؟",
+    "answer": "شيرر",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ش_402",
+    "letter": "ش",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا؟",
+    "answer": "شر",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ص_403",
+    "letter": "ص",
+    "category": "مسلسلات أجنبية",
+    "question": "ترجمة Game of Thrones للعربية؟",
+    "answer": "صراع",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ص_404",
+    "letter": "ص",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب هولندي سابق في الأرسنال وبرشلونة ، لاعب كاميروني؟",
+    "answer": "صامويل",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ص_405",
+    "letter": "ص",
+    "category": "الأدب العربي القديم",
+    "question": "نوع من الشعراء في الجاهلية كانوا فقراء متمردين على قبائلهم؟",
+    "answer": "صعاليك",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ض_406",
+    "letter": "ض",
+    "category": "كرة قدم أوروبية",
+    "question": "مصطلح يطلق على الفريق الذي لا يمتلك دفاعاً قوياً؟",
+    "answer": "ضعيف",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ض_407",
+    "letter": "ض",
+    "category": "لاعبين كرة قدم",
+    "question": "بينالتي. بالعربي؟",
+    "answer": "ضربة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ض_408",
+    "letter": "ض",
+    "category": "الأدب العربي القديم",
+    "question": "لغة القران الكريم تسمى لغة الـ _؟",
+    "answer": "ضاد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ط_409",
+    "letter": "ط",
+    "category": "مسلسلات أجنبية",
+    "question": "مدرس كيمياء. في مسلسل هاوس؟",
+    "answer": "طبيب",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ط_410",
+    "letter": "ط",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب سعودي أسطوري ، ، ؟ عربي.؟",
+    "answer": "طارق",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ط_411",
+    "letter": "ط",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا؟",
+    "answer": "طاب طبخكم",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ط_412",
+    "letter": "ط",
+    "category": "أمثال وحكم",
+    "question": "صفة ذميمة تدفع الشخص لأخذ ما ليس له؟",
+    "answer": "طمع",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ظ_413",
+    "letter": "ظ",
+    "category": "أسئلة عامة",
+    "question": "حيوان سريع جدا يشبه الغزال؟",
+    "answer": "ظبي",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ظ_414",
+    "letter": "ظ",
+    "category": "تاريخ",
+    "question": "سلطان مملوكي بطل معركة عين جالوت؟",
+    "answer": "ظاهر",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ظ_415",
+    "letter": "ظ",
+    "category": "أمثال وحكم",
+    "question": "شعور سيء تجاه الآخرين بسوء نية؟",
+    "answer": "ظن",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ظ_416",
+    "letter": "ظ",
+    "category": "مشاهير",
+    "question": "سياسي أو قائد تاريخي اسمه؟",
+    "answer": "ظاهر",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ع_417",
+    "letter": "ع",
+    "category": "مسلسلات أجنبية",
+    "question": "اسم مدينة سبرينغفيلد عربي؟",
+    "answer": "عمر",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ع_418",
+    "letter": "ع",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل عربي قديم عن شاب ضائع . أجنبي؟",
+    "answer": "عائلة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ع_419",
+    "letter": "ع",
+    "category": "مسلسلات أجنبية",
+    "question": "المسلسل الكرتوني الشهير الذي يتنبأ بالمستقبل؟",
+    "answer": "عائلة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ع_420",
+    "letter": "ع",
+    "category": "كرة قدم أوروبية",
+    "question": "الاسم القديم الذي كان يطلقه المعلقون المغاربة على دوري أبطال أوروبا؟",
+    "answer": "عصبة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "غ_421",
+    "letter": "غ",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل خيال علمي وحيوانات . دراما طبية؟",
+    "answer": "غريز",
+    "difficulty": "easy"
+  },
+  {
+    "id": "غ_422",
+    "letter": "غ",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل دراما طبية أمريكي شهير جداً؟",
+    "answer": "غريز",
+    "difficulty": "easy"
+  },
+  {
+    "id": "غ_423",
+    "letter": "غ",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب ويلزي نجم مانشستر يونايتد الأسبق؟",
+    "answer": "غيغز",
+    "difficulty": "medium"
+  },
+  {
+    "id": "غ_424",
+    "letter": "غ",
+    "category": "لاعبين كرة قدم",
+    "question": "بالعربي نكتبها. جافي أو؟",
+    "answer": "غافي",
+    "difficulty": "hard"
+  },
+  {
+    "id": "غ_425",
+    "letter": "غ",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا؟",
+    "answer": "غاية",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_426",
+    "letter": "ف",
+    "category": "أفلام وشخصياتها",
+    "question": "مخلوق أسطوري . مارفل بطل سريع جداً؟",
+    "answer": "فلاش",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_427",
+    "letter": "ف",
+    "category": "أفلام وشخصياتها",
+    "question": "بطل خارق دي سي يمتلك سرعة خارقة؟",
+    "answer": "فلاش",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ف_428",
+    "letter": "ف",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب إنجليزي فاز بالكرة الذهبية مع ليفربول وريال مدريد ، لاعب برتغالي أسطورة برشلونة وريال؟",
+    "answer": "فيغو",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ف_429",
+    "letter": "ف",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا؟",
+    "answer": "فاقد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_430",
+    "letter": "ق",
+    "category": "أسئلة عامة",
+    "question": "القارة التي نعيش فيها إذا كنت في السعودية أو العراق؟",
+    "answer": "قارة آسيا",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ق_431",
+    "letter": "ق",
+    "category": "كرة قدم أوروبية",
+    "question": "لقب يطلق على البطولات الأوروبية الكبرى؟",
+    "answer": "قارة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_432",
+    "letter": "ق",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل عن محامي . مسلسل صراع العروش؟",
+    "answer": "قلعة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ق_433",
+    "letter": "ق",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل تاريخي تركي مشهور عن مؤسس الدولة العثمانية يتحدث عن ابوه؟",
+    "answer": "قيامة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_434",
+    "letter": "ق",
+    "category": "أفلام وشخصياتها",
+    "question": "سلسلة أفلام شهيرة لجوني ديب عن ال؟",
+    "answer": "قراصنة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_435",
+    "letter": "ق",
+    "category": "الأدب العربي القديم",
+    "question": "أشهر معلقات العرب، امرؤ الـ _؟",
+    "answer": "قيس",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_436",
+    "letter": "ق",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في . يبدأ بالقاف؟",
+    "answer": "قناعة",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ق_437",
+    "letter": "ق",
+    "category": "مشاهير",
+    "question": "رئيس عربي راحل من ليبيا؟",
+    "answer": "قذافي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ك_438",
+    "letter": "ك",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي لندني للزرق في إنجلترا . نادي إسباني. اللقب في إسبانيا؟",
+    "answer": "كتالوني",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ك_439",
+    "letter": "ك",
+    "category": "كرة قدم أوروبية",
+    "question": "المدينة التي ينتمي إليها فريق برشلونة تقع في إقليم الـ _؟",
+    "answer": "كتالونيا",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ك_440",
+    "letter": "ك",
+    "category": "مسلسلات أجنبية",
+    "question": "ستارك. مدينة في المسلسل تبدأ بالكاف؟",
+    "answer": "كينغز",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ك_441",
+    "letter": "ك",
+    "category": "مسلسلات أجنبية",
+    "question": "عاصمة الممالك السبع في مسلسل صراع العروش؟",
+    "answer": "كينغز",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ك_442",
+    "letter": "ك",
+    "category": "أفلام وشخصياتها",
+    "question": "قرد غوريلا عملاق ومخيف له أفلام عديدة؟",
+    "answer": "كينغ",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ك_443",
+    "letter": "ك",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب فرنسي أسطوري من أصول جزائرية برقم 9 فاز بالبالون دور؟",
+    "answer": "كريم",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ك_444",
+    "letter": "ك",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب بلجيكي صانع ألعاب من الطراز الرفيع في مانشستر سيتي؟",
+    "answer": "كيفين",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ك_445",
+    "letter": "ك",
+    "category": "الأدب العربي القديم",
+    "question": "أو شاعر أموي عاشق كثير العزة؟",
+    "answer": "كُثيِّر",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ك_446",
+    "letter": "ك",
+    "category": "أمثال وحكم",
+    "question": "النظافة لا. التي قصمت ظهر البعير؟",
+    "answer": "كالقشة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ك_447",
+    "letter": "ك",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا؟",
+    "answer": "كثرة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ك_448",
+    "letter": "ك",
+    "category": "مشاهير",
+    "question": "لاعب كرة سلة راحل أسطوري في لوس أنجلوس ليكرز؟",
+    "answer": "كوبي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ل_449",
+    "letter": "ل",
+    "category": "كرة قدم أوروبية",
+    "question": "الدوري الإسباني يسمى بـ؟",
+    "answer": "ليغا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_450",
+    "letter": "ل",
+    "category": "أفلام وشخصياتها",
+    "question": "ممثل أمريكي بطل فيلم تايتانيك؟",
+    "answer": "ليوناردو",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_451",
+    "letter": "ل",
+    "category": "مسلسلات أجنبية",
+    "question": "لا اختصار مشهور جدا؟",
+    "answer": "لاكاسا دي بابيل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ل_452",
+    "letter": "ل",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي من أصحاب المعلقات؟",
+    "answer": "لبيد",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ل_453",
+    "letter": "ل",
+    "category": "مشاهير",
+    "question": "قائد ومؤسس النهضة في سنغافورة؟",
+    "answer": "لي",
+    "difficulty": "hard"
+  },
+  {
+    "id": "م_454",
+    "letter": "م",
+    "category": "مسلسلات أجنبية",
+    "question": "مسلسل كرتوني كوميدي . شخصية زوجة هومر؟",
+    "answer": "مارج",
+    "difficulty": "hard"
+  },
+  {
+    "id": "م_455",
+    "letter": "م",
+    "category": "مسلسلات أجنبية",
+    "question": "ممثل إيرلندي بطل بيكي بليندرز وصاحب أوسكار أوبنهايمر؟",
+    "answer": "مورفي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "م_456",
+    "letter": "م",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب أرجنتيني أسطوري؟",
+    "answer": "مارادونا",
+    "difficulty": "easy"
+  },
+  {
+    "id": "م_457",
+    "letter": "م",
+    "category": "لاعبين كرة قدم",
+    "question": "لاعب مصري هداف ليفربول التاريخي في البريميرليج؟",
+    "answer": "محمد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "م_458",
+    "letter": "م",
+    "category": "أمثال وحكم",
+    "question": "من كان بيته من زجاج لا يرمي الناس بالـ.... ؟ لا البداية م.؟",
+    "answer": "مصيبة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "م_459",
+    "letter": "م",
+    "category": "مشاهير",
+    "question": "مغني وبوب ستار أسطوري رحل عام 2009؟",
+    "answer": "مايكل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ن_460",
+    "letter": "ن",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في .؟",
+    "answer": "نار",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ن_461",
+    "letter": "ن",
+    "category": "أمثال وحكم",
+    "question": "يُقال للشخص المشهور جداً والواضح للجميع أنه؟",
+    "answer": "نار",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ن_462",
+    "letter": "ن",
+    "category": "مشاهير",
+    "question": "فيزيائي إسحاق مكتشف الجاذبية؟",
+    "answer": "نيوتن",
+    "difficulty": "easy"
+  },
+  {
+    "id": "و_463",
+    "letter": "و",
+    "category": "كرة قدم أوروبية",
+    "question": "نادي إنجليزي يلفظ؟",
+    "answer": "وست هام",
+    "difficulty": "medium"
+  },
+  {
+    "id": "و_464",
+    "letter": "و",
+    "category": "مسلسلات أجنبية",
+    "question": "المعلم الكيميائي في بريكنج باد؟",
+    "answer": "والتر",
+    "difficulty": "easy"
+  },
+  {
+    "id": "و_465",
+    "letter": "و",
+    "category": "أفلام وشخصياتها",
+    "question": "بطل فيلم الماتريكس وصاحب شخصية جون ويك ، بطل فيلم ___ سميث.؟",
+    "answer": "ويل",
+    "difficulty": "hard"
+  },
+  {
+    "id": "و_466",
+    "letter": "و",
+    "category": "أفلام وشخصياتها",
+    "question": "ممثل أمريكي أسمر بطل فيلم Men in Black و صفع مقدم الأوسكار؟",
+    "answer": "ويل",
+    "difficulty": "easy"
+  },
+  {
+    "id": "و_467",
+    "letter": "و",
+    "category": "لاعبين كرة قدم",
+    "question": "أسطورة هجوم مانشستر يونايتد وإنجلترا؟",
+    "answer": "واين",
+    "difficulty": "medium"
+  },
+  {
+    "id": "و_468",
+    "letter": "و",
+    "category": "الأدب العربي القديم",
+    "question": "الخليفة الأموي الشاعر الذي قُتل، مشهور بمجونه وشعره؟",
+    "answer": "وليد",
+    "difficulty": "hard"
+  },
+  {
+    "id": "و_469",
+    "letter": "و",
+    "category": "مشاهير",
+    "question": "ممثل كوميدي ومستر بين روان أتكينسون، اسم رئيس أمريكي؟",
+    "answer": "واشنطن",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ي_470",
+    "letter": "ي",
+    "category": "مسلسلات أجنبية",
+    "question": "بيتر دينكليج. ماذا عن شخصية؟",
+    "answer": "يغريت",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ي_471",
+    "letter": "ي",
+    "category": "لاعبين كرة قدم",
+    "question": "حارس مرمى روسي أسطوري ملقب بالعنكبوت الأسود؟",
+    "answer": "ياشين",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ي_472",
+    "letter": "ي",
+    "category": "لاعبين كرة قدم",
+    "question": "أسطورة كرة القدم الهولندية، مبتكر الكرة الشاملة؟",
+    "answer": "يوهان",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ي_473",
+    "letter": "ي",
+    "category": "مشاهير",
+    "question": "عداء جامايكي أسطوري، أسرع رجل في العالم؟",
+    "answer": "ياسين",
+    "difficulty": "easy"
+  },
+  {
+    "id": "أ_474",
+    "letter": "أ",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا مثل عربي يُضرب للبدايات البسيطة التي يتبعها الكثير، \" الغيث قطرة\"؟",
+    "answer": "أول",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ب_475",
+    "letter": "ب",
+    "category": "أمثال وحكم",
+    "question": "مثل عربي عن إتقان العمل: \".... النجار مخلع\"؟",
+    "answer": "باب",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ت_476",
+    "letter": "ت",
+    "category": "معلومات عامة",
+    "question": "شطر بيت يُضرب كمثل: \" الرياح بما لا تشتهي السفن\"؟",
+    "answer": "تجري",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ث_477",
+    "letter": "ث",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل أمريكي للمراهقين بعنوان \" عشر سبباً\"؟",
+    "answer": "ثلاثة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ث_478",
+    "letter": "ث",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا مثل شعبي يقال للشبه بين الخال وابن الأخت: \" الولد لخاله\"؟",
+    "answer": "ثلثين",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ج_479",
+    "letter": "ج",
+    "category": "أمثال وحكم",
+    "question": "مثل يُقال لمن يحاول إصلاح شيء فيفسده: \".... يكحلها عماها\"؟",
+    "answer": "جاء",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ح_480",
+    "letter": "ح",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل خيال ديستوبي مبني على رواية لمارجريت أتوود \" أمة\"؟",
+    "answer": "حكاية",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ح_481",
+    "letter": "ح",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا مثل يُقال للكاذب الذي يُكشف سريعاً: \" الكذب قصير\"؟",
+    "answer": "حبل",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ح_482",
+    "letter": "ح",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل كوري جنوبي عن ألعاب مميتة حقق نجاحاً عالمياً \"لعبة الـ \"؟",
+    "answer": "حبار",
+    "difficulty": "medium"
+  },
+  {
+    "id": "خ_483",
+    "letter": "خ",
+    "category": "معلومات عامة",
+    "question": "قادة المسلمين بعد وفاة النبي محمد يُطلق عليهم الـ؟",
+    "answer": "خلفاء",
+    "difficulty": "medium"
+  },
+  {
+    "id": "خ_484",
+    "letter": "خ",
+    "category": "أمثال وحكم",
+    "question": "مثل يُقال عن الكلام المفيد القصير: \" الكلام ما قل ودل\"؟",
+    "answer": "خير",
+    "difficulty": "easy"
+  },
+  {
+    "id": "د_485",
+    "letter": "د",
+    "category": "أمثال وحكم",
+    "question": "مثل عن أهمية الوقاية: \" وقاية خير من قنطار علاج\"؟",
+    "answer": "درهم",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ذ_486",
+    "letter": "ذ",
+    "category": "أمثال وحكم",
+    "question": "مثل يقال لمن يحاول التغطية على الحقيقة: \".... . الرماد في العيون\"؟",
+    "answer": "ذر",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ذ_487",
+    "letter": "ذ",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم جريمة كوري كلاسيكي للمخرج بونج جون هو \" قاتل\"؟",
+    "answer": "ذكريات",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ذ_488",
+    "letter": "ذ",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "(أو ببساطة، حيوان يبدأ بالذال يعيش في البرية:؟",
+    "answer": "ذبابة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ر_489",
+    "letter": "ر",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا مثل يُقال للصديق الوفي: \" أخ لك لم تلده أمك\"؟",
+    "answer": "رب",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ز_490",
+    "letter": "ز",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل شهير عن الموتى السائرين يصنف كأحد مسلسلات الـ؟",
+    "answer": "زومبي",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ز_491",
+    "letter": "ز",
+    "category": "أمثال وحكم",
+    "question": "مثل يقال عند تفاقم المشكلة: \".... الطين بلة\"؟",
+    "answer": "زاد",
+    "difficulty": "easy"
+  },
+  {
+    "id": "س_492",
+    "letter": "س",
+    "category": "أمثال وحكم",
+    "question": "مثل يُقال عندما لا ينفع الندم: \" السيف العذل\"؟",
+    "answer": "سبق",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ش_493",
+    "letter": "ش",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا مثل يُقال عند المصائب التي تدعو للسخرية: \" البلية ما يضحك\"؟",
+    "answer": "شر",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ص_494",
+    "letter": "ص",
+    "category": "جغرافيا",
+    "question": "نادي بلغاري شهير في العاصمة؟",
+    "answer": "صوفيا",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ص_495",
+    "letter": "ص",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم إثارة شهير بطله أنتوني هوبكنز؟",
+    "answer": "صمت",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ص_496",
+    "letter": "ص",
+    "category": "أمثال وحكم",
+    "question": "مثل يُقال لمعرفة الصديق الحقيقي: \" من صدقك لا من صادقك\"؟",
+    "answer": "صديقك",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ض_497",
+    "letter": "ض",
+    "category": "أفلام وشخصياتها",
+    "question": "فيلم أكشن مصري قديم للفنان عادل إمام؟",
+    "answer": "ضربة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ض_498",
+    "letter": "ض",
+    "category": "كرة قدم أوروبية",
+    "question": "قاعدة كروية عند عرقلة اللاعب داخل صندوق الخصم؟",
+    "answer": "ضربة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ض_499",
+    "letter": "ض",
+    "category": "معلومات عامة",
+    "question": "حالة طبية تُقاس بجهاز خاص حول الذراع؟",
+    "answer": "ضغط",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ض_500",
+    "letter": "ض",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي شهير من بني ضمرة؟",
+    "answer": "ضمرة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ض_501",
+    "letter": "ض",
+    "category": "أمثال وحكم",
+    "question": "مثل يُقال للمعتدي الذي يسبق بالشكوى: \".... وبكى سبقني واشتكى\"؟",
+    "answer": "ضربني",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ض_502",
+    "letter": "ض",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل مصري قامت ببطولته غادة عبد الرازق؟",
+    "answer": "ضد",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ض_503",
+    "letter": "ض",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "شخصية إسلامية وفارس مغوار، أخو خولة؟",
+    "answer": "ضرار",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ط_504",
+    "letter": "ط",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا مثل شامي يقال عن شخصين متشابهين اجتمعا؟",
+    "answer": "طنجرة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ظ_505",
+    "letter": "ظ",
+    "category": "أمثال وحكم",
+    "question": "مثل يقال عن قسوة الأقارب: \".... ذوي القربى أشد مضاضة\"؟",
+    "answer": "ظلم",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ظ_506",
+    "letter": "ظ",
+    "category": "جغرافيا",
+    "question": "مسلسل سوري قديم أو مسلسل خليجي؟",
+    "answer": "ظل",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ع_507",
+    "letter": "ع",
+    "category": "أمثال وحكم",
+    "question": "مثل عن القناعة بما تملك: \" في اليد خير من عشرة على الشجرة\"؟",
+    "answer": "عصفور",
+    "difficulty": "medium"
+  },
+  {
+    "id": "غ_508",
+    "letter": "غ",
+    "category": "أمثال وحكم",
+    "question": "مثل عن استحالة إرضاء الجميع: \"رضا الناس لا تدرك\"؟",
+    "answer": "غاية",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ف_509",
+    "letter": "ف",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا مثل يُقال لمن لا يستطيع تقديم شيء لأنه لا يملكه: \" الشيء لا يعطيه\"؟",
+    "answer": "فاقد",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ق_510",
+    "letter": "ق",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل أنثولوجي يحكي؟",
+    "answer": "قصة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ق_511",
+    "letter": "ق",
+    "category": "معلومات عامة",
+    "question": "سلسلة أفلام شهيرة بطلها جاك سبارو؟",
+    "answer": "قراصنة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ق_512",
+    "letter": "ق",
+    "category": "أمثال وحكم",
+    "question": "خطيب وشاعر جاهلي يُضرب به المثل في الفصاحة؟",
+    "answer": "قس",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ق_513",
+    "letter": "ق",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا مثل يُقال للأمر البسيط الذي يسبب انهياراً كبيراً: \" قصمت ظهر البعير\"؟",
+    "answer": "قشة",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ق_514",
+    "letter": "ق",
+    "category": "أمثال وحكم",
+    "question": "ممثل سوري شهير شارك في العديد من المسلسلات؟",
+    "answer": "قيس",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ك_515",
+    "letter": "ك",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل بريطاني يروي قصة العائلة المالكة؟",
+    "answer": "كراون",
+    "difficulty": "medium"
+  },
+  {
+    "id": "ك_516",
+    "letter": "ك",
+    "category": "أمثال وحكم",
+    "question": "مثل يُقال عن الهدوء التام وعدم الحركة: \" على رؤوسهم الطير\"؟",
+    "answer": "كأن",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ل_517",
+    "letter": "ل",
+    "category": "الأدب العربي القديم",
+    "question": "شاعر جاهلي صاحب إحدى المعلقات ومطلعها \"عفت الديار \"؟",
+    "answer": "لبيد بن ربيعة",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ل_518",
+    "letter": "ل",
+    "category": "أمثال وحكم",
+    "question": "مثل عن اختيار ا ام المناسب للموقف المناسب: \" مقام مقال\"؟",
+    "answer": "لكل",
+    "difficulty": "medium"
+  },
+  {
+    "id": "م_519",
+    "letter": "م",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "مسلسل عن هاكر عبقري يعاني من اضطرابات نفسية؟",
+    "answer": "مستر",
+    "difficulty": "medium"
+  },
+  {
+    "id": "م_520",
+    "letter": "م",
+    "category": "أمثال وحكم",
+    "question": "أكمل المثل الشهير: (....) جد وجد؟",
+    "answer": "من",
+    "difficulty": "easy"
+  },
+  {
+    "id": "ن_521",
+    "letter": "ن",
+    "category": "أمثال وحكم",
+    "question": "ما هي الكلمة الناقصة في هذا مثل يُقال للشخص أو الشيء المشهور جداً: \" على علم\"؟",
+    "answer": "نار",
+    "difficulty": "hard"
+  },
+  {
+    "id": "و_522",
+    "letter": "و",
+    "category": "مسلسلات أجنبية وشخصياتها",
+    "question": "أول كلمة من اسم مسلسل الزومبي الشهير بالإنجليزية؟",
+    "answer": "ووكينغ أو الموتى السائرون",
+    "difficulty": "medium"
+  },
+  {
+    "id": "و_523",
+    "letter": "و",
+    "category": "أمثال وحكم",
+    "question": "مثل يقال عن ت شخصين في الطباع: \" شن طبقة\"؟",
+    "answer": "وافق",
+    "difficulty": "hard"
+  },
+  {
+    "id": "ي_524",
+    "letter": "ي",
+    "category": "أمثال وحكم",
+    "question": "مثل يقال عند وجود شبه كبير بين شخصين لا تربطهما قرابة: \" من الشبه أربعين\"؟",
+    "answer": "يخلق",
+    "difficulty": "easy"
+  }
+]

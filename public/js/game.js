@@ -1,0 +1,633 @@
+// ===== UNIFIED GAME CLIENT =====
+const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+const ws = new WebSocket(`${protocol}//${location.host}`);
+
+// Global State
+let gameState = null;
+let currentRoomId = null;
+let isHost = false;
+let myPlayerId = null;
+let myTeam = null;
+
+// Timer constants
+const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * 45; // r=45
+
+// ===== DOM ELEMENTS =====
+// Screens
+const menuScreen = document.getElementById('menu-screen');
+const lobbyScreen = document.getElementById('lobby-screen');
+const gameScreen = document.getElementById('game-screen');
+
+// Menu UI
+const btnShowCreate = document.getElementById('btn-show-create');
+const btnShowJoin = document.getElementById('btn-show-join');
+const menuOptions = document.getElementById('menu-options-container');
+const createForm = document.getElementById('create-room-form');
+const joinForm = document.getElementById('join-room-form');
+const backBtns = document.querySelectorAll('.btn-back-menu');
+
+// Create Form
+const createGameSuffix = document.getElementById('create-game-suffix');
+const createHostName = document.getElementById('create-host-name');
+const btnCreateRoom = document.getElementById('btn-create-room');
+
+// Join Form
+const joinRoomCode = document.getElementById('join-room-code');
+const joinPlayerName = document.getElementById('join-player-name');
+const btnJoinRoom = document.getElementById('btn-join-room');
+const joinError = document.getElementById('join-error');
+
+// Lobby Elements
+const lobbyTitle = document.getElementById('lobby-title');
+const lobbyRoomCode = document.getElementById('lobby-room-code');
+const redPlayers = document.getElementById('red-players');
+const bluePlayers = document.getElementById('blue-players');
+const launchGameBtn = document.getElementById('launch-game-btn');
+const backToMenuBtn = document.getElementById('back-to-menu');
+
+// Game UI core
+const hexGrid = document.getElementById('hex-grid');
+const turnIndicator = document.getElementById('turn-indicator');
+const gameTitleBar = document.getElementById('game-title-bar-text');
+const redCount = document.getElementById('red-count');
+const blueCount = document.getElementById('blue-count');
+const redPower = document.getElementById('red-power');
+const bluePower = document.getElementById('blue-power');
+
+// Overlays
+const questionOverlay = document.getElementById('question-overlay');
+const winOverlay = document.getElementById('win-overlay');
+const roundOverlay = document.getElementById('round-overlay');
+const winText = document.getElementById('win-text');
+const btnNewGame = document.getElementById('btn-new-game');
+const confettiEl = document.getElementById('confetti');
+const roundWinText = document.getElementById('round-win-text');
+
+// Question Overlay Components
+const timerSection = document.getElementById('timer-section');
+const timerProgress = document.getElementById('timer-progress');
+const timerNumber = document.getElementById('timer-number');
+const buzzedInfo = document.getElementById('buzzed-info');
+const buzzedName = document.getElementById('buzzed-name');
+const buzzedTeamLabel = document.getElementById('buzzed-team-label');
+const phaseLabel = document.getElementById('phase-label');
+
+// Player Controls
+const playerControls = document.getElementById('player-controls');
+const btnBuzz = document.getElementById('btn-buzz');
+const micStatus = document.getElementById('mic-status');
+const recognizedTextUI = document.getElementById('recognized-text');
+
+// Host Controls
+const hostControls = document.querySelector('.host-controls');
+const btnSkip = document.getElementById('btn-skip');
+const btnCancel = document.getElementById('btn-cancel');
+
+// Round elements
+const roundTimerProgress = document.getElementById('round-timer-progress');
+const roundTimerNumber = document.getElementById('round-timer-number');
+
+// Initial setup
+timerProgress.style.strokeDasharray = CIRCLE_CIRCUMFERENCE;
+roundTimerProgress.style.strokeDasharray = CIRCLE_CIRCUMFERENCE;
+
+// ===== HELPERS =====
+function showScreen(screen) {
+    [menuScreen, lobbyScreen, gameScreen].forEach(s => s.classList.remove('active'));
+    screen.classList.add('active');
+}
+
+function updateValidation(formType) {
+    if (formType === 'create') {
+        const hasTeam = document.querySelector('#create-room-form .team-btn.selected');
+        const hasSuffix = document.getElementById('create-game-suffix').value.trim();
+        const hasHost = document.getElementById('create-host-name').value.trim();
+        btnCreateRoom.disabled = !(hasSuffix && hasHost && hasTeam);
+        // Live update logo
+        document.getElementById('logo-name-display').textContent = hasSuffix || '...';
+    } else {
+        const hasTeam = document.querySelector('#join-room-form .team-btn.selected');
+        btnJoinRoom.disabled = !(joinRoomCode.value.trim() && joinPlayerName.value.trim() && hasTeam);
+    }
+}
+
+// ===== MENU LISTENERS =====
+btnShowCreate.addEventListener('click', () => {
+    menuOptions.classList.add('hidden');
+    createForm.classList.remove('hidden');
+});
+
+btnShowJoin.addEventListener('click', () => {
+    menuOptions.classList.add('hidden');
+    joinForm.classList.remove('hidden');
+});
+
+backBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        createForm.classList.add('hidden');
+        joinForm.classList.add('hidden');
+        menuOptions.classList.remove('hidden');
+    });
+});
+
+document.querySelectorAll('.team-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        const parent = e.target.closest('.team-selection');
+        parent.querySelectorAll('.team-btn').forEach(b => b.classList.remove('selected'));
+        e.target.classList.add('selected');
+        updateValidation(parent.closest('#create-room-form') ? 'create' : 'join');
+    });
+});
+
+[createGameSuffix, createHostName, joinRoomCode, joinPlayerName].forEach(input => {
+    input.addEventListener('input', () => {
+        updateValidation(input.closest('#create-room-form') ? 'create' : 'join');
+    });
+});
+
+// ===== ROOM CREATION / JOINING =====
+btnCreateRoom.addEventListener('click', () => {
+    const nameSuffix = createGameSuffix.value.trim() || 'سيف';
+    const hostName = createHostName.value.trim();
+    const team = document.querySelector('#create-room-form .team-btn.selected').dataset.team;
+    const redTeamName = document.getElementById('red-team-name').value.trim() || 'الفريق الأحمر';
+    const blueTeamName = document.getElementById('blue-team-name').value.trim() || 'الفريق الأزرق';
+
+    ws.send(JSON.stringify({
+        type: 'create-room',
+        nameSuffix,
+        hostName,
+        team,
+        redTeamName,
+        blueTeamName
+    }));
+});
+
+
+btnJoinRoom.addEventListener('click', () => {
+    const code = joinRoomCode.value.trim().toUpperCase();
+    const playerName = joinPlayerName.value.trim();
+    const team = document.querySelector('#join-room-form .team-btn.selected').dataset.team;
+
+    joinError.classList.add('hidden');
+    btnJoinRoom.disabled = true;
+
+    ws.send(JSON.stringify({
+        type: 'join-room',
+        roomId: code,
+        name: playerName,
+        team: team
+    }));
+});
+
+backToMenuBtn.addEventListener('click', () => {
+    location.reload(); // Quick reset
+});
+
+// ===== VOICE RECOGNITION (Speech API) =====
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+let recognition = null;
+
+if (SpeechRecognition) {
+    recognition = new SpeechRecognition();
+    recognition.lang = 'ar-SA';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        if (gameState && gameState.phase === 'answering') {
+            recognizedTextUI.textContent = `"${transcript}"`;
+            recognizedTextUI.classList.remove('hidden');
+            micStatus.classList.add('hidden');
+            ws.send(JSON.stringify({ type: 'voice-answer', answer: transcript }));
+        }
+    };
+
+    recognition.onerror = (event) => {
+        console.error("Speech error", event.error);
+        micStatus.classList.add('hidden');
+        recognizedTextUI.textContent = '❌ لم يتم التقاط الصوت بوضوح';
+        recognizedTextUI.classList.remove('hidden');
+
+        // In case of error, send empty string so auto-judge fails it naturally
+        setTimeout(() => {
+            if (gameState && gameState.phase === 'answering') {
+                ws.send(JSON.stringify({ type: 'voice-answer', answer: "" }));
+            }
+        }, 1500);
+    };
+
+    recognition.onend = () => {
+        micStatus.classList.add('hidden');
+    };
+}
+
+// ===== WEBSOCKET LISTENERS =====
+ws.addEventListener('message', (event) => {
+    const msg = JSON.parse(event.data);
+
+    if (msg.type === 'error') {
+        joinError.textContent = msg.message;
+        joinError.classList.remove('hidden');
+        btnJoinRoom.disabled = false;
+        return;
+    }
+
+    if (msg.type === 'room-created') {
+        currentRoomId = msg.roomId;
+        isHost = true;
+        myPlayerId = msg.id;
+        myTeam = msg.team;
+        lobbyRoomCode.textContent = currentRoomId;
+        launchGameBtn.classList.remove('hidden');
+        if (btnResetQuestions) btnResetQuestions.classList.remove('hidden');
+        showScreen(lobbyScreen);
+    }
+
+    if (msg.type === 'joined-room') {
+        currentRoomId = msg.roomId;
+        isHost = false;
+        myPlayerId = msg.id;
+        myTeam = msg.team;
+        lobbyRoomCode.textContent = currentRoomId;
+        launchGameBtn.classList.add('hidden'); // Only host can launch
+        showScreen(lobbyScreen);
+    }
+
+    if (msg.type === 'game-over') {
+        gameState = msg.state;
+        render();
+    }
+
+    if (msg.type === 'round-won') {
+        gameState = msg.state;
+        render();
+    }
+
+    if (msg.type === 'new-round') {
+        gameState = msg.state;
+        resetBuzzerUI();
+        render();
+    }
+
+    if (msg.type === 'questions-reset') {
+        showToast(`✅ تم إعادة تعيين جميع الأسئلة (${msg.count} سؤال)`);
+        return;
+    }
+
+    switch (msg.type) {
+        case 'game-state':
+            gameState = msg.state;
+            render();
+            break;
+
+        case 'player-joined':
+        case 'player-left':
+            gameState.players = msg.players;
+            renderPlayers();
+            break;
+
+        case 'game-name':
+            gameState.gameName = msg.name;
+            gameTitleBar.textContent = msg.name;
+            lobbyTitle.textContent = msg.name.replace('حروف مع ', '');
+            break;
+
+        case 'buzzed':
+            gameState.buzzedPlayer = msg.player;
+            gameState.phase = 'answering';
+            showBuzzed(msg.player);
+            break;
+
+        case 'you-buzzed':
+            // I successfully buzzed in! Start listening.
+            playerControls.classList.remove('hidden');
+            btnBuzz.classList.add('hidden');
+            micStatus.classList.remove('hidden');
+            recognizedTextUI.classList.add('hidden');
+            if (recognition) {
+                try { recognition.start(); } catch (e) { }
+            } else {
+                recognizedTextUI.textContent = 'المتصفح لا يدعم المايكروفون';
+                recognizedTextUI.classList.remove('hidden');
+                micStatus.classList.add('hidden');
+                setTimeout(() => { ws.send(JSON.stringify({ type: 'voice-answer', answer: '' })); }, 2000);
+            }
+            break;
+
+        case 'enable-buzzer':
+            resetBuzzerUI();
+            break;
+
+        case 'timer':
+            updateTimer(msg.seconds, msg.phase);
+            break;
+
+        case 'correct-answer':
+            // Only host flashes correct
+            break;
+
+        case 'wrong-answer':
+            phaseLabel.textContent = `❌ إجابة خاطئة: "${msg.spoken}"`;
+            break;
+
+        case 'team-chance': {
+            const rN = (gameState && gameState.redTeamName) || 'الفريق الأحمر';
+            const bN = (gameState && gameState.blueTeamName) || 'الفريق الأزرق';
+            phaseLabel.textContent = `⏳ فرصة لـ ${msg.team === 'red' ? rN : bN}`;
+            buzzedInfo.classList.add('hidden');
+            if (recognition) { try { recognition.stop(); } catch (e) { } }
+            break;
+        }
+
+        case 'open-round':
+            phaseLabel.textContent = '🔓 الإجابة مفتوحة للجميع!';
+            buzzedInfo.classList.add('hidden');
+            timerSection.classList.add('hidden');
+            if (recognition) { try { recognition.stop(); } catch (e) { } }
+            break;
+
+        case 'category-changed': {
+            const rN2 = (gameState && gameState.redTeamName) || 'الفريق الأحمر';
+            const bN2 = (gameState && gameState.blueTeamName) || 'الفريق الأزرق';
+            phaseLabel.textContent = `⚡ ${msg.team === 'red' ? rN2 : bN2} غيّر الفئة إلى: ${msg.category}`;
+            break;
+        }
+    }
+});
+
+function resetBuzzerUI() {
+    if (!isHost || isHost) { // Everyone sees buzzer if they are playing
+        playerControls.classList.remove('hidden');
+        btnBuzz.classList.remove('hidden');
+        btnBuzz.disabled = false;
+        micStatus.classList.add('hidden');
+        recognizedTextUI.classList.add('hidden');
+        if (recognition) { try { recognition.stop(); } catch (e) { } }
+    }
+}
+
+// ===== RENDER LOGIC =====
+function render() {
+    if (!gameState) return;
+    const phase = gameState.phase;
+
+    lobbyTitle.textContent = gameState.gameName.replace('حروف مع ', '');
+
+    if (phase === 'lobby') {
+        renderPlayers();
+        return;
+    } else {
+        showScreen(gameScreen);
+        gameTitleBar.textContent = gameState.gameName;
+        renderGrid();
+        renderScores();
+        renderTurn();
+        renderPowerUps();
+    }
+
+    // Update Round Scores
+    document.getElementById('red-rounds').textContent = gameState.redRoundsWon || 0;
+    document.getElementById('blue-rounds').textContent = gameState.blueRoundsWon || 0;
+
+    // Phases
+    questionOverlay.classList.add('hidden');
+    winOverlay.classList.add('hidden');
+    roundOverlay.classList.add('hidden');
+    hexGrid.style.pointerEvents = isHost ? 'auto' : 'none'; // Only host can click cells
+
+    if (phase === 'question' || phase === 'teamChance' || phase === 'openRound' || phase === 'answering') {
+        showQuestion();
+    } else if (phase === 'round-won') {
+        roundOverlay.classList.remove('hidden');
+        hexGrid.style.pointerEvents = 'none';
+        const roundWinnerTeam = gameState.roundWinner;
+        const winnerName = roundWinnerTeam === 'red' ? 'الفريق الأحمر' : 'الفريق الأزرق';
+        roundWinText.textContent = `فاز ${winnerName} بالجولة!`;
+        roundWinText.style.color = roundWinnerTeam === 'red' ? 'var(--red-team)' : 'var(--blue-team)';
+    } else if (phase === 'finished') {
+        winOverlay.classList.remove('hidden');
+        const wTeam = gameState.winner === 'red' ? 'الفريق الأحمر' : 'الفريق الأزرق';
+        winText.textContent = `فاز ${wTeam}`;
+        winText.style.color = gameState.winner === 'red' ? 'var(--red-team)' : 'var(--blue-team)';
+        spawnConfetti();
+    }
+}
+
+function renderPlayers() {
+    if (!gameState) return;
+    const reds = gameState.players.filter(p => p.team === 'red');
+    const blues = gameState.players.filter(p => p.team === 'blue');
+    redPlayers.innerHTML = reds.map(p => `<div class="player-tag">🔴 ${p.name} ${p.isHost ? '(مضيف)' : ''}</div>`).join('');
+    bluePlayers.innerHTML = blues.map(p => `<div class="player-tag">🔵 ${p.name} ${p.isHost ? '(مضيف)' : ''}</div>`).join('');
+    if (isHost) launchGameBtn.disabled = gameState.players.length < 2; // Require at least 2 players
+}
+
+function renderGrid() {
+    hexGrid.innerHTML = '';
+    [0, 1, 2, 3].forEach(r => {
+        const rowDiv = document.createElement('div');
+        rowDiv.className = 'hex-row' + (r % 2 === 1 ? ' offset' : '');
+        gameState.cells.filter(c => c.row === r).forEach(cell => {
+            const hex = document.createElement('div');
+            hex.className = 'hex-cell';
+            if (cell.owner === 'red') hex.classList.add('owned-red');
+            if (cell.owner === 'blue') hex.classList.add('owned-blue');
+            hex.innerHTML = `<span class="letter">${cell.letter}</span>`;
+            if (!cell.owner && gameState.phase === 'playing' && isHost) {
+                hex.addEventListener('click', () => selectCell(cell.index));
+            }
+            rowDiv.appendChild(hex);
+        });
+        hexGrid.appendChild(rowDiv);
+    });
+}
+
+function renderScores() {
+    redCount.textContent = gameState.cells.filter(c => c.owner === 'red').length;
+    blueCount.textContent = gameState.cells.filter(c => c.owner === 'blue').length;
+}
+
+function renderTurn() {
+    const t = gameState.currentTurn;
+    const redName = gameState.redTeamName || 'الفريق الأحمر';
+    const blueName = gameState.blueTeamName || 'الفريق الأزرق';
+
+    // Update header team name labels
+    const hRed = document.getElementById('header-red-team-name');
+    const hBlue = document.getElementById('header-blue-team-name');
+    if (hRed) hRed.textContent = redName + ' ↕';
+    if (hBlue) hBlue.textContent = blueName + ' ↔';
+
+    turnIndicator.className = 'turn-indicator ' + (t === 'red' ? 'turn-red' : 'turn-blue');
+    turnIndicator.textContent = `دور ${t === 'red' ? redName + ' 🔴' : blueName + ' 🔵'}`;
+}
+
+function renderPowerUps() {
+    redPower.classList.toggle('used', gameState.redCategoryChange);
+    bluePower.classList.toggle('used', gameState.blueCategoryChange);
+}
+
+function showQuestion() {
+    const q = gameState.currentQuestion;
+    if (!q) return;
+    questionOverlay.classList.remove('hidden');
+    document.getElementById('q-category').textContent = q.category;
+    document.getElementById('q-difficulty').textContent =
+        q.difficulty === 'easy' ? '⭐ سهل' : q.difficulty === 'medium' ? '⭐⭐ متوسط' : '⭐⭐⭐ صعب';
+    document.getElementById('q-letter').textContent = q.letter;
+    document.getElementById('q-text').textContent = q.question;
+
+    if (isHost) {
+        btnSkip.classList.remove('hidden');
+        btnCancel.classList.remove('hidden');
+    } else {
+        btnSkip.classList.add('hidden');
+        btnCancel.classList.add('hidden');
+    }
+
+    if (gameState.phase === 'question') {
+        phaseLabel.textContent = '🔔 اضغطوا على الزر للإجابة!';
+        buzzedInfo.classList.add('hidden');
+        timerSection.classList.add('hidden');
+    }
+}
+
+function showBuzzed(player) {
+    buzzedInfo.classList.remove('hidden');
+    buzzedName.textContent = player.name;
+    buzzedName.style.color = player.team === 'red' ? 'var(--red-team)' : 'var(--blue-team)';
+    buzzedTeamLabel.textContent = `الفريق ${player.team === 'red' ? 'الأحمر' : 'الأزرق'}`;
+    timerSection.classList.remove('hidden');
+    phaseLabel.textContent = '🎤 أجب الآن!';
+
+    // Disable buzzer for everyone
+    btnBuzz.disabled = true;
+
+    if (player.id !== myPlayerId) {
+        playerControls.classList.add('hidden');
+    }
+}
+
+function updateTimer(seconds, phase) {
+    if (phase === 'answering' || phase === 'teamChance') {
+        timerNumber.textContent = seconds;
+        const total = phase === 'answering' ? 5 : 10;
+        const percent = (seconds / total) * 100;
+        timerProgress.style.strokeDashoffset = CIRCLE_CIRCUMFERENCE - (percent / 100) * CIRCLE_CIRCUMFERENCE;
+        timerProgress.classList.remove('warning', 'danger');
+        if (seconds <= 2) timerProgress.classList.add('danger');
+        else if (seconds <= 3) timerProgress.classList.add('warning');
+    } else if (phase === 'round-won') {
+        roundTimerNumber.textContent = seconds;
+        const total = 5;
+        const percent = (seconds / total) * 100;
+        roundTimerProgress.style.strokeDashoffset = CIRCLE_CIRCUMFERENCE - (percent / 100) * CIRCLE_CIRCUMFERENCE;
+    }
+}
+
+function spawnConfetti() {
+    confettiEl.innerHTML = '';
+    const colors = ['#ff4057', '#4090ff', '#ffd700', '#00e676', '#ff8800', '#b388ff'];
+    for (let i = 0; i < 80; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + '%';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = Math.random() * 2 + 's';
+        piece.style.animationDuration = (2 + Math.random() * 2) + 's';
+        confettiEl.appendChild(piece);
+    }
+}
+
+// ===== ACTIONS =====
+function selectCell(index) {
+    ws.send(JSON.stringify({ type: 'select-cell', index }));
+}
+
+launchGameBtn.addEventListener('click', () => {
+    ws.send(JSON.stringify({ type: 'start-game' }));
+});
+
+btnBuzz.addEventListener('click', () => {
+    btnBuzz.disabled = true;
+    ws.send(JSON.stringify({ type: 'buzz' }));
+});
+
+redPower.addEventListener('click', () => changeCategory('red'));
+bluePower.addEventListener('click', () => changeCategory('blue'));
+
+function changeCategory(team) {
+    if (!isHost && myTeam !== team) return;
+    if ((team === 'red' && gameState.redCategoryChange) || (team === 'blue' && gameState.blueCategoryChange)) return;
+    if (gameState.phase !== 'question') return;
+
+    fetch('/api/categories').then(r => r.json()).then(cats => {
+        const currentCat = gameState.currentQuestion.category;
+        const otherCats = cats.filter(c => c !== currentCat);
+        if (otherCats.length > 0) {
+            const randomNew = otherCats[Math.floor(Math.random() * otherCats.length)];
+            ws.send(JSON.stringify({ type: 'category-change', category: randomNew }));
+        }
+    });
+}
+
+// Host controls
+btnSkip.addEventListener('click', () => ws.send(JSON.stringify({ type: 'skip-question' })));
+btnCancel.addEventListener('click', () => ws.send(JSON.stringify({ type: 'cancel-cell' })));
+btnNewGame.addEventListener('click', () => {
+    if (isHost) ws.send(JSON.stringify({ type: 'reset-game' }));
+});
+
+// ===== RESET USED QUESTIONS =====
+const btnResetQuestions = document.getElementById('btn-reset-questions');
+if (btnResetQuestions) {
+    btnResetQuestions.addEventListener('click', () => {
+        if (!isHost) return;
+        if (!confirm('هل أنت متأكد من إعادة تعيين سجل الأسئلة المستخدمة؟\nستظهر جميع الأسئلة من جديد بما فيها الملعوبة مسبقاً.')) return;
+        ws.send(JSON.stringify({ type: 'reset-used-questions' }));
+    });
+}
+
+function showToast(msg, color = '#00e676') {
+    const toast = document.getElementById('toast-msg');
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.style.background = color;
+    toast.classList.remove('hidden');
+    setTimeout(() => toast.classList.add('hidden'), 3500);
+}
+
+// Hex Bg Graphics
+function generateHexBg(container) {
+    if (!container) return;
+    const letters = 'ا ب ت ث ج ح خ د ذ ر ز س ش ص ض ط ظ ع غ ف ق ك ل م ن هـ و ي'.split(' ');
+    const w = window.innerWidth; const h = window.innerHeight;
+    const cellW = 90; const cellH = 100;
+    const cols = Math.ceil(w / (cellW * 0.85)) + 1;
+    const rows = Math.ceil(h / (cellH * 0.75)) + 1;
+    container.innerHTML = '';
+    let li = 0;
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+            const div = document.createElement('div');
+            div.className = 'hex-bg-cell';
+            const x = c * (cellW * 0.85) + (r % 2 === 1 ? cellW * 0.42 : 0);
+            const y = r * (cellH * 0.75);
+            div.style.left = x + 'px';
+            div.style.top = y + 'px';
+            div.textContent = letters[li % letters.length];
+            li++;
+            container.appendChild(div);
+        }
+    }
+}
+generateHexBg(document.getElementById('hex-bg-pattern'));
+generateHexBg(document.getElementById('hex-bg-lobby'));
+generateHexBg(document.getElementById('hex-bg-game'));
+window.addEventListener('resize', () => {
+    generateHexBg(document.getElementById('hex-bg-pattern'));
+    generateHexBg(document.getElementById('hex-bg-lobby'));
+    generateHexBg(document.getElementById('hex-bg-game'));
+});

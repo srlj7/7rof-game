@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حروف مع</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- MAIN MENU SCREEN -->
+    <div id="menu-screen" class="screen active">
+        <div class="hex-bg-pattern" id="hex-bg-pattern"></div>
+        <div class="menu-container">
+            <div class="logo-section">
+                <div class="logo-main">
+                    <span class="logo-7rof">حروف</span>
+                    <span class="logo-with">مع</span>
+                    <span class="logo-name" id="logo-name-display">...</span>
+                </div>
+            </div>
+            <div class="menu-options" id="menu-options-container">
+                <button id="btn-show-create" class="btn-main btn-start-main">إنشاء غرفة</button>
+                <button id="btn-show-join" class="btn-main btn-secondary-main">الانضمام لغرفة</button>
+            </div>
+
+            <!-- CREATE ROOM FORM -->
+            <div id="create-room-form" class="menu-form hidden">
+                <h3 class="form-title">إنشاء غرفة جديدة</h3>
+
+                <!-- Game Name: "حروف مع" + suffix -->
+                <div class="game-name-row">
+                    <span class="game-name-prefix">حروف مع</span>
+                    <input type="text" id="create-game-suffix" class="name-input-main suffix-input"
+                        placeholder="اسمك هنا" maxlength="20">
+                </div>
+
+                <input type="text" id="create-host-name" class="name-input-main" placeholder="اسمك (المضيف)"
+                    maxlength="15">
+
+                <!-- Team Name Inputs -->
+                <div class="team-names-row">
+                    <div class="team-name-field">
+                        <label class="team-name-label red-label">🔴 اسم الفريق الأول</label>
+                        <input type="text" id="red-team-name" class="name-input-main team-name-input"
+                            placeholder="الفريق الأحمر" maxlength="15" value="الفريق الأحمر">
+                    </div>
+                    <div class="team-name-field">
+                        <label class="team-name-label blue-label">🔵 اسم الفريق الثاني</label>
+                        <input type="text" id="blue-team-name" class="name-input-main team-name-input"
+                            placeholder="الفريق الأزرق" maxlength="15" value="الفريق الأزرق">
+                    </div>
+                </div>
+
+                <div class="team-selection">
+                    <button id="host-team-red" class="team-btn t-red" data-team="red">انضم للأول</button>
+                    <button id="host-team-blue" class="team-btn t-blue" data-team="blue">انضم للثاني</button>
+                </div>
+                <button id="btn-create-room" class="btn-main btn-start-main" disabled>تأكيد وإنشاء</button>
+                <button class="btn-back-menu">رجوع</button>
+            </div>
+
+            <!-- JOIN ROOM FORM -->
+            <div id="join-room-form" class="menu-form hidden">
+                <h3 class="form-title">الانضمام لغرفة</h3>
+                <input type="text" id="join-room-code" class="name-input-main code-input"
+                    placeholder="رمز الغرفة (مثال: A5B2)" maxlength="4">
+                <input type="text" id="join-player-name" class="name-input-main" placeholder="اسمك" maxlength="15">
+                <div class="team-selection">
+                    <button id="join-team-red" class="team-btn t-red" data-team="red">الفريق الأحمر</button>
+                    <button id="join-team-blue" class="team-btn t-blue" data-team="blue">الفريق الأزرق</button>
+                </div>
+                <button id="btn-join-room" class="btn-main btn-start-main" disabled>انضمام</button>
+                <button class="btn-back-menu">رجوع</button>
+                <p id="join-error" class="error-text hidden"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOBBY SCREEN -->
+    <div id="lobby-screen" class="screen">
+        <div class="hex-bg-pattern" id="hex-bg-lobby"></div>
+        <div class="lobby-container">
+            <div class="lobby-logo">
+                <span class="lobby-logo-7rof">حروف</span>
+                <span class="lobby-logo-with">مع</span>
+                <span class="lobby-logo-name" id="lobby-title">سيف</span>
+            </div>
+
+            <div class="lobby-card">
+                <h2 class="lobby-card-title">رمز الغرفة للاعبين:</h2>
+                <div class="room-code-display" id="lobby-room-code">----</div>
+            </div>
+
+            <div class="lobby-teams-row">
+                <div class="lobby-team-card red-team-card">
+                    <h3>🔴 <span id="lobby-red-team-name">الفريق الأحمر</span></h3>
+                    <div id="red-players" class="player-list"></div>
+                </div>
+                <div class="lobby-team-card blue-team-card">
+                    <h3>🔵 <span id="lobby-blue-team-name">الفريق الأزرق</span></h3>
+                    <div id="blue-players" class="player-list"></div>
+                </div>
+            </div>
+
+            <div class="lobby-buttons">
+                <!-- Host only buttons -->
+                <button id="launch-game-btn" class="btn-main btn-start-main hidden">ابدأ المباراة</button>
+                <button id="btn-reset-questions" class="btn-main btn-reset-q hidden" title="حذف سجل الأسئلة المستخدمة">♻️ إعادة تعيين الأسئلة</button>
+                <button id="back-to-menu" class="btn-lobby-back">↩ خروج من الغرفة</button>
+            </div>
+            <!-- Toast notification -->
+            <div id="toast-msg" class="toast-msg hidden"></div>
+        </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="game-screen" class="screen">
+        <div class="hex-bg-pattern" id="hex-bg-game"></div>
+        <div class="game-header">
+            <div class="team-score red-score">
+                <span id="header-red-team-name" class="team-label">الفريق الأحمر ↕</span>
+                <span id="red-count" class="score-num">0</span>
+                <div id="red-power" class="power-badge" title="تغيير الفئة">⚡</div>
+            </div>
+
+            <div class="game-center-header">
+                <div class="round-scores">
+                    <span id="red-rounds" class="round-num red-text">0</span>
+                    <span class="round-divider">-</span>
+                    <span id="blue-rounds" class="round-num blue-text">0</span>
+                </div>
+                <div class="game-title-bar">
+                    <h1 id="game-title-bar-text">حروف مع سيف</h1>
+                    <div id="turn-indicator" class="turn-indicator"></div>
+                </div>
+            </div>
+
+            <div class="team-score blue-score">
+                <span id="header-blue-team-name" class="team-label">الفريق الأزرق ↔</span>
+                <span id="blue-count" class="score-num">0</span>
+                <div id="blue-power" class="power-badge" title="تغيير الفئة">⚡</div>
+            </div>
+        </div>
+
+        <div class="game-body">
+            <div id="hex-grid" class="hex-grid"></div>
+        </div>
+
+        <!-- Question Overlay -->
+        <div id="question-overlay" class="overlay hidden">
+            <div class="question-card">
+                <div class="question-meta">
+                    <span id="q-category" class="q-category"></span>
+                    <span id="q-difficulty" class="q-difficulty"></span>
+                    <span id="q-letter" class="q-letter"></span>
+                </div>
+                <p id="q-text" class="question-text"></p>
+                <div id="timer-section" class="timer-section hidden">
+                    <div id="timer-ring" class="timer-ring">
+                        <svg viewBox="0 0 100 100">
+                            <circle class="timer-bg" cx="50" cy="50" r="45" />
+                            <circle id="timer-progress" class="timer-progress" cx="50" cy="50" r="45" />
+                        </svg>
+                        <span id="timer-number" class="timer-number">5</span>
+                    </div>
+                </div>
+                <div id="buzzed-info" class="buzzed-info hidden">
+                    <p id="buzzed-name"></p>
+                    <p id="buzzed-team-label"></p>
+                </div>
+                <div id="phase-label" class="phase-label"></div>
+
+                <!-- PLAYER UI: Integrated Buzzer -->
+                <div id="player-controls" class="player-controls hidden">
+                    <button id="btn-buzz" class="buzzer-btn">أنا أعرف!</button>
+                    <div id="mic-status" class="mic-status hidden">
+                        <span class="pulse"></span> تحدث الآن...
+                    </div>
+                    <p id="recognized-text" class="recognized-text hidden"></p>
+                </div>
+
+                <!-- HOST UI: Cancel / Skip -->
+                <div class="host-controls">
+                    <button id="btn-skip" class="btn-judge btn-skip-judge hidden">⏭ تغيير السؤال</button>
+                    <button id="btn-cancel" class="btn-judge btn-cancel-judge hidden">↩ إلغاء</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Win Overlay -->
+        <div id="win-overlay" class="overlay hidden">
+            <div class="win-card">
+                <div class="confetti-container" id="confetti"></div>
+                <h1 id="win-text" class="win-text">🏆</h1>
+                <p class="final-match-text">بطل المباراة!</p>
+                <button id="btn-new-game" class="btn-start">لعبة جديدة</button>
+            </div>
+        </div>
+
+        <!-- Round Win Overlay -->
+        <div id="round-overlay" class="overlay hidden">
+            <div class="win-card round-card">
+                <h2 id="round-win-text" class="win-text">فاز الفريق بالجولة!</h2>
+                <div class="round-timer-ring">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="timer-bg" cx="50" cy="50" r="45" />
+                        <circle id="round-timer-progress" class="timer-progress" cx="50" cy="50" r="45" />
+                    </svg>
+                    <span id="round-timer-number" class="timer-number">5</span>
+                </div>
+                <p class="next-round-text">جاري تحضير الجولة القادمة...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+</body>
+
+</html>

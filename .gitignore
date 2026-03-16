@@ -1,0 +1,24 @@
+node_modules/
+.env
+used_questions.json
+*.log
+*.tmp
+# Cleanup scripts and temp json files
+add_q_*.js
+parse_user.js
+analyze_and_clean_qs.js
+fix_all_qs.js
+deep_clean_qs.js
+find_anomalies.js
+fix_anomalies.js
+surgical_purge.js
+final_polish_qs.js
+final_final_fix.js
+validate_db.js
+anomalies.json
+malformed.json
+mismatched.json
+questions_clean.json
+questions_fixed.json
+questions_to_fix.json
+user_raw.txt
