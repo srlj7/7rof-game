@@ -549,7 +549,6 @@ wss.on('connection', (ws) => {
         broadcastToRoom(roomId, { 
             type: 'answer-received', 
             answer: msg.answer, 
-            realAnswer: room.currentQuestion.answer,
             isCorrect: isCorrect,
             player: room.buzzedPlayer 
         });
@@ -557,12 +556,16 @@ wss.on('connection', (ws) => {
         break;
 
       case 'judge-answer':
+        // Old handler, keeping it for compatibility or removing it if safe
+        break;
+
+      case 'award-point':
         if (!client.isHost) break;
         if (room.phase !== 'judging') break;
 
-        if (msg.correct) {
-          handleCorrectAnswer(roomId, room);
-        } else {
+        if (msg.team === 'red' || msg.team === 'blue') {
+          handleCorrectAnswer(roomId, room, msg.team);
+        } else if (msg.team === 'wrong') {
           broadcastToRoom(roomId, { type: 'wrong-answer', player: room.buzzedPlayer, spoken: room.currentAnswer });
           handleWrongAnswer(roomId, room);
         }
@@ -674,8 +677,8 @@ wss.on('close', () => {
   clearInterval(interval);
 });
 
-function handleCorrectAnswer(roomId, room) {
-  const team = room.buzzedPlayer.team;
+function handleCorrectAnswer(roomId, room, teamOverride = null) {
+  const team = teamOverride || room.buzzedPlayer.team;
   room.cells[room.selectedCell].owner = team;
   broadcastToRoom(roomId, { type: 'correct-answer', player: room.buzzedPlayer, answer: room.currentQuestion.answer, cellIndex: room.selectedCell });
 

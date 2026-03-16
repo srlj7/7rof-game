@@ -1166,6 +1166,80 @@ body {
     background: linear-gradient(135deg, #ff4057, #cc0000);
 }
 
+.real-answer-text.buzzed-player-answer {
+    font-size: 1.2rem;
+    color: #ffeb3b;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.answering-player-badge {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    color: #fff;
+    margin-top: 10px;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.award-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.btn-award {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.btn-award.btn-red {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
+}
+
+.btn-award.btn-blue {
+    background: linear-gradient(135deg, #2193b0, #6dd5ed);
+    box-shadow: 0 4px 15px rgba(33, 147, 176, 0.3);
+}
+
+.btn-award:active {
+    transform: scale(0.95);
+}
+
+.btn-wrong {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: #ffdce0 !important;
+    box-shadow: none !important;
+}
+
+.btn-wrong:hover {
+    background: rgba(255, 0, 0, 0.2) !important;
+    border-color: #ff4b2b !important;
+}
+
+.judging-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: fadeInUp 0.5s ease both;
+}
+
 /* Win Screen */
 .win-card {
     text-align: center;

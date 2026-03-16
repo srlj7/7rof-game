@@ -171,15 +171,20 @@
                 <div id="buzzed-info" class="buzzed-info hidden">
                     <p id="buzzed-name"></p>
                     <p id="buzzed-team-label"></p>
-                    <p id="received-answer" class="received-answer-text hidden"></p>
-                    <p id="real-answer" class="real-answer-text hidden"></p>
+                    <div id="judging-reveal" class="judging-reveal">
+                        <p id="received-answer" class="received-answer-text hidden"></p>
+                        <p id="answering-player-badge" class="answering-player-badge hidden"></p>
+                    </div>
                 </div>
                 <div id="phase-label" class="phase-label"></div>
 
                 <!-- HOST JUDGING UI -->
                 <div id="judging-controls" class="judging-controls hidden">
-                    <button id="btn-judge-correct" class="btn-judge-final btn-correct">✅ صحيحة</button>
-                    <button id="btn-judge-wrong" class="btn-judge-final btn-wrong">❌ خاطئة</button>
+                    <div class="award-buttons">
+                        <button id="btn-award-red" class="btn-award btn-red">نقطة للأحمر</button>
+                        <button id="btn-award-blue" class="btn-award btn-blue">نقطة للأزرق</button>
+                    </div>
+                    <button id="btn-judge-wrong" class="btn-judge-final btn-wrong">إجابة خاطئة ❌</button>
                 </div>
 
                 <!-- PLAYER UI: Integrated Buzzer -->

@@ -115,9 +115,10 @@ const buzzedName = document.getElementById('buzzed-name');
 const buzzedTeamLabel = document.getElementById('buzzed-team-label');
 const phaseLabel = document.getElementById('phase-label');
 const receivedAnswerUI = document.getElementById('received-answer');
-const realAnswerUI = document.getElementById('real-answer');
+const answeringPlayerBadge = document.getElementById('answering-player-badge');
 const judgingControls = document.getElementById('judging-controls');
-const btnJudgeCorrect = document.getElementById('btn-judge-correct');
+const btnAwardRed = document.getElementById('btn-award-red');
+const btnAwardBlue = document.getElementById('btn-award-blue');
 const btnJudgeWrong = document.getElementById('btn-judge-wrong');
 
 // Player Controls
@@ -273,13 +274,23 @@ if (SpeechRecognition) {
 }
 
 // Host Judging Listeners
-btnJudgeCorrect.addEventListener('click', () => {
-    ws.send(JSON.stringify({ type: 'judge-answer', correct: true }));
-});
-btnJudgeWrong.addEventListener('click', () => {
-    ws.send(JSON.stringify({ type: 'judge-answer', correct: false }));
-});
+if (btnAwardRed) {
+    btnAwardRed.addEventListener('click', () => {
+        ws.send(JSON.stringify({ type: 'award-point', team: 'red' }));
+    });
+}
+if (btnAwardBlue) {
+    btnAwardBlue.addEventListener('click', () => {
+        ws.send(JSON.stringify({ type: 'award-point', team: 'blue' }));
+    });
+}
+if (btnJudgeWrong) {
+    btnJudgeWrong.addEventListener('click', () => {
+        ws.send(JSON.stringify({ type: 'award-point', team: 'wrong' }));
+    });
+}
 
+// Timer constants
 // ===== WEBSOCKET LISTENERS =====
 function handleMessage(event) {
     const msg = JSON.parse(event.data);
@@ -585,15 +596,20 @@ function showQuestion() {
         receivedAnswerUI.textContent = `الإجابة المقروءة: ${gameState.currentAnswer || '...'}`;
         receivedAnswerUI.classList.remove('hidden');
         
-        // Only show correct answer in judging phase
-        realAnswerUI.textContent = `الإجابة الصحيحة: ${q.answer}`;
-        realAnswerUI.classList.remove('hidden');
+        // Show player name badge
+        if (answeringPlayerBadge && gameState.buzzedPlayer) {
+            answeringPlayerBadge.textContent = `اللاعب: ${gameState.buzzedPlayer.name}`;
+            answeringPlayerBadge.classList.remove('hidden');
+        }
 
         if (isHost) {
             judgingControls.classList.remove('hidden');
-            // Visual hint based on auto-judging
-            btnJudgeCorrect.style.opacity = gameState.autoResult ? '1' : '0.6';
-            btnJudgeWrong.style.opacity = gameState.autoResult ? '0.6' : '1';
+            // Visual hint based on auto-judging (optional)
+            if (btnAwardRed && btnAwardBlue) {
+                const suggTeam = gameState.buzzedPlayer.team;
+                btnAwardRed.style.opacity = (gameState.autoResult && suggTeam === 'red') ? '1' : '0.8';
+                btnAwardBlue.style.opacity = (gameState.autoResult && suggTeam === 'blue') ? '1' : '0.8';
+            }
         } else {
             judgingControls.classList.add('hidden');
         }
