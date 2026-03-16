@@ -814,6 +814,35 @@ body {
     gap: 4px;
 }
 
+.grid-wrapper {
+    position: relative;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Side borders for Blue (Left/Right) */
+.grid-wrapper::before,
+.grid-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    width: 5px;
+    background: var(--blue-team);
+    border-radius: 5px;
+    box-shadow: 0 0 15px var(--blue-glow);
+}
+
+.grid-wrapper::before {
+    left: 0;
+}
+
+.grid-wrapper::after {
+    right: 0;
+}
+
 .hex-row {
     display: flex;
     gap: 6px;
@@ -872,10 +901,12 @@ body {
 .hex-grid::after {
     content: '';
     display: block;
-    height: 4px;
-    width: 80%;
-    border-radius: 4px;
+    height: 5px;
+    width: 90%;
+    border-radius: 5px;
     background: var(--red-team);
+    box-shadow: 0 0 15px var(--red-glow);
+    margin: 5px 0;
 }
 
 /* ========================================
