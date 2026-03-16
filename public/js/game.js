@@ -1,13 +1,55 @@
-// ===== UNIFIED GAME CLIENT =====
 const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-const ws = new WebSocket(`${protocol}//${location.host}`);
 
 // Global State
 let gameState = null;
-let currentRoomId = null;
-let isHost = false;
-let myPlayerId = null;
-let myTeam = null;
+let currentRoomId = localStorage.getItem('7rof_roomId');
+let isHost = localStorage.getItem('7rof_isHost') === 'true';
+let myPlayerId = localStorage.getItem('7rof_playerId');
+let myTeam = localStorage.getItem('7rof_myTeam');
+
+function connectWebSocket() {
+    const protocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+    ws = new WebSocket(`${protocol}//${location.host}`);
+
+    ws.onopen = () => {
+        console.log("✅ Connected to server");
+        reconnectAttempts = 0;
+        
+        // Auto-rejoin if we have active session
+        if (currentRoomId && myPlayerId) {
+            console.log("♻️ Attempting to rejoin room:", currentRoomId);
+            ws.send(JSON.stringify({
+                type: 'rejoin',
+                roomId: currentRoomId,
+                playerId: myPlayerId
+            }));
+        }
+    };
+
+    ws.onmessage = handleMessage;
+
+    ws.onclose = (e) => {
+        console.log("❌ Connection closed. Reconnecting...");
+        if (reconnectAttempts < MAX_RECONNECT_ATTEMPTS) {
+            reconnectAttempts++;
+            const delay = Math.min(1000 * Math.pow(2, reconnectAttempts), 10000);
+            setTimeout(connectWebSocket, delay);
+        }
+    };
+}
+
+// Start connection
+connectWebSocket();
+
+// Handle tab visibility (mobile backgrounding)
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+        if (!ws || ws.readyState !== WebSocket.OPEN) {
+            console.log("👀 Visible again, checking connection...");
+            connectWebSocket();
+        }
+    }
+});
 
 // Timer constants
 const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * 45; // r=45
@@ -181,6 +223,7 @@ btnJoinRoom.addEventListener('click', () => {
 });
 
 backToMenuBtn.addEventListener('click', () => {
+    localStorage.clear();
     location.reload(); // Quick reset
 });
 
@@ -224,68 +267,67 @@ if (SpeechRecognition) {
 }
 
 // ===== WEBSOCKET LISTENERS =====
-ws.addEventListener('message', (event) => {
+function handleMessage(event) {
     const msg = JSON.parse(event.data);
 
     if (msg.type === 'error') {
+        if (msg.code === 'SESSION_EXPIRED') {
+            localStorage.clear(); // Clear bad session
+            location.reload();
+            return;
+        }
         joinError.textContent = msg.message;
         joinError.classList.remove('hidden');
         btnJoinRoom.disabled = false;
         return;
     }
 
-    if (msg.type === 'room-created') {
-        currentRoomId = msg.roomId;
-        isHost = true;
-        myPlayerId = msg.id;
-        myTeam = msg.team;
-        lobbyRoomCode.textContent = currentRoomId;
-        launchGameBtn.classList.remove('hidden');
-        if (btnResetQuestions) btnResetQuestions.classList.remove('hidden');
-        showScreen(lobbyScreen);
-    }
-
-    if (msg.type === 'joined-room') {
-        currentRoomId = msg.roomId;
-        isHost = false;
-        myPlayerId = msg.id;
-        myTeam = msg.team;
-        lobbyRoomCode.textContent = currentRoomId;
-        launchGameBtn.classList.add('hidden'); // Only host can launch
-        showScreen(lobbyScreen);
-    }
-
-    if (msg.type === 'game-over') {
-        gameState = msg.state;
-        render();
-    }
-
-    if (msg.type === 'round-won') {
-        gameState = msg.state;
-        render();
-    }
-
-    if (msg.type === 'new-round') {
-        gameState = msg.state;
-        resetBuzzerUI();
-        render();
-    }
-
-    if (msg.type === 'questions-reset') {
-        showToast(`✅ تم إعادة تعيين جميع الأسئلة (${msg.count} سؤال)`);
-        return;
-    }
-
+    // --- Consolidated Message Handling ---
     switch (msg.type) {
-        case 'game-state':
+        case 'room-created':
+        case 'joined-room':
+            currentRoomId = msg.roomId;
+            isHost = msg.role === 'host';
+            myPlayerId = msg.id;
+            myTeam = msg.team;
             gameState = msg.state;
+            
+            // Save session
+            localStorage.setItem('7rof_roomId', msg.roomId);
+            localStorage.setItem('7rof_isHost', isHost);
+            localStorage.setItem('7rof_playerId', msg.id);
+            localStorage.setItem('7rof_myTeam', msg.team);
+
+            lobbyRoomCode.textContent = currentRoomId;
+            if (isHost) {
+                launchGameBtn.classList.remove('hidden');
+                if (btnResetQuestions) btnResetQuestions.classList.remove('hidden');
+            } else {
+                launchGameBtn.classList.add('hidden');
+            }
+            showScreen(lobbyScreen);
+            render();
+            break;
+
+        case 'game-state':
+        case 'game-over':
+        case 'round-won':
+            gameState = msg.state;
+            render();
+            break;
+
+        case 'new-round':
+            gameState = msg.state;
+            resetBuzzerUI();
             render();
             break;
 
         case 'player-joined':
         case 'player-left':
-            gameState.players = msg.players;
-            renderPlayers();
+            if (gameState) {
+                gameState.players = msg.players;
+                renderPlayers();
+            }
             break;
 
         case 'game-name':
@@ -355,7 +397,7 @@ ws.addEventListener('message', (event) => {
             break;
         }
     }
-});
+}
 
 function resetBuzzerUI() {
     if (!isHost || isHost) { // Everyone sees buzzer if they are playing
@@ -373,10 +415,17 @@ function render() {
     if (!gameState) return;
     const phase = gameState.phase;
 
-    lobbyTitle.textContent = gameState.gameName.replace('حروف مع ', '');
+    lobbyTitle.textContent = (gameState.gameName || "").replace('حروف مع ', '');
 
     if (phase === 'lobby') {
         renderPlayers();
+        
+        // Update lobby team names
+        const lRed = document.getElementById('lobby-red-team-name');
+        const lBlue = document.getElementById('lobby-blue-team-name');
+        if (lRed) lRed.textContent = gameState.redTeamName || 'الفريق الأحمر';
+        if (lBlue) lBlue.textContent = gameState.blueTeamName || 'الفريق الأزرق';
+
         return;
     } else {
         showScreen(gameScreen);
@@ -416,17 +465,29 @@ function render() {
 }
 
 function renderPlayers() {
-    if (!gameState) return;
+    if (!gameState || !gameState.players) return;
+    
     const reds = gameState.players.filter(p => p.team === 'red');
     const blues = gameState.players.filter(p => p.team === 'blue');
-    redPlayers.innerHTML = reds.map(p => `<div class="player-tag">🔴 ${p.name} ${p.isHost ? '(مضيف)' : ''}</div>`).join('');
-    bluePlayers.innerHTML = blues.map(p => `<div class="player-tag">🔵 ${p.name} ${p.isHost ? '(مضيف)' : ''}</div>`).join('');
-    if (isHost) launchGameBtn.disabled = gameState.players.length < 2; // Require at least 2 players
+    
+    const containerRed = document.getElementById('red-players');
+    const containerBlue = document.getElementById('blue-players');
+    
+    if (containerRed) {
+        containerRed.innerHTML = reds.map(p => `<div class="player-tag">🔴 ${p.name} ${p.isHost ? '(مضيف)' : ''}</div>`).join('');
+    }
+    if (containerBlue) {
+        containerBlue.innerHTML = blues.map(p => `<div class="player-tag">🔵 ${p.name} ${p.isHost ? '(مضيف)' : ''}</div>`).join('');
+    }
+    
+    if (isHost && launchGameBtn) {
+        launchGameBtn.disabled = gameState.players.length < 2;
+    }
 }
 
 function renderGrid() {
     hexGrid.innerHTML = '';
-    [0, 1, 2, 3].forEach(r => {
+    [0, 1, 2, 3, 4].forEach(r => {
         const rowDiv = document.createElement('div');
         rowDiv.className = 'hex-row' + (r % 2 === 1 ? ' offset' : '');
         gameState.cells.filter(c => c.row === r).forEach(cell => {

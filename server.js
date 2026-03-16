@@ -107,19 +107,20 @@ function createRoomState(name = 'حروف مع سيف', redTeamName = 'الفر�
   };
 }
 
-// Build hex grid - 7 cols x 4 rows = 28 cells, randomized letters
+// Build hex grid - 5 cols x 5 rows = 25 cells, randomized letters
 function initGrid() {
   const cells = [];
   const shuffledLetters = [...ARABIC_LETTERS];
+  // Fisher-Yates shuffle
   for (let i = shuffledLetters.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [shuffledLetters[i], shuffledLetters[j]] = [shuffledLetters[j], shuffledLetters[i]];
   }
 
   let idx = 0;
-  for (let row = 0; row < 4; row++) {
-    for (let col = 0; col < 7; col++) {
-      if (idx < 28) {
+  for (let row = 0; row < 5; row++) {
+    for (let col = 0; col < 5; col++) {
+      if (idx < 25) {
         cells.push({ letter: shuffledLetters[idx], owner: null, row, col, index: idx });
         idx++;
       }
@@ -131,7 +132,7 @@ function initGrid() {
 // ===== DIFFICULTY SCALING =====
 function getDifficulty(room) {
   const filled = room.cells.filter(c => c.owner !== null).length;
-  const ratio = filled / 28;
+  const ratio = filled / 25;
   if (ratio < 0.4) return ['easy', 'medium'];
   if (ratio < 0.7) return ['medium'];
   return ['hard'];
@@ -160,8 +161,8 @@ function checkWinFor(cells, team) {
     : owned.filter(c => c.col === 0);
 
   const targetCheck = team === 'red'
-    ? (c) => c.row === 3
-    : (c) => c.col === 6;
+    ? (c) => c.row === 4
+    : (c) => c.col === 4;
 
   const visited = new Set();
   const queue = [...startCells];
@@ -299,6 +300,7 @@ function startTimer(roomId, room, seconds, onEnd) {
 
 // ===== WEBSOCKET =====
 const clients = new Map(); // ws -> { roomId, type: 'host' | 'player', id, name, team }
+const sessions = new Map(); // clientId -> { roomId, type, id, name, team, isHost, ws, timeout }
 
 function broadcastToRoom(roomId, msg) {
   const data = JSON.stringify(msg);
@@ -335,12 +337,64 @@ function getPublicGameState(room) {
 }
 
 wss.on('connection', (ws) => {
+  ws.isAlive = true;
+  ws.on('pong', () => { ws.isAlive = true; });
+
   const clientId = uuidv4();
   clients.set(ws, { roomId: null, type: 'unknown', id: clientId });
 
   ws.on('message', (raw) => {
     let msg;
     try { msg = JSON.parse(raw); } catch { return; }
+    
+    // --- Session / Reconnection Handling ---
+    if (msg.type === 'rejoin') {
+      const { roomId, playerId } = msg;
+      const session = sessions.get(playerId);
+      
+      if (session && session.roomId === roomId) {
+        // Clear expiry timeout
+        if (session.timeout) {
+          clearTimeout(session.timeout);
+          session.timeout = null;
+        }
+        
+        // Update session with new socket
+        session.ws = ws;
+        clients.set(ws, { 
+          roomId: session.roomId, 
+          type: session.type, 
+          id: session.id, 
+          name: session.name, 
+          team: session.team,
+          isHost: session.isHost
+        });
+        
+        const room = rooms.get(roomId);
+        if (room) {
+          // If the player was marked as inactive/removed, re-add them if missing
+          if (!room.players.find(p => p.id === playerId)) {
+            room.players.push({ id: session.id, name: session.name, team: session.team, isHost: session.isHost });
+          }
+          
+          ws.send(JSON.stringify({ 
+            type: 'joined-room', 
+            roomId, 
+            role: session.type, 
+            id: session.id, 
+            team: session.team,
+            rejoined: true
+          }));
+          ws.send(JSON.stringify({ type: 'game-state', state: getPublicGameState(room) }));
+          broadcastToRoom(roomId, { type: 'player-joined', player: { id: session.id, name: session.name, team: session.team }, players: room.players });
+        }
+        return;
+      } else {
+        ws.send(JSON.stringify({ type: 'error', message: 'الجلسة منتهية، يرجى الانضمام مجدداً', code: 'SESSION_EXPIRED' }));
+        return;
+      }
+    }
+
     const client = clients.get(ws);
 
     // --- Room Management ---
@@ -360,7 +414,20 @@ wss.on('connection', (ws) => {
       const room = rooms.get(roomId);
       room.players.push({ id: clientId, name: msg.hostName, team: msg.team, isHost: true });
 
-      ws.send(JSON.stringify({ type: 'room-created', roomId, role: 'host', id: clientId, team: msg.team }));
+      // Save session
+      sessions.set(clientId, { 
+        roomId, type: 'host', id: clientId, name: msg.hostName, 
+        team: msg.team, isHost: true, ws 
+      });
+
+      ws.send(JSON.stringify({ 
+        type: 'room-created', 
+        roomId, 
+        role: 'host', 
+        id: clientId, 
+        team: msg.team,
+        state: getPublicGameState(room)
+      }));
       ws.send(JSON.stringify({ type: 'game-state', state: getPublicGameState(room) }));
       return;
     }
@@ -384,8 +451,23 @@ wss.on('connection', (ws) => {
       client.isHost = false;
 
       room.players.push({ id: clientId, name: msg.name, team: msg.team, isHost: false });
-      ws.send(JSON.stringify({ type: 'joined-room', roomId, role: 'player', id: clientId, team: msg.team }));
-      broadcastToRoom(roomId, { type: 'player-joined', player: { id: clientId, name: msg.name, team: msg.team }, players: room.players });
+      
+      // Save session
+      sessions.set(clientId, { 
+        roomId, type: 'player', id: clientId, name: msg.name, 
+        team: msg.team, isHost: false, ws 
+      });
+
+      ws.send(JSON.stringify({ 
+        type: 'joined-room', 
+        roomId, 
+        role: 'player', 
+        id: clientId, 
+        team: msg.team,
+        state: getPublicGameState(room)
+      }));
+      // Broadcast full state to everyone instead of just 'player-joined'
+      broadcastToRoom(roomId, { type: 'game-state', state: getPublicGameState(room) });
       return;
     }
 
@@ -526,18 +608,41 @@ wss.on('connection', (ws) => {
   ws.on('close', () => {
     const client = clients.get(ws);
     if (client && client.roomId) {
-      const room = rooms.get(client.roomId);
-      if (room) {
-        room.players = room.players.filter(p => p.id !== client.id);
-        broadcastToRoom(client.roomId, { type: 'player-left', id: client.id, players: room.players });
-        // Optional: If host leaves, close the room? 
-        if (client.isHost && room.players.length === 0) {
-          rooms.delete(client.roomId);
-        }
+      const session = sessions.get(client.id);
+      if (session) {
+        // Don't remove immediately. Set a grace period of 2 minutes.
+        console.log(`🔌 Player ${client.name} disconnected. Waiting 2m for rejoin...`);
+        
+        session.timeout = setTimeout(() => {
+          console.log(`⏰ Session expired for ${client.name}. Removing from room ${client.roomId}.`);
+          const room = rooms.get(client.roomId);
+          if (room) {
+            room.players = room.players.filter(p => p.id !== client.id);
+            // Broadcast state to everyone
+            broadcastToRoom(client.roomId, { type: 'game-state', state: getPublicGameState(room) });
+            if (client.isHost && room.players.length === 0) {
+              rooms.delete(client.roomId);
+            }
+          }
+          sessions.delete(client.id);
+        }, 120000); // 2 minutes
       }
     }
     clients.delete(ws);
   });
+});
+
+// Heartbeat interval to keep connections alive (every 30s)
+const interval = setInterval(() => {
+  wss.clients.forEach((ws) => {
+    if (ws.isAlive === false) return ws.terminate();
+    ws.isAlive = false;
+    ws.ping();
+  });
+}, 30000);
+
+wss.on('close', () => {
+  clearInterval(interval);
 });
 
 function handleCorrectAnswer(roomId, room) {
