@@ -81,31 +81,7 @@ const ARABIC_LETTERS = ['ا', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ذ', '�
 
 const rooms = new Map(); // roomId -> roomState
 
-function createRoomState(name = 'حروف مع سيف', redTeamName = 'الفريق الأحمر', blueTeamName = 'الفريق الأزرق') {
-  return {
-    phase: 'lobby',
-    gameName: name,
-    redTeamName,
-    blueTeamName,
-    cells: initGrid(),
-    currentTurn: 'red',
-    selectedCell: null,
-    currentQuestion: null,
-    buzzedPlayer: null,
-    buzzLocked: false,
-    timerSeconds: 0,
-    timerInterval: null, // Timer is now per-room
-    players: [],
-    redCategoryChange: false,
-    blueCategoryChange: false,
-    usedQuestions: new Set(),
-    winner: null,
-    answeringTeam: null,
-    redRoundsWon: 0,
-    blueRoundsWon: 0,
-    round: 1
-  };
-}
+// Build hex grid - 5 cols x 5 rows = 25 cells, randomized letters
 
 // Build hex grid - 5 cols x 5 rows = 25 cells, randomized letters
 function initGrid() {
@@ -298,15 +274,32 @@ function startTimer(roomId, room, seconds, onEnd) {
   }, 1000);
 }
 
-// ===== WEBSOCKET =====
-const clients = new Map(); // ws -> { roomId, type: 'host' | 'player', id, name, team }
-const sessions = new Map(); // clientId -> { roomId, type, id, name, team, isHost, ws, timeout }
-
-function broadcastToRoom(roomId, msg) {
-  const data = JSON.stringify(msg);
-  for (const [ws, info] of clients) {
-    if (ws.readyState === 1 && info.roomId === roomId) ws.send(data);
-  }
+function createRoomState(name = 'حروف مع سيف', redTeamName = 'الفريق الأحمر', blueTeamName = 'الفريق الأزرق') {
+  return {
+    phase: 'lobby',
+    gameName: name,
+    redTeamName,
+    blueTeamName,
+    cells: initGrid(),
+    currentTurn: 'red',
+    selectedCell: null,
+    currentQuestion: null,
+    buzzedPlayer: null,
+    buzzLocked: false,
+    timerSeconds: 0,
+    timerInterval: null,
+    players: [],
+    redCategoryChange: false,
+    blueCategoryChange: false,
+    usedQuestions: new Set(),
+    winner: null,
+    answeringTeam: null,
+    redRoundsWon: 0,
+    blueRoundsWon: 0,
+    round: 1,
+    currentAnswer: null,
+    autoResult: null
+  };
 }
 
 function getPublicGameState(room) {
@@ -322,19 +315,34 @@ function getPublicGameState(room) {
       question: room.currentQuestion.question,
       category: room.currentQuestion.category,
       letter: room.currentQuestion.letter,
-      difficulty: room.currentQuestion.difficulty,
+      difficulty: room.currentQuestion.difficulty
     } : null,
     buzzedPlayer: room.buzzedPlayer,
     timerSeconds: room.timerSeconds,
     players: room.players,
+    redCategoryChange: room.redCategoryChange,
     blueCategoryChange: room.blueCategoryChange,
-    winner: room.winner,
-    answeringTeam: room.answeringTeam,
+    currentAnswer: room.currentAnswer,
+    autoResult: room.autoResult,
     redRoundsWon: room.redRoundsWon,
     blueRoundsWon: room.blueRoundsWon,
-    round: room.round
+    roundWinner: room.roundWinner
   };
 }
+
+// ===== WEBSOCKET =====
+const clients = new Map(); // ws -> { roomId, type: 'host' | 'player', id, name, team }
+const sessions = new Map(); // clientId -> { roomId, type, id, name, team, isHost, ws, timeout }
+
+function broadcastToRoom(roomId, msg) {
+  const data = JSON.stringify(msg);
+  for (const [ws, info] of clients) {
+    if (ws.readyState === 1 && info.roomId === roomId) ws.send(data);
+  }
+}
+
+
+// WEBSOCKET SERVER
 
 wss.on('connection', (ws) => {
   ws.isAlive = true;
@@ -502,6 +510,8 @@ wss.on('connection', (ws) => {
         room.buzzedPlayer = null;
         room.answeringTeam = null;
         room._hadTeamChance = false;
+        room.currentAnswer = null; // Reset for new question
+        room.autoResult = null;     // Reset for new question
         broadcastToRoom(roomId, { type: 'game-state', state: getPublicGameState(room) });
         broadcastToRoom(roomId, { type: 'enable-buzzer' });
         break;
@@ -529,12 +539,31 @@ wss.on('connection', (ws) => {
         if (client.id !== room.buzzedPlayer?.id) break;
         clearGameTimer(room);
 
-        // --- AUTO JUDGING LOGIC ---
+        // Transition to judging phase
+        room.phase = 'judging';
+        room.currentAnswer = msg.answer;
+        // Game automatically checks, but host confirms/overrides
         const isCorrect = checkAnswer(msg.answer, room.currentQuestion.answer);
-        if (isCorrect) {
+        room.autoResult = isCorrect;
+
+        broadcastToRoom(roomId, { 
+            type: 'answer-received', 
+            answer: msg.answer, 
+            realAnswer: room.currentQuestion.answer,
+            isCorrect: isCorrect,
+            player: room.buzzedPlayer 
+        });
+        broadcastToRoom(roomId, { type: 'game-state', state: getPublicGameState(room) });
+        break;
+
+      case 'judge-answer':
+        if (!client.isHost) break;
+        if (room.phase !== 'judging') break;
+
+        if (msg.correct) {
           handleCorrectAnswer(roomId, room);
         } else {
-          broadcastToRoom(roomId, { type: 'wrong-answer', player: room.buzzedPlayer, spoken: msg.answer });
+          broadcastToRoom(roomId, { type: 'wrong-answer', player: room.buzzedPlayer, spoken: room.currentAnswer });
           handleWrongAnswer(roomId, room);
         }
         break;

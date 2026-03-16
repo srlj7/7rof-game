@@ -51,7 +51,8 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-// Timer constants
+
+// Build hex grid - 5 cols x 5 rows = 25 cells, randomized letters
 const CIRCLE_CIRCUMFERENCE = 2 * Math.PI * 45; // r=45
 
 // ===== DOM ELEMENTS =====
@@ -113,6 +114,11 @@ const buzzedInfo = document.getElementById('buzzed-info');
 const buzzedName = document.getElementById('buzzed-name');
 const buzzedTeamLabel = document.getElementById('buzzed-team-label');
 const phaseLabel = document.getElementById('phase-label');
+const receivedAnswerUI = document.getElementById('received-answer');
+const realAnswerUI = document.getElementById('real-answer');
+const judgingControls = document.getElementById('judging-controls');
+const btnJudgeCorrect = document.getElementById('btn-judge-correct');
+const btnJudgeWrong = document.getElementById('btn-judge-wrong');
 
 // Player Controls
 const playerControls = document.getElementById('player-controls');
@@ -266,6 +272,14 @@ if (SpeechRecognition) {
     };
 }
 
+// Host Judging Listeners
+btnJudgeCorrect.addEventListener('click', () => {
+    ws.send(JSON.stringify({ type: 'judge-answer', correct: true }));
+});
+btnJudgeWrong.addEventListener('click', () => {
+    ws.send(JSON.stringify({ type: 'judge-answer', correct: false }));
+});
+
 // ===== WEBSOCKET LISTENERS =====
 function handleMessage(event) {
     const msg = JSON.parse(event.data);
@@ -322,11 +336,19 @@ function handleMessage(event) {
             render();
             break;
 
-        case 'player-joined':
         case 'player-left':
             if (gameState) {
                 gameState.players = msg.players;
                 renderPlayers();
+            }
+            break;
+
+        case 'answer-received':
+            if (gameState) {
+                gameState.currentAnswer = msg.answer;
+                gameState.autoResult = msg.isCorrect;
+                gameState.phase = 'judging';
+                render();
             }
             break;
 
@@ -446,7 +468,7 @@ function render() {
     roundOverlay.classList.add('hidden');
     hexGrid.style.pointerEvents = isHost ? 'auto' : 'none'; // Only host can click cells
 
-    if (phase === 'question' || phase === 'teamChance' || phase === 'openRound' || phase === 'answering') {
+    if (phase === 'question' || phase === 'teamChance' || phase === 'openRound' || phase === 'answering' || phase === 'judging') {
         showQuestion();
     } else if (phase === 'round-won') {
         roundOverlay.classList.remove('hidden');
@@ -552,6 +574,29 @@ function showQuestion() {
         phaseLabel.textContent = '🔔 اضغطوا على الزر للإجابة!';
         buzzedInfo.classList.add('hidden');
         timerSection.classList.add('hidden');
+        judgingControls.classList.add('hidden');
+        receivedAnswerUI.classList.add('hidden');
+        realAnswerUI.classList.add('hidden');
+    } else if (gameState.phase === 'judging') {
+        phaseLabel.textContent = '⚖️ مراجعة الإجابة';
+        buzzedInfo.classList.remove('hidden');
+        timerSection.classList.add('hidden');
+        
+        receivedAnswerUI.textContent = `الإجابة المقروءة: ${gameState.currentAnswer || '...'}`;
+        receivedAnswerUI.classList.remove('hidden');
+        
+        // Only show correct answer in judging phase
+        realAnswerUI.textContent = `الإجابة الصحيحة: ${q.answer}`;
+        realAnswerUI.classList.remove('hidden');
+
+        if (isHost) {
+            judgingControls.classList.remove('hidden');
+            // Visual hint based on auto-judging
+            btnJudgeCorrect.style.opacity = gameState.autoResult ? '1' : '0.6';
+            btnJudgeWrong.style.opacity = gameState.autoResult ? '0.6' : '1';
+        } else {
+            judgingControls.classList.add('hidden');
+        }
     }
 }
 

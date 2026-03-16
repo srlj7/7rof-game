@@ -1040,6 +1040,37 @@ body {
     color: var(--text-dim);
 }
 
+.received-answer-text {
+    margin-top: 15px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px dashed var(--gold);
+    border-radius: 12px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    animation: slideUp 0.3s ease;
+}
+
+.real-answer-text {
+    margin-top: 10px;
+    padding: 15px;
+    background: rgba(0, 230, 118, 0.15);
+    border: 2px solid var(--green);
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--green);
+    text-align: center;
+    display: block;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .phase-label {
     font-size: 1.1rem;
     color: var(--gold);
@@ -1096,6 +1127,43 @@ body {
 
 .btn-judge.hidden {
     display: none;
+}
+
+/* Judging Buttons for Host */
+.judging-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.judging-controls.hidden {
+    display: none;
+}
+
+.btn-judge-final {
+    border: none;
+    border-radius: 15px;
+    padding: 15px 35px;
+    font-family: var(--font);
+    font-size: 1.3rem;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-judge-final:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.btn-judge-final.btn-correct {
+    background: linear-gradient(135deg, #00e676, #00c853);
+}
+
+.btn-judge-final.btn-wrong {
+    background: linear-gradient(135deg, #ff4057, #cc0000);
 }
 
 /* Win Screen */
