@@ -30,17 +30,21 @@
 
 html,
 body {
-    height: 100%;
+    min-height: 100%;
     font-family: var(--font);
     background: var(--bg-dark);
     color: var(--text);
-    overflow: hidden;
+    /* Allow global scroll if necessary, but screens will handle their own */
+    overflow-x: hidden;
 }
 
 .screen {
     display: none;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
 }
 
 .screen.active {
@@ -52,15 +56,15 @@ body {
    ======================================== */
 #menu-screen {
     position: relative;
+    padding: 20px 0;
     align-items: center;
     justify-content: center;
     background: var(--purple-bg);
-    overflow: hidden;
 }
 
 /* Hex pattern background */
 .hex-bg-pattern {
-    position: absolute;
+    position: fixed; /* Keep background static */
     inset: 0;
     z-index: 0;
     opacity: 0.2;
@@ -400,23 +404,20 @@ body {
    ======================================== */
 #lobby-screen {
     position: relative;
-    align-items: center;
-    justify-content: center;
     background: var(--purple-bg);
-    overflow: hidden;
 }
 
 .lobby-container {
     position: relative;
     z-index: 1;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    justify-content: flex-start; /* Better for scrolling */
+    gap: 30px;
+    padding: 40px 20px;
 }
 
 /* Lobby Logo */
