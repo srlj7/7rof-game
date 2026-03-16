@@ -276,16 +276,19 @@ if (SpeechRecognition) {
 // Host Judging Listeners
 if (btnAwardRed) {
     btnAwardRed.addEventListener('click', () => {
+        console.log("[Client] Clicking Award Red");
         ws.send(JSON.stringify({ type: 'award-point', team: 'red' }));
     });
 }
 if (btnAwardBlue) {
     btnAwardBlue.addEventListener('click', () => {
+        console.log("[Client] Clicking Award Blue");
         ws.send(JSON.stringify({ type: 'award-point', team: 'blue' }));
     });
 }
 if (btnJudgeWrong) {
     btnJudgeWrong.addEventListener('click', () => {
+        console.log("[Client] Clicking Judge Wrong");
         ws.send(JSON.stringify({ type: 'award-point', team: 'wrong' }));
     });
 }
@@ -620,8 +623,8 @@ function showQuestion() {
 
         if (isHost) {
             judgingControls.classList.remove('hidden');
-            // Visual hint based on auto-judging (optional)
-            if (btnAwardRed && btnAwardBlue) {
+            // Visual hint based on auto-judging
+            if (btnAwardRed && btnAwardBlue && gameState.buzzedPlayer) {
                 const suggTeam = gameState.buzzedPlayer.team;
                 btnAwardRed.style.opacity = (gameState.autoResult && suggTeam === 'red') ? '1' : '0.8';
                 btnAwardBlue.style.opacity = (gameState.autoResult && suggTeam === 'blue') ? '1' : '0.8';

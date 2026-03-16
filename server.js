@@ -560,12 +560,21 @@ wss.on('connection', (ws) => {
         break;
 
       case 'award-point':
-        if (!client.isHost) break;
-        if (room.phase !== 'judging') break;
+        console.log(`[Judgement] Received award-point from ${client.name}. Team: ${msg.team}. Phase: ${room.phase}. IsHost: ${client.isHost}`);
+        if (!client.isHost) {
+          console.warn("[Judgement] Rejected: Client is not host");
+          break;
+        }
+        if (room.phase !== 'judging') {
+          console.warn(`[Judgement] Rejected: Wrong phase (${room.phase})`);
+          break;
+        }
 
         if (msg.team === 'red' || msg.team === 'blue') {
+          console.log(`[Judgement] Awarding point to ${msg.team}`);
           handleCorrectAnswer(roomId, room, msg.team);
         } else if (msg.team === 'wrong') {
+          console.log("[Judgement] Marking as wrong answer");
           broadcastToRoom(roomId, { type: 'wrong-answer', player: room.buzzedPlayer, spoken: room.currentAnswer });
           handleWrongAnswer(roomId, room);
         }
