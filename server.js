@@ -738,7 +738,7 @@ function handleWrongAnswer(roomId, room) {
   const previousPhase = room.phase;
   const wrongTeam = room.buzzedPlayer?.team;
 
-  if (previousPhase === 'answering' && !room._hadTeamChance) {
+  if ((previousPhase === 'answering' || previousPhase === 'judging') && !room._hadTeamChance) {
     // First wrong: give other team 10 seconds
     room.phase = 'teamChance';
     room._hadTeamChance = true;
@@ -757,7 +757,7 @@ function handleWrongAnswer(roomId, room) {
       broadcastToRoom(roomId, { type: 'game-state', state: getPublicGameState(room) });
       broadcastToRoom(roomId, { type: 'enable-buzzer' });
     });
-  } else if (previousPhase === 'answering' && room._hadTeamChance) {
+  } else if ((previousPhase === 'answering' || previousPhase === 'judging') && room._hadTeamChance) {
     // Second wrong (from team chance) — open round
     room.phase = 'openRound';
     room.buzzLocked = false;

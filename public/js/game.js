@@ -581,13 +581,29 @@ function showQuestion() {
         btnCancel.classList.add('hidden');
     }
 
-    if (gameState.phase === 'question') {
-        phaseLabel.textContent = '🔔 اضغطوا على الزر للإجابة!';
+    if (gameState.phase === 'question' || gameState.phase === 'teamChance' || gameState.phase === 'openRound') {
+        phaseLabel.textContent = 
+            gameState.phase === 'question' ? '🔔 اضغطوا على الزر للإجابة!' :
+            gameState.phase === 'teamChance' ? '🔄 فرصة للفريق الآخر!' : 
+            '🌍 سؤال مفتوح للجميع!';
+        
         buzzedInfo.classList.add('hidden');
         timerSection.classList.add('hidden');
         judgingControls.classList.add('hidden');
         receivedAnswerUI.classList.add('hidden');
-        realAnswerUI.classList.add('hidden');
+        if (answeringPlayerBadge) answeringPlayerBadge.classList.add('hidden');
+        
+        // Ensure buzzer is visible and active for eligible players
+        playerControls.classList.remove('hidden');
+        btnBuzz.disabled = false;
+        
+        // Specific logic for teamChance: only other team can see buzzer
+        if (gameState.phase === 'teamChance') {
+            const teamChanceFor = gameState.answeringTeam === 'red' ? 'blue' : 'red';
+            if (myTeam !== teamChanceFor) {
+                playerControls.classList.add('hidden');
+            }
+        }
     } else if (gameState.phase === 'judging') {
         phaseLabel.textContent = '⚖️ مراجعة الإجابة';
         buzzedInfo.classList.remove('hidden');
