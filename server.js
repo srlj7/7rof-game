@@ -639,6 +639,17 @@ wss.on('connection', (ws) => {
         ws.send(JSON.stringify({ type: 'questions-reset', count: questions.length }));
         break;
 
+      case 'chat-message':
+        broadcastToRoom(roomId, {
+          type: 'chat-message',
+          text: msg.text,
+          playerId: client.id,
+          playerName: client.name,
+          team: client.team,
+          isHost: client.isHost || false
+        });
+        break;
+
     }
   });
 

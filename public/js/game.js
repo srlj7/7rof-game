@@ -68,6 +68,16 @@ const menuOptions = document.getElementById('menu-options-container');
 const createForm = document.getElementById('create-room-form');
 const joinForm = document.getElementById('join-room-form');
 const backBtns = document.querySelectorAll('.btn-back-menu');
+const btnCategoryChange = document.id ? null : document.querySelectorAll('.btn-category-change'); // Handling multiple buttons
+
+// Chat Elements
+const btnChatToggle = document.getElementById('btn-chat-toggle');
+const btnChatClose = document.getElementById('btn-chat-close');
+const chatPanel = document.getElementById('chat-panel');
+const chatMessages = document.getElementById('chat-messages');
+const chatInput = document.getElementById('chat-input');
+const btnSendChat = document.getElementById('btn-send-chat');
+const chatBadge = document.getElementById('chat-badge');
 
 // Create Form
 const createGameSuffix = document.getElementById('create-game-suffix');
@@ -293,6 +303,64 @@ if (btnJudgeWrong) {
     });
 }
 
+// --- Chat Logic ---
+function toggleChat() {
+    chatPanel.classList.toggle('hidden');
+    if (!chatPanel.classList.contains('hidden')) {
+        chatBadge.classList.add('hidden');
+        chatInput.focus();
+        // Scroll to bottom
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+}
+
+if (btnChatToggle) btnChatToggle.addEventListener('click', toggleChat);
+if (btnChatClose) btnChatClose.addEventListener('click', toggleChat);
+
+function sendChatMessage() {
+    const text = chatInput.value.trim();
+    if (text === '') return;
+    
+    ws.send(JSON.stringify({
+        type: 'chat-message',
+        text: text
+    }));
+    
+    chatInput.value = '';
+}
+
+if (btnSendChat) btnSendChat.addEventListener('click', sendChatMessage);
+if (chatInput) {
+    chatInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') sendChatMessage();
+    });
+}
+
+function addChatMessage(data) {
+    const isMe = data.playerId === myPlayerId;
+    const msgDiv = document.createElement('div');
+    msgDiv.className = `message ${isMe ? 'sent' : 'received'} ${data.team || ''}`;
+    
+    const senderSpan = document.createElement('span');
+    senderSpan.className = 'sender';
+    senderSpan.textContent = data.playerName + (data.isHost ? ' (المضيف)' : '');
+    
+    const textP = document.createElement('p');
+    textP.textContent = data.text;
+    
+    msgDiv.appendChild(senderSpan);
+    msgDiv.appendChild(textP);
+    chatMessages.appendChild(msgDiv);
+    
+    // Auto scroll if panel is open
+    if (!chatPanel.classList.contains('hidden')) {
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    } else {
+        // Show notification badge if closed
+        chatBadge.classList.remove('hidden');
+    }
+}
+
 // Timer constants
 // ===== WEBSOCKET LISTENERS =====
 function handleMessage(event) {
@@ -342,6 +410,10 @@ function handleMessage(event) {
         case 'round-won':
             gameState = msg.state;
             render();
+            break;
+
+        case 'chat-message':
+            addChatMessage(msg);
             break;
 
         case 'new-round':
@@ -396,6 +468,14 @@ function handleMessage(event) {
 
         case 'enable-buzzer':
             resetBuzzerUI();
+            break;
+
+        case 'game-state':
+            updateGameState(msg.state);
+            break;
+
+        case 'chat-message':
+            addChatMessage(msg);
             break;
 
         case 'timer':

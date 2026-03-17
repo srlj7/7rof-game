@@ -206,6 +206,26 @@
             </div>
         </div>
 
+        <!-- Chat System -->
+        <button id="btn-chat-toggle" class="btn-chat-toggle">
+            <span class="chat-icon">💬</span>
+            <span id="chat-badge" class="chat-badge hidden"></span>
+        </button>
+
+        <div id="chat-panel" class="chat-panel hidden">
+            <div class="chat-header">
+                <h3>💬 المحادثة</h3>
+                <button id="btn-chat-close" class="btn-chat-close">✕</button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="chat-input" placeholder="اكتب رسالة..." maxlength="100">
+                <button id="btn-send-chat">إرسال</button>
+            </div>
+        </div>
+
         <!-- Win Overlay -->
         <div id="win-overlay" class="overlay hidden">
             <div class="win-card">
