@@ -489,14 +489,6 @@ function handleMessage(event) {
             resetBuzzerUI();
             break;
 
-        case 'game-state':
-            updateGameState(msg.state);
-            break;
-
-        case 'chat-message':
-            addChatMessage(msg);
-            break;
-
         case 'timer':
             updateTimer(msg.seconds, msg.phase);
             break;
@@ -549,6 +541,7 @@ function resetBuzzerUI() {
 function render() {
     if (!gameState) return;
     const phase = gameState.phase;
+    console.log(`[Render] Phase: ${phase}, isHost: ${isHost}`);
 
     lobbyTitle.textContent = (gameState.gameName || "").replace('حروف مع ', '');
 
@@ -632,6 +625,7 @@ function renderGrid() {
             if (cell.owner === 'blue') hex.classList.add('owned-blue');
             hex.innerHTML = `<span class="letter">${cell.letter}</span>`;
             if (!cell.owner && gameState.phase === 'playing' && isHost) {
+                console.log(`[Grid] Adding listener to cell ${cell.index} (${cell.letter})`);
                 hex.addEventListener('click', () => selectCell(cell.index));
             }
             rowDiv.appendChild(hex);
@@ -818,6 +812,7 @@ function spawnConfetti() {
 
 // ===== ACTIONS =====
 function selectCell(index) {
+    console.log(`[Grid] Selecting cell index: ${index}`);
     ws.send(JSON.stringify({ type: 'select-cell', index }));
 }
 
