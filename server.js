@@ -539,20 +539,19 @@ wss.on('connection', (ws) => {
         if (client.id !== room.buzzedPlayer?.id) break;
         clearGameTimer(room);
 
-        // Transition to judging phase
-        room.phase = 'judging';
-        room.currentAnswer = msg.answer;
-        // Game automatically checks similarity (60% threshold now)
         const isCorrectTyped = checkAnswer(msg.answer, room.currentQuestion.answer);
-        room.autoResult = isCorrectTyped;
+        room.currentAnswer = msg.answer;
 
-        broadcastToRoom(roomId, { 
-            type: 'answer-received', 
-            answer: msg.answer, 
-            isCorrect: isCorrectTyped,
-            player: room.buzzedPlayer 
-        });
-        broadcastToRoom(roomId, { type: 'game-state', state: getPublicGameState(room) });
+        if (isCorrectTyped) {
+          handleCorrectAnswer(roomId, room);
+        } else {
+          broadcastToRoom(roomId, { 
+            type: 'wrong-answer', 
+            player: room.buzzedPlayer, 
+            spoken: msg.answer 
+          });
+          handleWrongAnswer(roomId, room);
+        }
         break;
 
       case 'judge-answer':

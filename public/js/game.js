@@ -455,12 +455,7 @@ function handleMessage(event) {
             break;
 
         case 'answer-received':
-            if (gameState) {
-                gameState.currentAnswer = msg.answer;
-                gameState.autoResult = msg.isCorrect;
-                gameState.phase = 'judging';
-                render();
-            }
+            // Removed for auto-judging (handled by correct/wrong-answer)
             break;
 
         case 'game-name':
@@ -494,7 +489,7 @@ function handleMessage(event) {
             break;
 
         case 'correct-answer':
-            // Only host flashes correct
+            // Optional: show a quick success toast or sound
             break;
 
         case 'wrong-answer':
@@ -715,31 +710,6 @@ function showQuestion() {
             // Instruction and button visibility are set dynamically in updateTimer
         } else {
             playerControls.classList.add('hidden');
-        }
-    } else if (gameState.phase === 'judging') {
-        phaseLabel.textContent = '⚖️ مراجعة الإجابة';
-        buzzedInfo.classList.remove('hidden');
-        timerSection.classList.add('hidden');
-        
-        receivedAnswerUI.textContent = `الإجابة المقروءة: ${gameState.currentAnswer || '...'}`;
-        receivedAnswerUI.classList.remove('hidden');
-        
-        // Show player name badge
-        if (answeringPlayerBadge && gameState.buzzedPlayer) {
-            answeringPlayerBadge.textContent = `اللاعب: ${gameState.buzzedPlayer.name}`;
-            answeringPlayerBadge.classList.remove('hidden');
-        }
-
-        if (isHost) {
-            judgingControls.classList.remove('hidden');
-            // Visual hint based on auto-judging
-            if (btnAwardRed && btnAwardBlue && gameState.buzzedPlayer) {
-                const suggTeam = gameState.buzzedPlayer.team;
-                btnAwardRed.style.opacity = (gameState.autoResult && suggTeam === 'red') ? '1' : '0.8';
-                btnAwardBlue.style.opacity = (gameState.autoResult && suggTeam === 'blue') ? '1' : '0.8';
-            }
-        } else {
-            judgingControls.classList.add('hidden');
         }
     }
 }
