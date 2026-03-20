@@ -196,7 +196,10 @@
                     <!-- NEW: Typing Phase UI -->
                     <div id="typing-area" class="typing-area hidden">
                         <input type="text" id="answer-input" class="answer-input" placeholder="اكتب إجابتك هنا..." autofocus>
-                        <button id="btn-submit-answer" class="btn-submit-answer">إرسال ✅</button>
+                        <div class="typing-actions">
+                            <button id="btn-submit-answer" class="btn-submit-answer">إرسال ✅</button>
+                            <button id="btn-forfeit-answer" class="btn-forfeit-answer hidden">لا أعرف ❌</button>
+                        </div>
                     </div>
 
                     <div id="mic-status" class="mic-status hidden">

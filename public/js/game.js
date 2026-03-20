@@ -135,6 +135,7 @@ const btnJudgeWrong = document.getElementById('btn-judge-wrong');
 const typingArea = document.getElementById('typing-area');
 const answerInput = document.getElementById('answer-input');
 const btnSubmitAnswer = document.getElementById('btn-submit-answer');
+const btnForfeitAnswer = document.getElementById('btn-forfeit-answer');
 
 // Player Controls
 const playerControls = document.getElementById('player-controls');
@@ -470,8 +471,7 @@ function handleMessage(event) {
 
         case 'buzzed':
             gameState.buzzedPlayer = msg.player;
-            // The phase will update via game-state usually, but we can set it here for immediate feedback
-            gameState.phase = 'speaking'; 
+            gameState.phase = 'answering'; 
             showBuzzed(msg.player);
             break;
 
@@ -481,6 +481,7 @@ function handleMessage(event) {
             btnBuzz.classList.add('hidden');
             micStatus.classList.remove('hidden'); 
             typingArea.classList.remove('hidden');
+            btnForfeitAnswer.classList.add('hidden'); 
             answerInput.focus();
             break;
 
@@ -705,26 +706,19 @@ function showQuestion() {
                 playerControls.classList.add('hidden');
             }
         }
-    } else if (gameState.phase === 'speaking' || gameState.phase === 'typing') {
-        phaseLabel.textContent = gameState.phase === 'speaking' ? '🗣️ انطق الإجابة واستعد للكتابة' : '⌨️ اكتب الإجابة الآن!';
+    } else if (gameState.phase === 'answering') {
+        const isMe = gameState.buzzedPlayer && gameState.buzzedPlayer.id === myPlayerId;
+        
+        // Timer logic is handled in updateTimer for granular instruction changes
         buzzedInfo.classList.remove('hidden');
         timerSection.classList.remove('hidden');
         judgingControls.classList.add('hidden');
         receivedAnswerUI.classList.add('hidden');
         
-        if (gameState.buzzedPlayer && gameState.buzzedPlayer.id === myPlayerId) {
+        if (isMe) {
             playerControls.classList.remove('hidden');
-            // Only show mic status during speaking phase
-            if (gameState.phase === 'speaking') {
-                micStatus.classList.remove('hidden');
-            } else {
-                micStatus.classList.add('hidden');
-            }
             typingArea.classList.remove('hidden');
-            // Focus only if not already typing (to avoid cursor reset)
-            if (document.activeElement !== answerInput) {
-                answerInput.focus();
-            }
+            // Instruction and button visibility are set dynamically in updateTimer
         } else {
             playerControls.classList.add('hidden');
         }
@@ -757,6 +751,7 @@ function showQuestion() {
 }
 
 function showBuzzed(player) {
+    const isMe = player.id === myPlayerId;
     buzzedInfo.classList.remove('hidden');
     buzzedName.textContent = player.name;
     buzzedName.style.color = player.team === 'red' ? 'var(--red-team)' : 'var(--blue-team)';
@@ -767,15 +762,33 @@ function showBuzzed(player) {
     // Disable buzzer for everyone
     btnBuzz.disabled = true;
 
-    if (player.id !== myPlayerId) {
+    if (!isMe) {
         playerControls.classList.add('hidden');
     }
 }
 
 function updateTimer(seconds, phase) {
-    if (phase === 'speaking' || phase === 'typing' || phase === 'teamChance') {
+    if (phase === 'answering' || phase === 'teamChance') {
+        const total = phase === 'answering' ? 25 : 10;
+        const isMe = gameState && gameState.buzzedPlayer && gameState.buzzedPlayer.id === myPlayerId;
+
+        if (phase === 'answering') {
+            if (seconds > 20) {
+                phaseLabel.textContent = '🗣️ انطق الإجابة (يسمعك الجميع)';
+                if (isMe) {
+                    micStatus.classList.remove('hidden');
+                    btnForfeitAnswer.classList.add('hidden');
+                }
+            } else {
+                phaseLabel.textContent = '⌨️ اكتب الإجابة الآن!';
+                if (isMe) {
+                    micStatus.classList.add('hidden');
+                    btnForfeitAnswer.classList.remove('hidden');
+                }
+            }
+        }
+
         timerNumber.textContent = seconds;
-        const total = phase === 'speaking' ? 5 : phase === 'typing' ? 20 : 10;
         const percent = (seconds / total) * 100;
         timerProgress.style.strokeDashoffset = CIRCLE_CIRCUMFERENCE - (percent / 100) * CIRCLE_CIRCUMFERENCE;
         timerProgress.classList.remove('warning', 'danger');

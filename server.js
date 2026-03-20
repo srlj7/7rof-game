@@ -524,24 +524,18 @@ wss.on('connection', (ws) => {
         room.buzzLocked = true;
         room.buzzedPlayer = { id: clientId, name: client.name, team: client.team };
         room.answeringTeam = client.team;
-        room.phase = 'speaking';
+        room.phase = 'answering';
         broadcastToRoom(roomId, { type: 'buzzed', player: room.buzzedPlayer });
         ws.send(JSON.stringify({ type: 'you-buzzed' }));
         
-        // Start 5s timer for speaking (just for players to hear the answer)
-        startTimer(roomId, room, 5, () => {
-            // Transition to typing phase after 5s
-            room.phase = 'typing';
-            broadcastToRoom(roomId, { type: 'game-state', state: getPublicGameState(room) });
-            // Start 20s timer for typing the answer
-            startTimer(roomId, room, 20, () => {
-                handleWrongAnswer(roomId, room);
-            });
+        // Start 25s total timer for the entire answering flow (speaking + typing)
+        startTimer(roomId, room, 25, () => {
+             handleWrongAnswer(roomId, room);
         });
         break;
 
       case 'submit-answer':
-        if (room.phase !== 'typing' && room.phase !== 'speaking') break;
+        if (room.phase !== 'answering') break;
         if (client.id !== room.buzzedPlayer?.id) break;
         clearGameTimer(room);
 
@@ -584,6 +578,13 @@ wss.on('connection', (ws) => {
           broadcastToRoom(roomId, { type: 'wrong-answer', player: room.buzzedPlayer, spoken: room.currentAnswer });
           handleWrongAnswer(roomId, room);
         }
+        break;
+
+      case 'forfeit-answer':
+        if (room.phase !== 'answering') break;
+        if (client.id !== room.buzzedPlayer?.id) break;
+        clearGameTimer(room);
+        handleWrongAnswer(roomId, room);
         break;
 
       case 'skip-question':
