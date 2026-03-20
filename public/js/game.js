@@ -479,8 +479,9 @@ function handleMessage(event) {
             // I successfully buzzed in!
             playerControls.classList.remove('hidden');
             btnBuzz.classList.add('hidden');
-            micStatus.classList.remove('hidden'); // This now says "Speak now (others hear you)"
-            typingArea.classList.add('hidden');
+            micStatus.classList.remove('hidden'); 
+            typingArea.classList.remove('hidden');
+            answerInput.focus();
             break;
 
         case 'enable-buzzer':
@@ -704,8 +705,8 @@ function showQuestion() {
                 playerControls.classList.add('hidden');
             }
         }
-    } else if (gameState.phase === 'typing') {
-        phaseLabel.textContent = '⌨️ اكتب الإجابة الآن!';
+    } else if (gameState.phase === 'speaking' || gameState.phase === 'typing') {
+        phaseLabel.textContent = gameState.phase === 'speaking' ? '🗣️ انطق الإجابة واستعد للكتابة' : '⌨️ اكتب الإجابة الآن!';
         buzzedInfo.classList.remove('hidden');
         timerSection.classList.remove('hidden');
         judgingControls.classList.add('hidden');
@@ -713,9 +714,17 @@ function showQuestion() {
         
         if (gameState.buzzedPlayer && gameState.buzzedPlayer.id === myPlayerId) {
             playerControls.classList.remove('hidden');
-            micStatus.classList.add('hidden');
+            // Only show mic status during speaking phase
+            if (gameState.phase === 'speaking') {
+                micStatus.classList.remove('hidden');
+            } else {
+                micStatus.classList.add('hidden');
+            }
             typingArea.classList.remove('hidden');
-            answerInput.focus();
+            // Focus only if not already typing (to avoid cursor reset)
+            if (document.activeElement !== answerInput) {
+                answerInput.focus();
+            }
         } else {
             playerControls.classList.add('hidden');
         }

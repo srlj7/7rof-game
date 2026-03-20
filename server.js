@@ -541,7 +541,7 @@ wss.on('connection', (ws) => {
         break;
 
       case 'submit-answer':
-        if (room.phase !== 'typing') break;
+        if (room.phase !== 'typing' && room.phase !== 'speaking') break;
         if (client.id !== room.buzzedPlayer?.id) break;
         clearGameTimer(room);
 
