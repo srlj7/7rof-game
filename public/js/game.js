@@ -131,6 +131,11 @@ const btnAwardRed = document.getElementById('btn-award-red');
 const btnAwardBlue = document.getElementById('btn-award-blue');
 const btnJudgeWrong = document.getElementById('btn-judge-wrong');
 
+// Typing UI
+const typingArea = document.getElementById('typing-area');
+const answerInput = document.getElementById('answer-input');
+const btnSubmitAnswer = document.getElementById('btn-submit-answer');
+
 // Player Controls
 const playerControls = document.getElementById('player-controls');
 const btnBuzz = document.getElementById('btn-buzz');
@@ -281,6 +286,25 @@ if (SpeechRecognition) {
     recognition.onend = () => {
         micStatus.classList.add('hidden');
     };
+}
+
+// Answer Submission
+if (btnSubmitAnswer) {
+    btnSubmitAnswer.addEventListener('click', () => {
+        const answer = answerInput.value.trim();
+        if (answer) {
+            ws.send(JSON.stringify({ type: 'submit-answer', answer: answer }));
+            typingArea.classList.add('hidden');
+            answerInput.value = '';
+        }
+    });
+}
+if (answerInput) {
+    answerInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            btnSubmitAnswer.click();
+        }
+    });
 }
 
 // Host Judging Listeners
@@ -446,24 +470,17 @@ function handleMessage(event) {
 
         case 'buzzed':
             gameState.buzzedPlayer = msg.player;
-            gameState.phase = 'answering';
+            // The phase will update via game-state usually, but we can set it here for immediate feedback
+            gameState.phase = 'speaking'; 
             showBuzzed(msg.player);
             break;
 
         case 'you-buzzed':
-            // I successfully buzzed in! Start listening.
+            // I successfully buzzed in!
             playerControls.classList.remove('hidden');
             btnBuzz.classList.add('hidden');
-            micStatus.classList.remove('hidden');
-            recognizedTextUI.classList.add('hidden');
-            if (recognition) {
-                try { recognition.start(); } catch (e) { }
-            } else {
-                recognizedTextUI.textContent = 'المتصفح لا يدعم المايكروفون';
-                recognizedTextUI.classList.remove('hidden');
-                micStatus.classList.add('hidden');
-                setTimeout(() => { ws.send(JSON.stringify({ type: 'voice-answer', answer: '' })); }, 2000);
-            }
+            micStatus.classList.remove('hidden'); // This now says "Speak now (others hear you)"
+            typingArea.classList.add('hidden');
             break;
 
         case 'enable-buzzer':
@@ -521,7 +538,7 @@ function resetBuzzerUI() {
         btnBuzz.classList.remove('hidden');
         btnBuzz.disabled = false;
         micStatus.classList.add('hidden');
-        recognizedTextUI.classList.add('hidden');
+        typingArea.classList.add('hidden');
         if (recognition) { try { recognition.stop(); } catch (e) { } }
     }
 }
@@ -687,6 +704,21 @@ function showQuestion() {
                 playerControls.classList.add('hidden');
             }
         }
+    } else if (gameState.phase === 'typing') {
+        phaseLabel.textContent = '⌨️ اكتب الإجابة الآن!';
+        buzzedInfo.classList.remove('hidden');
+        timerSection.classList.remove('hidden');
+        judgingControls.classList.add('hidden');
+        receivedAnswerUI.classList.add('hidden');
+        
+        if (gameState.buzzedPlayer && gameState.buzzedPlayer.id === myPlayerId) {
+            playerControls.classList.remove('hidden');
+            micStatus.classList.add('hidden');
+            typingArea.classList.remove('hidden');
+            answerInput.focus();
+        } else {
+            playerControls.classList.add('hidden');
+        }
     } else if (gameState.phase === 'judging') {
         phaseLabel.textContent = '⚖️ مراجعة الإجابة';
         buzzedInfo.classList.remove('hidden');
@@ -721,7 +753,7 @@ function showBuzzed(player) {
     buzzedName.style.color = player.team === 'red' ? 'var(--red-team)' : 'var(--blue-team)';
     buzzedTeamLabel.textContent = `الفريق ${player.team === 'red' ? 'الأحمر' : 'الأزرق'}`;
     timerSection.classList.remove('hidden');
-    phaseLabel.textContent = '🎤 أجب الآن!';
+    phaseLabel.textContent = '🗣️ انطق الإجابة (يسمعك الجميع)';
 
     // Disable buzzer for everyone
     btnBuzz.disabled = true;
@@ -732,9 +764,9 @@ function showBuzzed(player) {
 }
 
 function updateTimer(seconds, phase) {
-    if (phase === 'answering' || phase === 'teamChance') {
+    if (phase === 'speaking' || phase === 'typing' || phase === 'teamChance') {
         timerNumber.textContent = seconds;
-        const total = phase === 'answering' ? 5 : 10;
+        const total = phase === 'speaking' ? 5 : phase === 'typing' ? 20 : 10;
         const percent = (seconds / total) * 100;
         timerProgress.style.strokeDashoffset = CIRCLE_CIRCUMFERENCE - (percent / 100) * CIRCLE_CIRCUMFERENCE;
         timerProgress.classList.remove('warning', 'danger');

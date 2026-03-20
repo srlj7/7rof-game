@@ -252,7 +252,7 @@ function checkAnswer(spoken, correct) {
   for (let i = 0; i < shorter.length; i++) {
     if (longer.includes(shorter[i])) matches++;
   }
-  return (matches / longer.length) > 0.7;
+  return (matches / longer.length) > 0.6;
 }
 
 // ===== TIMERS & BROADCAST =====
@@ -524,32 +524,38 @@ wss.on('connection', (ws) => {
         room.buzzLocked = true;
         room.buzzedPlayer = { id: clientId, name: client.name, team: client.team };
         room.answeringTeam = client.team;
-        room.phase = 'answering';
+        room.phase = 'speaking';
         broadcastToRoom(roomId, { type: 'buzzed', player: room.buzzedPlayer });
         ws.send(JSON.stringify({ type: 'you-buzzed' }));
-        // Start 5s timer for answer
+        
+        // Start 5s timer for speaking (just for players to hear the answer)
         startTimer(roomId, room, 5, () => {
-          // Time's up, wrong answer default
-          handleWrongAnswer(roomId, room);
+            // Transition to typing phase after 5s
+            room.phase = 'typing';
+            broadcastToRoom(roomId, { type: 'game-state', state: getPublicGameState(room) });
+            // Start 20s timer for typing the answer
+            startTimer(roomId, room, 20, () => {
+                handleWrongAnswer(roomId, room);
+            });
         });
         break;
 
-      case 'voice-answer':
-        if (room.phase !== 'answering') break;
+      case 'submit-answer':
+        if (room.phase !== 'typing') break;
         if (client.id !== room.buzzedPlayer?.id) break;
         clearGameTimer(room);
 
         // Transition to judging phase
         room.phase = 'judging';
         room.currentAnswer = msg.answer;
-        // Game automatically checks, but host confirms/overrides
-        const isCorrect = checkAnswer(msg.answer, room.currentQuestion.answer);
-        room.autoResult = isCorrect;
+        // Game automatically checks similarity (60% threshold now)
+        const isCorrectTyped = checkAnswer(msg.answer, room.currentQuestion.answer);
+        room.autoResult = isCorrectTyped;
 
         broadcastToRoom(roomId, { 
             type: 'answer-received', 
             answer: msg.answer, 
-            isCorrect: isCorrect,
+            isCorrect: isCorrectTyped,
             player: room.buzzedPlayer 
         });
         broadcastToRoom(roomId, { type: 'game-state', state: getPublicGameState(room) });
@@ -758,7 +764,9 @@ function handleWrongAnswer(roomId, room) {
   const previousPhase = room.phase;
   const wrongTeam = room.buzzedPlayer?.team;
 
-  if ((previousPhase === 'answering' || previousPhase === 'judging') && !room._hadTeamChance) {
+  const isAnsweringPhase = ['speaking', 'typing', 'answering', 'judging'].includes(previousPhase);
+
+  if (isAnsweringPhase && !room._hadTeamChance) {
     // First wrong: give other team 10 seconds
     room.phase = 'teamChance';
     room._hadTeamChance = true;
@@ -777,7 +785,7 @@ function handleWrongAnswer(roomId, room) {
       broadcastToRoom(roomId, { type: 'game-state', state: getPublicGameState(room) });
       broadcastToRoom(roomId, { type: 'enable-buzzer' });
     });
-  } else if ((previousPhase === 'answering' || previousPhase === 'judging') && room._hadTeamChance) {
+  } else if (isAnsweringPhase && room._hadTeamChance) {
     // Second wrong (from team chance) — open round
     room.phase = 'openRound';
     room.buzzLocked = false;

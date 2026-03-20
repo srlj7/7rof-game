@@ -189,11 +189,18 @@
                     <button id="btn-judge-wrong" class="btn-judge-final btn-wrong">إجابة خاطئة ❌</button>
                 </div>
 
-                <!-- PLAYER UI: Integrated Buzzer -->
+                <!-- PLAYER UI: Integrated Buzzer & Typing -->
                 <div id="player-controls" class="player-controls hidden">
                     <button id="btn-buzz" class="buzzer-btn">أنا أعرف!</button>
+                    
+                    <!-- NEW: Typing Phase UI -->
+                    <div id="typing-area" class="typing-area hidden">
+                        <input type="text" id="answer-input" class="answer-input" placeholder="اكتب إجابتك هنا..." autofocus>
+                        <button id="btn-submit-answer" class="btn-submit-answer">إرسال ✅</button>
+                    </div>
+
                     <div id="mic-status" class="mic-status hidden">
-                        <span class="pulse"></span> تحدث الآن...
+                        <span class="pulse"></span> انطق الإجابة الآن (يسمعك اللاعبون)...
                     </div>
                     <p id="recognized-text" class="recognized-text hidden"></p>
                 </div>
